@@ -68,8 +68,8 @@ export default function AdminDashboardPage() {
       {/* Header Info */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="font-serif text-2xl font-bold text-white">Operations Dashboard</h2>
-          <p className="text-xs text-[#9DA4B0] mt-0.5">
+          <h2 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">Operations Dashboard</h2>
+          <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] mt-0.5">
             Real-time management for Hotel Sunny Point • Changes sync instantly to customer devices.
           </p>
         </div>
@@ -77,15 +77,15 @@ export default function AdminDashboardPage() {
         <div className="flex items-center gap-3">
           <Link
             href="/admin/menu"
-            className="px-4 py-2 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] shadow-md transition-colors"
+            className="px-4 py-2 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-colors"
           >
             + Add New Dish
           </Link>
           <Link
             href="/admin/qr"
-            className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#1C212C] hover:bg-[#252C3B] text-white border border-[#2A3140] flex items-center gap-1.5 transition-colors"
+            className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-[#1C212C] hover:bg-[#F5F0E6] dark:hover:bg-[#252C3B] text-[#292D29] dark:text-white border border-[#E7E2D6] dark:border-[#2A3140] flex items-center gap-1.5 transition-colors shadow-sm dark:shadow-none"
           >
-            <QrCode className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <QrCode className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37]" />
             <span>Print QR Card</span>
           </Link>
         </div>
@@ -93,65 +93,65 @@ export default function AdminDashboardPage() {
 
       {/* Stat Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="bg-[#12151C] border border-[#2A3140] p-5 rounded-2xl space-y-2">
-          <div className="flex items-center justify-between text-xs text-[#9DA4B0]">
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
+          <div className="flex items-center justify-between text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             <span>Total Menu Items</span>
-            <UtensilsCrossed className="w-4 h-4 text-[#D4AF37]" />
+            <UtensilsCrossed className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
           </div>
           <div className="flex items-baseline justify-between">
-            <span className="text-3xl font-bold text-white">{totalDishes}</span>
+            <span className="text-3xl font-bold text-[#292D29] dark:text-white">{totalDishes}</span>
             <span className="text-[11px] text-[#22C55E] font-medium">100% Pure Veg</span>
           </div>
         </div>
 
-        <div className="bg-[#12151C] border border-[#2A3140] p-5 rounded-2xl space-y-2">
-          <div className="flex items-center justify-between text-xs text-[#9DA4B0]">
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
+          <div className="flex items-center justify-between text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             <span>Live Availability</span>
             <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
           </div>
           <div className="flex items-baseline justify-between">
             <span className="text-3xl font-bold text-[#22C55E]">{availableDishes}</span>
-            <span className="text-[11px] text-red-400">
+            <span className="text-[11px] text-red-500 dark:text-red-400">
               {unavailableDishes > 0 ? `${unavailableDishes} Sold Out` : "0 Sold Out"}
             </span>
           </div>
         </div>
 
-        <div className="bg-[#12151C] border border-[#2A3140] p-5 rounded-2xl space-y-2">
-          <div className="flex items-center justify-between text-xs text-[#9DA4B0]">
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
+          <div className="flex items-center justify-between text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             <span>Active Categories</span>
             <Layers className="w-4 h-4 text-[#E07A2B]" />
           </div>
           <div className="flex items-baseline justify-between">
-            <span className="text-3xl font-bold text-white">{categoriesCount}</span>
-            <span className="text-[11px] text-[#D4AF37] font-medium">7 Food Divisions</span>
+            <span className="text-3xl font-bold text-[#292D29] dark:text-white">{categoriesCount}</span>
+            <span className="text-[11px] text-[#174D35] dark:text-[#D4AF37] font-medium">7 Food Divisions</span>
           </div>
         </div>
 
-        <div className="bg-[#12151C] border border-[#2A3140] p-5 rounded-2xl space-y-2">
-          <div className="flex items-center justify-between text-xs text-[#9DA4B0]">
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
+          <div className="flex items-center justify-between text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             <span>Guest Rating</span>
             <Star className="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]" />
           </div>
           <div className="flex items-baseline justify-between">
-            <span className="text-3xl font-bold text-white">{avgRating}★</span>
-            <span className="text-[11px] text-gray-400">{restaurant.feedback.length} Reviews</span>
+            <span className="text-3xl font-bold text-[#292D29] dark:text-white">{avgRating}★</span>
+            <span className="text-[11px] text-[#6D756D] dark:text-gray-400">{restaurant.feedback.length} Reviews</span>
           </div>
         </div>
       </div>
 
       {/* Quick Dish Live Controls Table */}
-      <div className="bg-[#12151C] border border-[#2A3140] rounded-2xl overflow-hidden shadow-xl space-y-4 p-5 sm:p-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#2A3140]">
+      <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl space-y-4 p-5 sm:p-6 transition-colors">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E7E2D6] dark:border-[#2A3140]">
           <div>
-            <h3 className="font-serif font-bold text-lg text-white">Dishes Quick Control & Price Editor</h3>
-            <p className="text-xs text-[#9DA4B0]">
+            <h3 className="font-serif font-bold text-lg text-[#292D29] dark:text-white">Dishes Quick Control & Price Editor</h3>
+            <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">
               Edit price inline or toggle availability. Instantly updates the customer menu.
             </p>
           </div>
           <Link
             href="/admin/menu"
-            className="text-xs font-semibold text-[#D4AF37] hover:underline flex items-center gap-1"
+            className="text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] hover:underline flex items-center gap-1"
           >
             <span>Open Advanced Menu Manager</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -161,7 +161,7 @@ export default function AdminDashboardPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs min-w-[580px]">
             <thead>
-              <tr className="border-b border-[#2A3140] text-[#9DA4B0] uppercase text-[10px] tracking-wider">
+              <tr className="border-b border-[#E7E2D6] dark:border-[#2A3140] text-[#6D756D] dark:text-[#9DA4B0] uppercase text-[10px] tracking-wider">
                 <th className="pb-3 font-semibold">Dish</th>
                 <th className="pb-3 font-semibold">Category</th>
                 <th className="pb-3 font-semibold">Price (₹)</th>
@@ -170,13 +170,13 @@ export default function AdminDashboardPage() {
                 <th className="pb-3 font-semibold text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#2A3140]/60">
+            <tbody className="divide-y divide-[#E7E2D6] dark:divide-[#2A3140]/60">
               {restaurant.items.slice(0, 8).map((dish) => {
                 const cat = restaurant.categories.find((c) => c.id === dish.categoryId);
                 const isEditingThisPrice = editingPriceId === dish.id;
 
                 return (
-                  <tr key={dish.id} className="hover:bg-[#171A21] transition-colors">
+                  <tr key={dish.id} className="hover:bg-[#FAF9F3] dark:hover:bg-[#171A21] transition-colors">
                     {/* Dish Name + Thumbnail */}
                     <td className="py-3 pr-4">
                       <div className="flex items-center gap-3">
@@ -189,14 +189,14 @@ export default function AdminDashboardPage() {
                           />
                         </div>
                         <div>
-                          <p className="font-bold text-white text-xs">{dish.name.en}</p>
-                          <p className="text-[10px] text-[#D4AF37]">{dish.name.mr}</p>
+                          <p className="font-bold text-[#292D29] dark:text-white text-xs">{dish.name.en}</p>
+                          <p className="text-[10px] text-[#174D35] dark:text-[#D4AF37]">{dish.name.mr}</p>
                         </div>
                       </div>
                     </td>
 
                     {/* Category */}
-                    <td className="py-3 text-gray-300">
+                    <td className="py-3 text-[#6D756D] dark:text-gray-300">
                       {cat?.name.en || "Unassigned"}
                     </td>
 
@@ -204,23 +204,23 @@ export default function AdminDashboardPage() {
                     <td className="py-3">
                       {isEditingThisPrice ? (
                         <div className="flex items-center gap-1.5">
-                          <span className="text-[#D4AF37] font-bold">₹</span>
+                          <span className="text-[#174D35] dark:text-[#D4AF37] font-bold">₹</span>
                           <input
                             type="number"
                             value={priceInput}
                             onChange={(e) => setPriceInput(Number(e.target.value))}
-                            className="w-16 bg-[#0F1115] border border-[#D4AF37] rounded px-1.5 py-0.5 text-xs text-white"
+                            className="w-16 bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#174D35] dark:border-[#D4AF37] rounded px-1.5 py-0.5 text-xs text-[#292D29] dark:text-white"
                             autoFocus
                           />
                           <button
                             onClick={() => handleSavePrice(dish.id)}
-                            className="px-2 py-0.5 bg-[#22C55E] text-[#0F1115] rounded text-[10px] font-bold"
+                            className="px-2 py-0.5 bg-[#22C55E] text-white rounded text-[10px] font-bold"
                           >
                             Save
                           </button>
                           <button
                             onClick={() => setEditingPriceId(null)}
-                            className="text-gray-400 text-[10px] px-1"
+                            className="text-[#6D756D] dark:text-gray-400 text-[10px] px-1"
                           >
                             Cancel
                           </button>
@@ -228,11 +228,11 @@ export default function AdminDashboardPage() {
                       ) : (
                         <button
                           onClick={() => startEditPrice(dish.id, dish.price)}
-                          className="font-bold text-[#F9E79F] hover:text-[#D4AF37] hover:underline flex items-center gap-1"
+                          className="font-bold text-[#174D35] dark:text-[#F9E79F] hover:underline flex items-center gap-1"
                           title="Click to edit price"
                         >
                           <span>₹{dish.price}</span>
-                          <span className="text-[10px] text-gray-500 font-normal">✎</span>
+                          <span className="text-[10px] text-gray-400 font-normal">✎</span>
                         </button>
                       )}
                     </td>
@@ -244,7 +244,7 @@ export default function AdminDashboardPage() {
                         className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition-colors ${
                           dish.isAvailable
                             ? "bg-[#22C55E]/15 text-[#22C55E] border border-[#22C55E]/30"
-                            : "bg-red-950/40 text-red-400 border border-red-700/40"
+                            : "bg-red-100 dark:bg-red-950/40 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-700/40"
                         }`}
                       >
                         {dish.isAvailable ? "Available" : "Sold Out"}
@@ -258,7 +258,7 @@ export default function AdminDashboardPage() {
                         className={`px-2 py-0.5 rounded text-[10px] font-semibold transition-colors ${
                           dish.isBestseller
                             ? "bg-[#E07A2B]/20 text-[#E07A2B] border border-[#E07A2B]/40"
-                            : "text-gray-500 hover:text-gray-300"
+                            : "text-[#6D756D] hover:text-[#292D29] dark:text-gray-500 dark:hover:text-gray-300"
                         }`}
                       >
                         {dish.isBestseller ? "★ Bestseller" : "Standard"}
@@ -270,7 +270,7 @@ export default function AdminDashboardPage() {
                       <Link
                         href={`/dish/${dish.slug}`}
                         target="_blank"
-                        className="text-gray-400 hover:text-[#D4AF37] text-[11px] inline-flex items-center gap-1"
+                        className="text-[#6D756D] hover:text-[#174D35] dark:text-gray-400 dark:hover:text-[#D4AF37] text-[11px] inline-flex items-center gap-1"
                       >
                         <span>View</span>
                         <ExternalLink className="w-3 h-3" />

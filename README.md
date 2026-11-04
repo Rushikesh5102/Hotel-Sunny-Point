@@ -20,6 +20,7 @@
     <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind-3.4.16-38B2AC?style=flat-square&logo=tailwind-css" alt="Tailwind CSS" /></a>
     <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-19.0.0-61DAFB?style=flat-square&logo=react" alt="React 19" /></a>
     <a href="https://supabase.com/"><img src="https://img.shields.io/badge/Supabase-Multi--Tenant_Ready-3ECF8E?style=flat-square&logo=supabase" alt="Supabase Ready" /></a>
+    <img src="https://img.shields.io/badge/Dual_Theme-Heritage_Luxury_%7C_Natural_Heritage-174D35?style=flat-square" alt="Dual Theme" />
     <img src="https://img.shields.io/badge/Tri--Lingual-EN_%7C_मराठी_%7C_हिन्दी-D4AF37?style=flat-square" alt="Tri-lingual" />
     <img src="https://img.shields.io/badge/Dietary-100%25_Pure_Veg-22C55E?style=flat-square" alt="Pure Veg" />
     <img src="https://img.shields.io/badge/FSSAI-0000907350-D4AF37?style=flat-square" alt="FSSAI" />
@@ -265,6 +266,9 @@ npx tsc --noEmit
 | **Data Migration Spec** | [DATABASE_MIGRATION_REPORT.md](DATABASE_MIGRATION_REPORT.md) | Multi-lingual JSONB mapping & seed execution manifest |
 | **Backend Testing** | [BACKEND_TEST_REPORT.md](BACKEND_TEST_REPORT.md) | 12 security test suites & pre-flight compilation results |
 | **Phase 4 Completion** | [PHASE_4_COMPLETION_REPORT.md](PHASE_4_COMPLETION_REPORT.md) | Phase 4 readiness report & environment configuration |
+| **Theme System Architecture** | [THEME_SYSTEM.md](THEME_SYSTEM.md) | Dual theme tokens, CSS custom properties, zero-flash script & switcher spec |
+| **Theme Implementation Audit** | [THEME_IMPLEMENTATION_REPORT.md](THEME_IMPLEMENTATION_REPORT.md) | 17-route customer and admin audit, component refactorings & state preservation |
+| **Theme Visual QA** | [THEME_VISUAL_QA_REPORT.md](THEME_VISUAL_QA_REPORT.md) | WCAG contrast audit, 6-breakpoint responsive tests, and zero-defect sign-off |
 
 ---
 

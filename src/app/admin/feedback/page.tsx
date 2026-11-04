@@ -26,63 +26,63 @@ export default function AdminFeedbackPage() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h2 className="font-serif text-2xl font-bold text-white">Guest Feedback Management</h2>
-        <p className="text-xs text-[#9DA4B0] mt-0.5">
+        <h2 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">Guest Feedback Management</h2>
+        <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] mt-0.5">
           Reviews and ratings submitted by guests visiting Hotel Sunny Point.
         </p>
       </div>
 
       {/* 5 Rating Criteria Summaries */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        <div className="bg-[#12151C] border border-[#2A3140] p-4 rounded-2xl text-center space-y-1">
-          <span className="text-[10px] text-[#9DA4B0] uppercase font-semibold">Food Quality</span>
-          <div className="text-2xl font-bold text-[#F9E79F]">{avgFoodQuality}★</div>
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-4 rounded-2xl text-center space-y-1 shadow-sm dark:shadow-none transition-colors">
+          <span className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-semibold">Food Quality</span>
+          <div className="text-2xl font-bold text-[#174D35] dark:text-[#F9E79F]">{avgFoodQuality}★</div>
           <p className="text-[10px] text-[#22C55E]">Fresh & Authentic</p>
         </div>
 
-        <div className="bg-[#12151C] border border-[#2A3140] p-4 rounded-2xl text-center space-y-1">
-          <span className="text-[10px] text-[#9DA4B0] uppercase font-semibold">Taste & Flavor</span>
-          <div className="text-2xl font-bold text-[#D4AF37]">{avgTaste}★</div>
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-4 rounded-2xl text-center space-y-1 shadow-sm dark:shadow-none transition-colors">
+          <span className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-semibold">Taste & Flavor</span>
+          <div className="text-2xl font-bold text-[#174D35] dark:text-[#D4AF37]">{avgTaste}★</div>
           <p className="text-[10px] text-[#22C55E]">Legacy Recipes</p>
         </div>
 
-        <div className="bg-[#12151C] border border-[#2A3140] p-4 rounded-2xl text-center space-y-1">
-          <span className="text-[10px] text-[#9DA4B0] uppercase font-semibold">Service</span>
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-4 rounded-2xl text-center space-y-1 shadow-sm dark:shadow-none transition-colors">
+          <span className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-semibold">Service</span>
           <div className="text-2xl font-bold text-[#E07A2B]">{avgService}★</div>
-          <p className="text-[10px] text-[#C9CDD5]">Warm Hospitality</p>
+          <p className="text-[10px] text-[#6D756D] dark:text-[#C9CDD5]">Warm Hospitality</p>
         </div>
 
-        <div className="bg-[#12151C] border border-[#2A3140] p-4 rounded-2xl text-center space-y-1">
-          <span className="text-[10px] text-[#9DA4B0] uppercase font-semibold">Cleanliness</span>
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-4 rounded-2xl text-center space-y-1 shadow-sm dark:shadow-none transition-colors">
+          <span className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-semibold">Cleanliness</span>
           <div className="text-2xl font-bold text-[#22C55E]">{avgCleanliness}★</div>
           <p className="text-[10px] text-[#22C55E]">Pure Veg Standards</p>
         </div>
 
-        <div className="bg-[#12151C] border border-[#D4AF37]/40 p-4 rounded-2xl text-center space-y-1 col-span-2 sm:col-span-1">
-          <span className="text-[10px] text-[#D4AF37] uppercase font-bold">Overall Rating</span>
-          <div className="text-2xl font-bold text-white">{avgOverall}★</div>
-          <p className="text-[10px] text-[#D4AF37]">{totalReviews} Verified Guests</p>
+        <div className="bg-white dark:bg-[#12151C] border border-[#174D35]/30 dark:border-[#D4AF37]/40 p-4 rounded-2xl text-center space-y-1 col-span-2 sm:col-span-1 shadow-sm dark:shadow-none transition-colors">
+          <span className="text-[10px] text-[#174D35] dark:text-[#D4AF37] uppercase font-bold">Overall Rating</span>
+          <div className="text-2xl font-bold text-[#292D29] dark:text-white">{avgOverall}★</div>
+          <p className="text-[10px] text-[#174D35] dark:text-[#D4AF37]">{totalReviews} Verified Guests</p>
         </div>
       </div>
 
       {/* Feedback Items List */}
-      <div className="bg-[#12151C] border border-[#2A3140] rounded-2xl overflow-hidden shadow-xl">
-        <div className="p-4 sm:p-5 border-b border-[#2A3140] flex items-center justify-between">
-          <h3 className="font-serif font-bold text-base text-white">Recent Guest Reviews</h3>
-          <span className="text-xs text-[#9DA4B0]">{totalReviews} Total Submissions</span>
+      <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl transition-colors">
+        <div className="p-4 sm:p-5 border-b border-[#E7E2D6] dark:border-[#2A3140] flex items-center justify-between">
+          <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white">Recent Guest Reviews</h3>
+          <span className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">{totalReviews} Total Submissions</span>
         </div>
 
-        <div className="divide-y divide-[#2A3140]/60">
+        <div className="divide-y divide-[#E7E2D6] dark:divide-[#2A3140]/60">
           {restaurant.feedback.map((fb) => (
-            <div key={fb.id} className="p-5 space-y-3 hover:bg-[#171A21] transition-colors">
+            <div key={fb.id} className="p-5 space-y-3 hover:bg-[#FAF9F3] dark:hover:bg-[#171A21] transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] flex items-center justify-center font-bold text-xs text-[#D4AF37]">
+                  <div className="w-8 h-8 rounded-full bg-[#174D35]/10 border border-[#174D35]/30 text-[#174D35] dark:bg-[#D4AF37]/20 dark:border-[#D4AF37] dark:text-[#D4AF37] flex items-center justify-center font-bold text-xs">
                     {fb.customerName.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-xs sm:text-sm">{fb.customerName}</h4>
-                    <p className="text-[11px] text-[#9DA4B0]">
+                    <h4 className="font-bold text-[#292D29] dark:text-white text-xs sm:text-sm">{fb.customerName}</h4>
+                    <p className="text-[11px] text-[#6D756D] dark:text-[#9DA4B0]">
                       {fb.tableNumber || "Walk-in Guest"} {fb.customerPhone ? `• ${fb.customerPhone}` : ""}
                     </p>
                   </div>
@@ -98,10 +98,10 @@ export default function AdminFeedbackPage() {
                   <span
                     className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase ${
                       fb.status === "new"
-                        ? "bg-blue-950 text-blue-300 border border-blue-800"
+                        ? "bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
                         : fb.status === "reviewed"
                         ? "bg-[#22C55E]/15 text-[#22C55E] border border-[#22C55E]/30"
-                        : "bg-gray-800 text-gray-400"
+                        : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
                     }`}
                   >
                     {fb.status}
@@ -110,19 +110,19 @@ export default function AdminFeedbackPage() {
               </div>
 
               {fb.comment && (
-                <p className="text-xs text-[#C9CDD5] italic bg-[#0F1115] p-3 rounded-xl border border-[#2A3140]">
+                <p className="text-xs text-[#292D29] dark:text-[#C9CDD5] italic bg-[#FAF9F3] dark:bg-[#0F1115] p-3 rounded-xl border border-[#E7E2D6] dark:border-[#2A3140]">
                   &ldquo;{fb.comment}&rdquo;
                 </p>
               )}
 
-              <div className="flex flex-wrap items-center justify-between pt-1 text-[11px] text-[#9DA4B0] gap-2">
+              <div className="flex flex-wrap items-center justify-between pt-1 text-[11px] text-[#6D756D] dark:text-[#9DA4B0] gap-2">
                 <span>Submitted: {new Date(fb.createdAt).toLocaleDateString()}</span>
 
                 <div className="flex items-center gap-2">
                   {fb.status !== "reviewed" && (
                     <button
                       onClick={() => updateFeedbackStatus(fb.id, "reviewed")}
-                      className="px-2.5 py-1 rounded bg-[#212631] text-[#22C55E] hover:bg-[#2A3140] transition-colors"
+                      className="px-2.5 py-1 rounded bg-[#EDF2E9] dark:bg-[#212631] text-[#174D35] dark:text-[#22C55E] hover:bg-[#E2EAE0] dark:hover:bg-[#2A3140] transition-colors font-medium"
                     >
                       Mark Reviewed
                     </button>
@@ -130,7 +130,7 @@ export default function AdminFeedbackPage() {
                   {fb.status !== "archived" && (
                     <button
                       onClick={() => updateFeedbackStatus(fb.id, "archived")}
-                      className="px-2.5 py-1 rounded bg-[#212631] text-gray-400 hover:text-white transition-colors"
+                      className="px-2.5 py-1 rounded bg-[#F5F0E6] dark:bg-[#212631] text-[#6D756D] dark:text-gray-400 hover:text-[#292D29] dark:hover:text-white hover:bg-[#EAE4D7] dark:hover:bg-[#2A3140] transition-colors"
                     >
                       Archive
                     </button>

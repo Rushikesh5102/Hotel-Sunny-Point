@@ -49,7 +49,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0F1115] pb-16 md:pb-0">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] pb-16 md:pb-0 transition-colors">
       <Header />
 
       <main className="flex-1 pb-24">
@@ -57,7 +57,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <Link
             href="/menu"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D4AF37] hover:text-[#F9E79F] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#174D35] hover:text-[#225E43] dark:text-[#D4AF37] dark:hover:text-[#F9E79F] transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to Digital Menu</span>
@@ -66,10 +66,10 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
 
         {/* Dish Showcase Area */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-          <div className="bg-[#171A21] border border-[#D4AF37]/40 rounded-3xl overflow-hidden shadow-2xl">
+          <div className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl overflow-hidden shadow-xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               {/* Left Column: Authentic Photography */}
-              <div className="lg:col-span-6 relative aspect-[4/3] lg:aspect-auto min-h-[350px] lg:min-h-[500px] bg-[#0F1115]">
+              <div className="lg:col-span-6 relative aspect-[4/3] lg:aspect-auto min-h-[350px] lg:min-h-[500px] bg-[#F5F0E6] dark:bg-[#0F1115]">
                 <Image
                   src={dish.image}
                   alt={t(dish.name)}
@@ -77,14 +77,14 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#171A21] via-transparent to-transparent lg:hidden" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-[#171A21] via-transparent to-transparent lg:hidden" />
 
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <div className="w-6 h-6 bg-[#0F1115]/90 border border-[#22C55E] flex items-center justify-center rounded p-1 shadow-md">
+                  <div className="w-6 h-6 bg-white/90 dark:bg-[#0F1115]/90 border border-[#22C55E] flex items-center justify-center rounded p-1 shadow-md">
                     <div className="w-3 h-3 rounded-full bg-[#22C55E]"></div>
                   </div>
                   {dish.isSignature && (
-                    <span className="flex items-center gap-1 bg-[#D4AF37] text-[#0F1115] text-xs font-bold px-2.5 py-1 rounded-full shadow-md uppercase tracking-wider">
+                    <span className="flex items-center gap-1 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] text-xs font-bold px-2.5 py-1 rounded-full shadow-md uppercase tracking-wider">
                       <Sparkles className="w-3 h-3" />
                       <span>Signature</span>
                     </span>
@@ -96,12 +96,12 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
               <div className="lg:col-span-6 p-6 sm:p-10 flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
+                    <span className="text-xs font-bold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider">
                       {category ? t(category.name) : "Speciality"}
                     </span>
                     <button
                       onClick={handleShare}
-                      className="flex items-center gap-1.5 text-xs text-[#D4AF37] hover:text-[#F9E79F] transition-colors"
+                      className="flex items-center gap-1.5 text-xs text-[#174D35] hover:text-[#225E43] dark:text-[#D4AF37] dark:hover:text-[#F9E79F] transition-colors"
                     >
                       <Share2 className="w-3.5 h-3.5" />
                       <span>{copied ? "Link Copied!" : "Share"}</span>
@@ -109,48 +109,48 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                   </div>
 
                   <div>
-                    <h1 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-1">
+                    <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#292D29] dark:text-white mb-1">
                       {t(dish.name)}
                     </h1>
-                    <p className="text-sm text-[#D4AF37] font-medium">{dish.name.mr}</p>
+                    <p className="text-sm text-[#174D35] dark:text-[#D4AF37] font-semibold">{dish.name.mr}</p>
                   </div>
 
                   <div className="flex items-baseline gap-2 pt-1">
-                    <span className="text-3xl font-bold text-[#F9E79F]">₹{dish.price}</span>
+                    <span className="text-3xl font-bold text-[#174D35] dark:text-[#F9E79F]">₹{dish.price}</span>
                     {dish.priceStatus === "verified" ? (
                       <span className="text-xs text-[#22C55E] flex items-center gap-1 font-semibold">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         <span>Verified Price</span>
                       </span>
                     ) : (
-                      <span className="text-xs text-[#9DA4B0] bg-[#0F1115] px-2 py-0.5 rounded border border-[#2A3140]">
+                      <span className="text-xs text-[#6D756D] bg-[#F5F0E6] dark:text-[#9DA4B0] dark:bg-[#0F1115] px-2 py-0.5 rounded border border-[#E7E2D6] dark:border-[#2A3140]">
                         Provisional Demo Rate
                       </span>
                     )}
                   </div>
 
-                  <p className="text-sm text-[#C9CDD5] leading-relaxed">
+                  <p className="text-sm text-[#292D29] dark:text-[#C9CDD5] leading-relaxed">
                     {t(dish.fullDescription) || t(dish.shortDescription)}
                   </p>
 
                   {/* Attributes */}
                   <div className="grid grid-cols-2 gap-3 pt-2">
                     {dish.servingSize && (
-                      <div className="bg-[#0F1115] border border-[#2A3140] p-3 rounded-xl flex items-center gap-2.5">
+                      <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-center gap-2.5">
                         <Heart className="w-4 h-4 text-[#E07A2B]" />
                         <div>
-                          <p className="text-[10px] text-[#9DA4B0] uppercase">Portion</p>
-                          <p className="text-xs font-semibold text-white">{dish.servingSize}</p>
+                          <p className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-bold">Portion</p>
+                          <p className="text-xs font-semibold text-[#292D29] dark:text-white">{dish.servingSize}</p>
                         </div>
                       </div>
                     )}
 
                     {dish.preparationTimeMinutes && (
-                      <div className="bg-[#0F1115] border border-[#2A3140] p-3 rounded-xl flex items-center gap-2.5">
-                        <Clock className="w-4 h-4 text-[#D4AF37]" />
+                      <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-center gap-2.5">
+                        <Clock className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                         <div>
-                          <p className="text-[10px] text-[#9DA4B0] uppercase">Prep Time</p>
-                          <p className="text-xs font-semibold text-white">{dish.preparationTimeMinutes} minutes</p>
+                          <p className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-bold">Prep Time</p>
+                          <p className="text-xs font-semibold text-[#292D29] dark:text-white">{dish.preparationTimeMinutes} minutes</p>
                         </div>
                       </div>
                     )}
@@ -159,14 +159,14 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                   {/* Ingredients */}
                   {dish.ingredients && dish.ingredients.length > 0 && (
                     <div className="pt-2">
-                      <h4 className="text-xs font-semibold text-[#D4AF37] uppercase tracking-wider mb-2">
+                      <h4 className="text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-2">
                         Authentic Ingredients
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {dish.ingredients.map((ing, i) => (
                           <span
                             key={i}
-                            className="text-xs px-3 py-1 rounded-full bg-[#0F1115] border border-[#2A3140] text-[#E2E8F0]"
+                            className="text-xs px-3 py-1 rounded-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] text-[#292D29] dark:text-[#E2E8F0] font-medium"
                           >
                             {ing}
                           </span>
@@ -177,15 +177,15 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                 </div>
 
                 {/* Call to Order/Dine In */}
-                <div className="pt-6 border-t border-[#2A3140] flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="text-xs text-[#9DA4B0]">
-                    <p className="font-semibold text-white">Pure Veg Kitchen</p>
+                <div className="pt-6 border-t border-[#E7E2D6] dark:border-[#2A3140] flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">
+                    <p className="font-semibold text-[#292D29] dark:text-white">Pure Veg Kitchen</p>
                     <p>Prepared fresh on order at Hotel Sunny Point</p>
                   </div>
 
                   <a
                     href={`tel:${restaurant.settings.primaryPhone}`}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] uppercase tracking-wider transition-colors shadow-md"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-md"
                   >
                     <Phone className="w-4 h-4" />
                     <span>Call Restaurant</span>
@@ -199,7 +199,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
         {/* Related Dishes from same category */}
         {relatedDishes.length > 0 && (
           <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-6">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#292D29] dark:text-white mb-6">
               More from {category ? t(category.name) : "This Category"}
             </h3>
 
@@ -208,9 +208,9 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                 <Link
                   key={rel.id}
                   href={`/dish/${rel.slug}`}
-                  className="bg-[#171A21] border border-[#2A3140] hover:border-[#D4AF37]/50 rounded-2xl p-4 flex items-center gap-4 group transition-all"
+                  className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 rounded-2xl p-4 flex items-center gap-4 group shadow-sm hover:shadow-md transition-all"
                 >
-                  <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-black shrink-0">
+                  <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-[#F5F0E6] dark:bg-black shrink-0">
                     <Image
                       src={rel.image}
                       alt={t(rel.name)}
@@ -219,10 +219,10 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-serif font-bold text-white text-sm truncate group-hover:text-[#D4AF37] transition-colors">
+                    <h4 className="font-serif font-bold text-[#292D29] dark:text-white text-sm truncate group-hover:text-primary dark:group-hover:text-[#D4AF37] transition-colors">
                       {t(rel.name)}
                     </h4>
-                    <p className="text-xs text-[#F9E79F] font-semibold mt-0.5">₹{rel.price}</p>
+                    <p className="text-xs text-[#174D35] dark:text-[#F9E79F] font-bold mt-0.5">₹{rel.price}</p>
                   </div>
                 </Link>
               ))}

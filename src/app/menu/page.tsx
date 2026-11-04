@@ -83,23 +83,23 @@ function MenuContent() {
   }, [restaurant.items, restaurant.categories, selectedCategory, filterType, searchQuery]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0F1115] pb-16 md:pb-0">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] pb-16 md:pb-0 transition-colors">
       <Header />
 
       <main className="flex-1 pb-24">
         {/* Menu Hero Header (Mobile Compact) */}
-        <section className="bg-gradient-to-b from-[#171A21] to-[#0F1115] border-b border-[#2A3140]/60 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+        <section className="bg-gradient-to-b from-[#F5F0E6] to-[#FAF9F3] dark:from-[#171A21] dark:to-[#0F1115] border-b border-[#E7E2D6] dark:border-[#2A3140]/60 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center space-y-2 sm:space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[11px] font-semibold text-[#D4AF37] uppercase tracking-wider">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#174D35]/10 dark:bg-[#D4AF37]/10 border border-[#174D35]/30 dark:border-[#D4AF37]/30 text-[11px] font-bold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider">
               <Utensils className="w-3 h-3" />
               <span>{t({ en: "Pure Veg Digital Menu", mr: "शुद्ध शाकाहारी डिजिटल मेनू" })}</span>
             </div>
 
-            <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+            <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#292D29] dark:text-white tracking-tight">
               {t({ en: "Explore Our Full Menu", mr: "हॉटेल सनी पॉईंटचा संपूर्ण मेनू" })}
             </h1>
 
-            <p className="text-xs sm:text-sm text-[#9DA4B0] max-w-xl mx-auto">
+            <p className="text-xs sm:text-sm text-[#6D756D] dark:text-[#9DA4B0] max-w-xl mx-auto">
               {t({
                 en: "Authentic 1965 legacy, South Indian specialties, sizzlers & Global Bites. Tap any dish for details.",
                 mr: "१९६५ पासूनचा वारसा, खास डोसे, सूप्स आणि आंतरराष्ट्रीय पदार्थ. सविस्तर माहितीसाठी पदार्थावर क्लिक करा.",
@@ -109,7 +109,7 @@ function MenuContent() {
             {/* Fast Search Input Bar */}
             <div className="max-w-md mx-auto pt-3">
               <div className="relative">
-                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9DA4B0]" />
+                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6D756D] dark:text-[#9DA4B0]" />
                 <input
                   type="text"
                   value={searchQuery}
@@ -118,12 +118,12 @@ function MenuContent() {
                     en: "Search dosa, paneer, noodles, soup...",
                     mr: "डोसा, पनीर, नूडल्स, सूप शोधा...",
                   })}
-                  className="w-full bg-[#0F1115] border border-[#2A3140] focus:border-[#D4AF37] rounded-xl pl-10 pr-9 py-2.5 text-xs text-white placeholder-[#6B7280] outline-none shadow-inner transition-colors"
+                  className="w-full bg-white dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl pl-10 pr-9 py-2.5 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] outline-none shadow-sm transition-colors"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-white"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-[#292D29] dark:hover:text-white"
                     aria-label="Clear search"
                   >
                     <X className="w-3.5 h-3.5" />
@@ -135,7 +135,7 @@ function MenuContent() {
         </section>
 
         {/* Sticky Mobile-First Category Navigation Bar */}
-        <div className="sticky top-20 z-30 bg-[#0F1115]/95 backdrop-blur-md border-b border-[#2A3140] shadow-md py-2.5 px-3 sm:px-6 lg:px-8">
+        <div className="sticky top-20 z-30 bg-[#FAF9F3]/95 dark:bg-[#0F1115]/95 backdrop-blur-md border-b border-[#E7E2D6] dark:border-[#2A3140] shadow-sm py-2.5 px-3 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5">
             {/* Category Pills (Touch Horizontal Scroll) */}
             <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar w-full py-0.5 overscroll-x-contain">
@@ -143,8 +143,8 @@ function MenuContent() {
                 onClick={() => setSelectedCategory("all")}
                 className={`px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all shrink-0 active:scale-95 ${
                   selectedCategory === "all"
-                    ? "bg-[#D4AF37] text-[#0F1115] shadow-md font-bold"
-                    : "bg-[#171A21] text-[#C9CDD5] hover:bg-[#212631] border border-[#2A3140]"
+                    ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow-md font-bold"
+                    : "bg-white text-[#292D29] hover:bg-[#F5F0E6] border border-[#E7E2D6] dark:bg-[#171A21] dark:text-[#C9CDD5] dark:hover:bg-[#212631] dark:border-[#2A3140]"
                 }`}
               >
                 {t({ en: "All", mr: "सर्व" })} ({restaurant.items.length})
@@ -159,8 +159,8 @@ function MenuContent() {
                     onClick={() => setSelectedCategory(cat.slug)}
                     className={`px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all shrink-0 flex items-center gap-1.5 active:scale-95 ${
                       isSelected
-                        ? "bg-[#D4AF37] text-[#0F1115] shadow-md font-bold"
-                        : "bg-[#171A21] text-[#C9CDD5] hover:bg-[#212631] border border-[#2A3140]"
+                        ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow-md font-bold"
+                        : "bg-white text-[#292D29] hover:bg-[#F5F0E6] border border-[#E7E2D6] dark:bg-[#171A21] dark:text-[#C9CDD5] dark:hover:bg-[#212631] dark:border-[#2A3140]"
                     }`}
                   >
                     <span>{t(cat.name)}</span>
@@ -177,11 +177,11 @@ function MenuContent() {
                   onClick={() => setFilterType(filterType === "signature" ? "all" : "signature")}
                   className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-semibold whitespace-nowrap border transition-all flex items-center gap-1 ${
                     filterType === "signature"
-                      ? "bg-[#D4AF37]/20 border-[#D4AF37] text-[#D4AF37]"
-                      : "bg-[#171A21] border-[#2A3140] text-[#9DA4B0] hover:text-white"
+                      ? "bg-[#174D35]/15 border-[#174D35] text-[#174D35] dark:bg-[#D4AF37]/20 dark:border-[#D4AF37] dark:text-[#D4AF37]"
+                      : "bg-white border-[#E7E2D6] text-[#6D756D] hover:text-[#292D29] dark:bg-[#171A21] dark:border-[#2A3140] dark:text-[#9DA4B0] dark:hover:text-white"
                   }`}
                 >
-                  <Sparkles className="w-2.5 h-2.5 text-[#D4AF37]" />
+                  <Sparkles className="w-2.5 h-2.5 text-[#174D35] dark:text-[#D4AF37]" />
                   <span>Signature</span>
                 </button>
 
@@ -190,7 +190,7 @@ function MenuContent() {
                   className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-semibold whitespace-nowrap border transition-all flex items-center gap-1 ${
                     filterType === "bestseller"
                       ? "bg-[#E07A2B]/20 border-[#E07A2B] text-[#E07A2B]"
-                      : "bg-[#171A21] border-[#2A3140] text-[#9DA4B0] hover:text-white"
+                      : "bg-white border-[#E7E2D6] text-[#6D756D] hover:text-[#292D29] dark:bg-[#171A21] dark:border-[#2A3140] dark:text-[#9DA4B0] dark:hover:text-white"
                   }`}
                 >
                   <Star className="w-2.5 h-2.5 text-[#E07A2B]" />
@@ -202,7 +202,7 @@ function MenuContent() {
                   className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-semibold whitespace-nowrap border transition-all flex items-center gap-1 ${
                     filterType === "budget"
                       ? "bg-[#22C55E]/20 border-[#22C55E] text-[#22C55E]"
-                      : "bg-[#171A21] border-[#2A3140] text-[#9DA4B0] hover:text-white"
+                      : "bg-white border-[#E7E2D6] text-[#6D756D] hover:text-[#292D29] dark:bg-[#171A21] dark:border-[#2A3140] dark:text-[#9DA4B0] dark:hover:text-white"
                   }`}
                 >
                   <CheckCircle2 className="w-2.5 h-2.5 text-[#22C55E]" />
@@ -211,13 +211,13 @@ function MenuContent() {
               </div>
 
               {/* View Switcher: Compact List vs Grid */}
-              <div className="flex items-center gap-0.5 bg-[#171A21] border border-[#2A3140] p-0.5 rounded-lg shrink-0">
+              <div className="flex items-center gap-0.5 bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] p-0.5 rounded-lg shrink-0 shadow-sm">
                 <button
                   onClick={() => setViewMode("compact")}
                   className={`p-1.5 rounded-md text-xs transition-colors ${
                     viewMode === "compact"
-                      ? "bg-[#D4AF37] text-[#0F1115] shadow"
-                      : "text-gray-400 hover:text-white"
+                      ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow"
+                      : "text-gray-400 hover:text-[#292D29] dark:hover:text-white"
                   }`}
                   title="Compact List View"
                   aria-label="Switch to compact list view"
@@ -228,8 +228,8 @@ function MenuContent() {
                   onClick={() => setViewMode("grid")}
                   className={`p-1.5 rounded-md text-xs transition-colors ${
                     viewMode === "grid"
-                      ? "bg-[#D4AF37] text-[#0F1115] shadow"
-                      : "text-gray-400 hover:text-white"
+                      ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow"
+                      : "text-gray-400 hover:text-[#292D29] dark:hover:text-white"
                   }`}
                   title="Photo Grid View"
                   aria-label="Switch to photo grid view"
@@ -244,15 +244,15 @@ function MenuContent() {
         {/* Dish Results Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
           {/* Active Filter Info & Count */}
-          <div className="flex items-center justify-between pb-4 text-xs text-[#9DA4B0]">
+          <div className="flex items-center justify-between pb-4 text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             <div>
               <span>Showing </span>
-              <strong className="text-white">{filteredDishes.length}</strong>
+              <strong className="text-[#292D29] dark:text-white">{filteredDishes.length}</strong>
               <span> dishes</span>
               {searchQuery && (
                 <span>
                   {" "}
-                  for &ldquo;<strong className="text-[#D4AF37]">{searchQuery}</strong>&rdquo;
+                  for &ldquo;<strong className="text-[#174D35] dark:text-[#D4AF37]">{searchQuery}</strong>&rdquo;
                 </span>
               )}
             </div>
@@ -264,7 +264,7 @@ function MenuContent() {
                   setFilterType("all");
                   setSearchQuery("");
                 }}
-                className="text-xs text-[#D4AF37] hover:underline font-medium"
+                className="text-xs text-[#174D35] dark:text-[#D4AF37] hover:underline font-semibold"
               >
                 Clear all filters
               </button>
@@ -272,10 +272,10 @@ function MenuContent() {
           </div>
 
           {filteredDishes.length === 0 ? (
-            <div className="bg-[#171A21] border border-[#2A3140] rounded-2xl p-8 sm:p-12 text-center space-y-4 max-w-lg mx-auto">
+            <div className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl p-8 sm:p-12 text-center space-y-4 max-w-lg mx-auto shadow-sm">
               <Utensils className="w-12 h-12 text-[#9DA4B0] mx-auto opacity-40" />
-              <h3 className="font-serif text-lg font-bold text-white">No dishes found</h3>
-              <p className="text-xs text-[#9DA4B0]">
+              <h3 className="font-serif text-lg font-bold text-[#292D29] dark:text-white">No dishes found</h3>
+              <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">
                 We couldn&apos;t find any dishes matching your search. Try searching for something else or reset your filters.
               </p>
               <button
@@ -284,7 +284,7 @@ function MenuContent() {
                   setFilterType("all");
                   setSearchQuery("");
                 }}
-                className="px-4 py-2 rounded-xl text-xs font-semibold bg-[#D4AF37] text-[#0F1115]"
+                className="px-4 py-2 rounded-xl text-xs font-semibold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow-sm"
               >
                 Show All Dishes
               </button>
@@ -314,12 +314,12 @@ function MenuContent() {
       <div className="fixed bottom-20 right-4 z-30 md:hidden">
         <button
           onClick={() => setCategoryDrawerOpen(true)}
-          className="flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#B89324] text-[#0F1115] font-bold text-xs shadow-2xl border border-black/40 active:scale-95 transition-transform"
+          className="flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#174D35] text-white dark:bg-gradient-to-r dark:from-[#D4AF37] dark:to-[#B89324] dark:text-[#0F1115] font-bold text-xs shadow-xl border border-white/20 dark:border-black/40 active:scale-95 transition-transform"
           aria-label="Browse Categories"
         >
           <Layers className="w-4 h-4" />
           <span>{t({ en: "Categories", mr: "कॅटेगरी" })}</span>
-          <span className="bg-[#0F1115] text-[#D4AF37] text-[10px] px-1.5 py-0.2 rounded-full">
+          <span className="bg-white/20 dark:bg-[#0F1115] text-white dark:text-[#D4AF37] text-[10px] px-1.5 py-0.5 rounded-full">
             {restaurant.categories.length}
           </span>
         </button>
@@ -329,36 +329,36 @@ function MenuContent() {
       {categoryDrawerOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setCategoryDrawerOpen(false)}
           />
-          <div className="fixed inset-x-0 bottom-0 bg-[#171A21] border-t border-[#D4AF37]/50 rounded-t-3xl p-5 shadow-2xl z-10 max-h-[80vh] overflow-y-auto animate-in slide-in-from-bottom duration-300">
-            <div className="w-12 h-1.5 bg-white/30 rounded-full mx-auto mb-4" />
-            <div className="flex items-center justify-between pb-3 border-b border-[#2A3140]">
-              <h3 className="font-serif font-bold text-base text-white flex items-center gap-2">
-                <Layers className="w-4 h-4 text-[#D4AF37]" />
+          <div className="fixed inset-x-0 bottom-0 bg-[#FAF9F3] dark:bg-[#171A21] border-t border-[#E7E2D6] dark:border-[#D4AF37]/50 rounded-t-3xl p-5 shadow-2xl z-10 max-h-[80vh] overflow-y-auto animate-in slide-in-from-bottom duration-300">
+            <div className="w-12 h-1.5 bg-gray-400/40 dark:bg-white/30 rounded-full mx-auto mb-4" />
+            <div className="flex items-center justify-between pb-3 border-b border-[#E7E2D6] dark:border-[#2A3140]">
+              <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white flex items-center gap-2">
+                <Layers className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                 <span>{t({ en: "Select Food Category", mr: "कॅटेगरी निवडा" })}</span>
               </h3>
               <button
                 onClick={() => setCategoryDrawerOpen(false)}
-                className="p-1 rounded-lg text-gray-400 hover:text-white"
+                className="p-1 rounded-lg text-gray-500 hover:text-[#292D29] dark:text-gray-400 dark:hover:text-white"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="divide-y divide-[#2A3140]/60 mt-2">
+            <div className="divide-y divide-[#E7E2D6] dark:divide-[#2A3140]/60 mt-2">
               <button
                 onClick={() => {
                   setSelectedCategory("all");
                   setCategoryDrawerOpen(false);
                 }}
                 className={`w-full py-3 flex items-center justify-between text-left text-xs font-semibold ${
-                  selectedCategory === "all" ? "text-[#D4AF37]" : "text-white"
+                  selectedCategory === "all" ? "text-[#174D35] dark:text-[#D4AF37]" : "text-[#292D29] dark:text-white"
                 }`}
               >
                 <span>{t({ en: "All Categories", mr: "सर्व पदार्थ" })}</span>
-                <span className="text-[#9DA4B0] text-[11px] font-normal">
+                <span className="text-[#6D756D] dark:text-[#9DA4B0] text-[11px] font-normal">
                   {restaurant.items.length} items
                 </span>
               </button>
@@ -374,11 +374,11 @@ function MenuContent() {
                       setCategoryDrawerOpen(false);
                     }}
                     className={`w-full py-3 flex items-center justify-between text-left text-xs font-semibold transition-colors ${
-                      isSelected ? "text-[#D4AF37]" : "text-gray-200"
+                      isSelected ? "text-[#174D35] dark:text-[#D4AF37]" : "text-[#292D29] dark:text-gray-200"
                     }`}
                   >
                     <div className="flex items-center gap-2.5">
-                      <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-black shrink-0 border border-[#2A3140]">
+                      <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-[#F5F0E6] dark:bg-black shrink-0 border border-[#E7E2D6] dark:border-[#2A3140]">
                         <Image
                           src={cat.image}
                           alt={cat.name.en}
@@ -388,12 +388,12 @@ function MenuContent() {
                       </div>
                       <div>
                         <p>{t(cat.name)}</p>
-                        <p className="text-[10px] text-[#9DA4B0] font-normal">
+                        <p className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] font-normal">
                           {count} {t({ en: "dishes", mr: "पदार्थ" })}
                         </p>
                       </div>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-[#9DA4B0]" />
+                    <ChevronRight className="w-4 h-4 text-[#6D756D] dark:text-[#9DA4B0]" />
                   </button>
                 );
               })}

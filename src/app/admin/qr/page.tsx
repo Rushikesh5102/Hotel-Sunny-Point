@@ -88,15 +88,15 @@ export default function AdminQRPage() {
       {/* Header (Hidden in Print) */}
       <div className="no-print flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="font-serif text-2xl font-bold text-white">Permanent QR Code Manager</h2>
-          <p className="text-xs text-[#9DA4B0] mt-0.5">
+          <h2 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">Permanent QR Code Manager</h2>
+          <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] mt-0.5">
             Table tent cards & instant QR downloads for Hotel Sunny Point.
           </p>
         </div>
 
         <button
           onClick={handlePrint}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] shadow-lg transition-colors"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-colors"
         >
           <Printer className="w-4 h-4" />
           <span>Print Table Tent Card</span>
@@ -106,17 +106,17 @@ export default function AdminQRPage() {
       {/* Configuration & Downloads (Hidden in Print) */}
       <div className="no-print grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left Config Panel */}
-        <div className="lg:col-span-5 bg-[#12151C] border border-[#2A3140] p-6 rounded-2xl space-y-6">
+        <div className="lg:col-span-5 bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl space-y-6 shadow-sm dark:shadow-none transition-colors">
           <div className="space-y-2">
-            <h3 className="font-serif font-bold text-lg text-white">QR Target URL</h3>
-            <p className="text-xs text-[#9DA4B0]">
+            <h3 className="font-serif font-bold text-lg text-[#292D29] dark:text-white">QR Target URL</h3>
+            <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">
               This permanent URL remains constant. Updating prices or dishes in Admin updates customer phones without changing the QR code.
             </p>
           </div>
 
           <div className="space-y-3">
             <div>
-              <label className="block text-xs font-semibold text-[#D4AF37] uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-1.5">
                 Table Number (Optional)
               </label>
               <input
@@ -124,17 +124,17 @@ export default function AdminQRPage() {
                 value={tableNumber}
                 onChange={(e) => setTableNumber(e.target.value)}
                 placeholder="e.g. 5, 12, or leave blank for General"
-                className="w-full bg-[#0F1115] border border-[#2A3140] focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-white"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                 Generated Permanent URL
               </label>
-              <div className="bg-[#0F1115] border border-[#2A3140] p-3 rounded-xl text-xs text-[#F9E79F] font-mono break-all flex items-center justify-between gap-2">
+              <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl text-xs text-[#174D35] dark:text-[#F9E79F] font-mono break-all flex items-center justify-between gap-2 transition-colors">
                 <span>{menuUrl}</span>
-                <a href={menuUrl} target="_blank" className="text-gray-400 hover:text-white shrink-0">
+                <a href={menuUrl} target="_blank" className="text-gray-400 hover:text-[#174D35] dark:hover:text-white shrink-0">
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -142,19 +142,19 @@ export default function AdminQRPage() {
           </div>
 
           <div className="pt-2 space-y-2.5">
-            <h4 className="text-xs font-semibold text-white uppercase tracking-wider">Export Assets</h4>
+            <h4 className="text-xs font-semibold text-[#292D29] dark:text-white uppercase tracking-wider">Export Assets</h4>
             <div className="grid grid-cols-2 gap-3">
               <button
                 onClick={handleDownloadPNG}
-                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold bg-[#1C212C] hover:bg-[#252C3B] text-white border border-[#2A3140] transition-colors"
+                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold bg-[#F5F0E6] hover:bg-[#EAE4D7] text-[#292D29] dark:bg-[#1C212C] dark:hover:bg-[#252C3B] dark:text-white border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
               >
-                <Download className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <Download className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37]" />
                 <span>PNG (600px)</span>
               </button>
 
               <button
                 onClick={handleDownloadSVG}
-                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold bg-[#1C212C] hover:bg-[#252C3B] text-white border border-[#2A3140] transition-colors"
+                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold bg-[#F5F0E6] hover:bg-[#EAE4D7] text-[#292D29] dark:bg-[#1C212C] dark:hover:bg-[#252C3B] dark:text-white border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
               >
                 <Download className="w-3.5 h-3.5 text-[#22C55E]" />
                 <span>Vector SVG</span>
@@ -164,12 +164,12 @@ export default function AdminQRPage() {
         </div>
 
         {/* Right Preview Card */}
-        <div className="lg:col-span-7 bg-[#12151C] border border-[#2A3140] p-6 rounded-2xl flex flex-col items-center justify-center space-y-4">
-          <span className="text-xs text-[#9DA4B0] uppercase font-bold tracking-wider">
+        <div className="lg:col-span-7 bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl flex flex-col items-center justify-center space-y-4 shadow-sm dark:shadow-none transition-colors">
+          <span className="text-xs text-[#6D756D] dark:text-[#9DA4B0] uppercase font-bold tracking-wider">
             Live Preview
           </span>
 
-          <div className="p-4 bg-white rounded-2xl shadow-2xl border-4 border-[#D4AF37]">
+          <div className="p-4 bg-white rounded-2xl shadow-md dark:shadow-2xl border-4 border-[#174D35] dark:border-[#D4AF37]">
             {qrPngUrl ? (
               <img
                 src={qrPngUrl}
@@ -183,7 +183,7 @@ export default function AdminQRPage() {
             )}
           </div>
 
-          <p className="text-xs text-[#C9CDD5] text-center max-w-sm">
+          <p className="text-xs text-[#6D756D] dark:text-[#C9CDD5] text-center max-w-sm">
             Scan with any standard smartphone camera. No app download required. Works directly in browser.
           </p>
         </div>
@@ -191,7 +191,7 @@ export default function AdminQRPage() {
 
       {/* Printable Table Tent Poster (Optimized for Paper Printouts) */}
       <div className="pt-4">
-        <h3 className="no-print font-serif text-lg font-bold text-white mb-4">
+        <h3 className="no-print font-serif text-lg font-bold text-[#292D29] dark:text-white mb-4">
           Table Tent Card Design (Print Ready)
         </h3>
 

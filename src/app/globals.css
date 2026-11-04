@@ -4,7 +4,127 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* ==============================================================================
+   DUAL THEME DESIGN SYSTEM:
+   1. Light Mode: Natural Heritage (Warm Cream, Forest Green, Sage, Muted Gold)
+   2. Dark Mode:  Heritage Luxury (Deep Charcoal, Rich Gold, Terracotta)
+   ============================================================================== */
+
+:root, [data-theme="light"], .light {
+  /* Core Canvas & Surfaces */
+  --background: #FAF9F3;
+  --foreground: #292D29;
+  --surface: #F5F0E6;
+  --surface-elevated: #FFFFFF;
+  --surface-soft: #EDF2E9;
+
+  /* Card Surfaces */
+  --card: #FFFFFF;
+  --card-foreground: #292D29;
+  --card-border: #E7E2D6;
+  --card-muted: #F5F0E6;
+
+  /* Primary Brand: Forest Green */
+  --primary: #174D35;
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #123C29;
+  --primary-subtle: #EDF2E9;
+
+  /* Secondary Brand: Deeper Forest Green */
+  --secondary: #225E43;
+  --secondary-foreground: #FFFFFF;
+
+  /* Accents: Muted Heritage Gold & Sage */
+  --accent: #C6A45C;
+  --accent-foreground: #1A1810;
+  --accent-hover: #B59349;
+  --sage: #A3B18A;
+  --terracotta: #D4691E;
+
+  /* Muted Text & Borders */
+  --muted: #EFEBE0;
+  --muted-foreground: #6D756D;
+  --border: #E7E2D6;
+  --border-subtle: #F0ECE2;
+
+  /* Form Elements */
+  --input: #FFFFFF;
+  --input-border: #D5CEBE;
+  --ring: #174D35;
+
+  /* Feedback Colors */
+  --success: #22C55E;
+  --warning: #E07A2B;
+  --danger: #DC2626;
+
+  /* Header & Navigation */
+  --nav-bg: rgba(250, 249, 243, 0.92);
+  --nav-border: #E7E2D6;
+
+  /* Legacy Color Compatibility */
+  --color-gold: #C6A45C;
+  --color-gold-hover: #B59349;
+  --color-gold-light: #FDF9F0;
+  --color-terracotta: #D4691E;
+  --color-dark: #FAF9F3;
+  --color-card: #FFFFFF;
+  --color-surface: #F5F0E6;
+  --color-border: #E7E2D6;
+  --color-pure-veg: #22C55E;
+}
+
+.dark, [data-theme="dark"] {
+  /* Core Canvas & Surfaces */
+  --background: #0F1115;
+  --foreground: #F8F9FA;
+  --surface: #171A20;
+  --surface-elevated: #20242C;
+  --surface-soft: #1E232B;
+
+  /* Card Surfaces */
+  --card: #171A21;
+  --card-foreground: #F8F9FA;
+  --card-border: #2A3140;
+  --card-muted: #1F2532;
+
+  /* Primary Brand: Rich Heritage Gold */
+  --primary: #D4AF37;
+  --primary-foreground: #0F1115;
+  --primary-hover: #B89324;
+  --primary-subtle: rgba(212, 175, 55, 0.12);
+
+  /* Secondary Brand: Terracotta */
+  --secondary: #E07A2B;
+  --secondary-foreground: #FFFFFF;
+
+  /* Accents: Warm Terracotta & Deep Gold */
+  --accent: #E07A2B;
+  --accent-foreground: #FFFFFF;
+  --accent-hover: #C56317;
+  --sage: #8A9A70;
+  --terracotta: #E07A2B;
+
+  /* Muted Text & Borders */
+  --muted: #20242C;
+  --muted-foreground: #A7A9AE;
+  --border: #2A3140;
+  --border-subtle: #30343C;
+
+  /* Form Elements */
+  --input: #12151C;
+  --input-border: #2A3140;
+  --ring: #D4AF37;
+
+  /* Feedback Colors */
+  --success: #22C55E;
+  --warning: #E07A2B;
+  --danger: #EF4444;
+
+  /* Header & Navigation */
+  --nav-bg: rgba(15, 17, 21, 0.92);
+  --nav-border: rgba(42, 49, 64, 0.8);
+
+  /* Legacy Color Compatibility */
   --color-gold: #D4AF37;
   --color-gold-hover: #B89324;
   --color-gold-light: #F5E8BA;
@@ -17,18 +137,28 @@
 }
 
 body {
-  background-color: #0F1115;
-  color: #F8F9FA;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: 'Outfit', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 /* Eliminate 300ms mobile tap delay and prevent accidental double-tap zoom on UI buttons */
 button, a, input, select, textarea, [role="button"] {
   touch-action: manipulation;
+}
+
+/* Smooth Theme Transitions (150-250ms) */
+@media (prefers-reduced-motion: no-preference) {
+  header, nav, aside, main, section, div, button, input {
+    transition-property: background-color, border-color, color, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 /* iOS Safe Area Padding */
@@ -43,20 +173,32 @@ h1, h2, h3, .font-heritage {
   font-family: 'Playfair Display', 'Cinzel', 'Noto Sans Devanagari', serif;
 }
 
-/* Gold Metallic Text Gradient */
-.text-gold-gradient {
+/* Gold Metallic Text Gradient (Theme-Adaptive) */
+.dark .text-gold-gradient {
   background: linear-gradient(135deg, #F9E79F 0%, #D4AF37 50%, #AA7C11 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Gold Border Subtle Glow */
-.gold-glow {
-  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+.light .text-gold-gradient, [data-theme="light"] .text-gold-gradient {
+  background: linear-gradient(135deg, #174D35 0%, #225E43 50%, #C6A45C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.gold-glow-sm {
+/* Border Subtle Glows */
+.dark .gold-glow {
+  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+}
+.light .gold-glow, [data-theme="light"] .gold-glow {
+  box-shadow: 0 0 25px -5px rgba(23, 77, 53, 0.15);
+}
+
+.dark .gold-glow-sm {
   box-shadow: 0 0 15px -3px rgba(212, 175, 55, 0.2);
+}
+.light .gold-glow-sm, [data-theme="light"] .gold-glow-sm {
+  box-shadow: 0 0 15px -3px rgba(23, 77, 53, 0.12);
 }
 
 /* Hide scrollbar for category horizontal scrolls while keeping functionality */

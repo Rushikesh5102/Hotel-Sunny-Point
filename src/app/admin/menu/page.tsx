@@ -162,15 +162,15 @@ export default function AdminMenuPage() {
       {/* Header Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="font-serif text-2xl font-bold text-white">Menu Management</h2>
-          <p className="text-xs text-[#9DA4B0]">
+          <h2 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">Menu Management</h2>
+          <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             Add, update prices, change photography, and toggle availability across all {restaurant.items.length} dishes.
           </p>
         </div>
 
         <button
           onClick={handleOpenAdd}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] shadow-lg transition-colors shrink-0"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-colors shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Dish</span>
@@ -178,15 +178,15 @@ export default function AdminMenuPage() {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-[#12151C] border border-[#2A3140] p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm dark:shadow-none transition-colors">
         <div className="relative w-full sm:w-72">
-          <Search className="w-4 h-4 text-[#9DA4B0] absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-[#6D756D] dark:text-[#9DA4B0] absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search dish name..."
-            className="w-full bg-[#0F1115] border border-[#2A3140] focus:border-[#D4AF37] rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-[#6B7280] outline-none"
+            className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl pl-9 pr-3 py-2 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none transition-colors"
           />
         </div>
 
@@ -195,8 +195,8 @@ export default function AdminMenuPage() {
             onClick={() => setSelectedCategoryFilter("all")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
               selectedCategoryFilter === "all"
-                ? "bg-[#D4AF37] text-[#0F1115]"
-                : "bg-[#0F1115] text-[#9DA4B0] hover:text-white border border-[#2A3140]"
+                ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115]"
+                : "bg-[#FAF9F3] dark:bg-[#0F1115] text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#292D29] dark:hover:text-white border border-[#E7E2D6] dark:border-[#2A3140]"
             }`}
           >
             All Categories ({restaurant.items.length})
@@ -207,8 +207,8 @@ export default function AdminMenuPage() {
               onClick={() => setSelectedCategoryFilter(c.id)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
                 selectedCategoryFilter === c.id
-                  ? "bg-[#D4AF37] text-[#0F1115]"
-                  : "bg-[#0F1115] text-[#9DA4B0] hover:text-white border border-[#2A3140]"
+                  ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115]"
+                  : "bg-[#FAF9F3] dark:bg-[#0F1115] text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#292D29] dark:hover:text-white border border-[#E7E2D6] dark:border-[#2A3140]"
               }`}
             >
               {c.name.en}
@@ -218,11 +218,11 @@ export default function AdminMenuPage() {
       </div>
 
       {/* Menu Table */}
-      <div className="bg-[#12151C] border border-[#2A3140] rounded-2xl overflow-hidden shadow-xl">
+      <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl transition-colors">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs min-w-[640px]">
             <thead>
-              <tr className="border-b border-[#2A3140] text-[#9DA4B0] uppercase text-[10px] tracking-wider bg-[#171A21]">
+              <tr className="border-b border-[#E7E2D6] dark:border-[#2A3140] text-[#6D756D] dark:text-[#9DA4B0] uppercase text-[10px] tracking-wider bg-[#F5F0E6] dark:bg-[#171A21]">
                 <th className="py-3.5 px-4 font-semibold">Dish</th>
                 <th className="py-3.5 px-4 font-semibold">Category</th>
                 <th className="py-3.5 px-4 font-semibold">Price (₹)</th>
@@ -232,15 +232,15 @@ export default function AdminMenuPage() {
                 <th className="py-3.5 px-4 font-semibold text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#2A3140]/60">
+            <tbody className="divide-y divide-[#E7E2D6] dark:divide-[#2A3140]/60">
               {filteredDishes.map((dish) => {
                 const cat = restaurant.categories.find((c) => c.id === dish.categoryId);
                 return (
-                  <tr key={dish.id} className="hover:bg-[#171A21] transition-colors">
+                  <tr key={dish.id} className="hover:bg-[#FAF9F3] dark:hover:bg-[#171A21] transition-colors">
                     {/* Dish Name */}
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-black shrink-0 border border-[#2A3140]">
+                        <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-black shrink-0 border border-[#E7E2D6] dark:border-[#2A3140]">
                           <Image
                             src={dish.image}
                             alt={dish.name.en}
@@ -249,23 +249,23 @@ export default function AdminMenuPage() {
                           />
                         </div>
                         <div>
-                          <p className="font-bold text-white text-xs">{dish.name.en}</p>
-                          <p className="text-[10px] text-[#D4AF37]">{dish.name.mr}</p>
-                          <p className="text-[10px] text-[#6B7280] line-clamp-1">{dish.shortDescription.en}</p>
+                          <p className="font-bold text-[#292D29] dark:text-white text-xs">{dish.name.en}</p>
+                          <p className="text-[10px] text-[#174D35] dark:text-[#D4AF37]">{dish.name.mr}</p>
+                          <p className="text-[10px] text-[#6D756D] dark:text-[#6B7280] line-clamp-1">{dish.shortDescription.en}</p>
                         </div>
                       </div>
                     </td>
 
                     {/* Category */}
-                    <td className="py-3 px-4 text-gray-300">
-                      <span className="bg-[#0F1115] px-2 py-1 rounded text-[11px] border border-[#2A3140]">
+                    <td className="py-3 px-4 text-[#6D756D] dark:text-gray-300">
+                      <span className="bg-[#FAF9F3] dark:bg-[#0F1115] px-2 py-1 rounded text-[11px] border border-[#E7E2D6] dark:border-[#2A3140]">
                         {cat?.name.en || "Unassigned"}
                       </span>
                     </td>
 
                     {/* Price */}
                     <td className="py-3 px-4">
-                      <span className="font-bold text-base text-[#F9E79F]">₹{dish.price}</span>
+                      <span className="font-bold text-base text-[#174D35] dark:text-[#F9E79F]">₹{dish.price}</span>
                     </td>
 
                     {/* Availability Toggle */}
@@ -278,7 +278,7 @@ export default function AdminMenuPage() {
                         className={`px-3 py-1 rounded-full text-[10px] font-bold transition-colors ${
                           dish.isAvailable
                             ? "bg-[#22C55E]/15 text-[#22C55E] border border-[#22C55E]/30"
-                            : "bg-red-950/40 text-red-400 border border-red-700/40"
+                            : "bg-red-100 dark:bg-red-950/40 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-700/40"
                         }`}
                       >
                         {dish.isAvailable ? "Available" : "Sold Out"}
@@ -295,7 +295,7 @@ export default function AdminMenuPage() {
                         className={`p-1.5 rounded-lg transition-colors ${
                           dish.isBestseller
                             ? "bg-[#E07A2B]/20 text-[#E07A2B]"
-                            : "text-gray-600 hover:text-gray-400"
+                            : "text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400"
                         }`}
                         title="Toggle Bestseller Badge"
                       >
@@ -306,11 +306,11 @@ export default function AdminMenuPage() {
                     {/* Chef Pick */}
                     <td className="py-3 px-4 text-center">
                       {dish.isChefRecommendation ? (
-                        <span className="text-[10px] font-semibold text-[#D4AF37] bg-[#D4AF37]/15 px-2 py-0.5 rounded-full border border-[#D4AF37]/30">
+                        <span className="text-[10px] font-semibold text-[#174D35] bg-[#174D35]/10 border border-[#174D35]/20 dark:text-[#D4AF37] dark:bg-[#D4AF37]/15 dark:border-[#D4AF37]/30 px-2 py-0.5 rounded-full">
                           Recommended
                         </span>
                       ) : (
-                        <span className="text-gray-600 text-[10px]">—</span>
+                        <span className="text-gray-400 dark:text-gray-600 text-[10px]">—</span>
                       )}
                     </td>
 
@@ -319,15 +319,15 @@ export default function AdminMenuPage() {
                       <div className="flex items-center justify-end gap-2">
                         <button
                           onClick={() => handleOpenEdit(dish)}
-                          className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#252C3B] transition-colors"
+                          className="p-1.5 rounded-lg text-gray-500 hover:text-[#174D35] dark:text-gray-400 dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors"
                           title="Edit Dish Details & Price"
                         >
-                          <Edit2 className="w-4 h-4 text-[#D4AF37]" />
+                          <Edit2 className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                         </button>
 
                         <button
                           onClick={() => handleDelete(dish)}
-                          className="p-1.5 rounded-lg text-gray-400 hover:text-red-400 hover:bg-[#252C3B] transition-colors"
+                          className="p-1.5 rounded-lg text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400 hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors"
                           title="Delete Dish"
                         >
                           <Trash2 className="w-4 h-4" />
@@ -344,26 +344,26 @@ export default function AdminMenuPage() {
 
       {/* Add / Edit Dish Modal */}
       {(isAddingNew || editingDish) && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
-          <div className="relative w-full max-w-xl bg-[#171A21] border border-[#D4AF37]/40 rounded-3xl p-6 sm:p-8 shadow-2xl my-8">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm overflow-y-auto">
+          <div className="relative w-full max-w-xl bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl p-6 sm:p-8 shadow-2xl my-8 transition-colors">
             <button
               onClick={() => {
                 setIsAddingNew(false);
                 setEditingDish(null);
               }}
-              className="absolute top-5 right-5 text-gray-400 hover:text-white"
+              className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 dark:hover:text-white"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <h3 className="font-serif text-xl font-bold text-white mb-6">
+            <h3 className="font-serif text-xl font-bold text-[#292D29] dark:text-white mb-6">
               {isAddingNew ? "Add New Dish to Menu" : `Edit "${editingDish?.name.en}"`}
             </h3>
 
             <form onSubmit={handleSaveForm} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#D4AF37] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-1">
                     Dish Name (English) *
                   </label>
                   <input
@@ -371,32 +371,32 @@ export default function AdminMenuPage() {
                     required
                     value={formNameEn}
                     onChange={(e) => setFormNameEn(e.target.value)}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#D4AF37] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-1">
                     Dish Name (मराठी)
                   </label>
                   <input
                     type="text"
                     value={formNameMr}
                     onChange={(e) => setFormNameMr(e.target.value)}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                     Category *
                   </label>
                   <select
                     value={formCategoryId}
                     onChange={(e) => setFormCategoryId(e.target.value)}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   >
                     {restaurant.categories.map((c) => (
                       <option key={c.id} value={c.id}>
@@ -407,7 +407,7 @@ export default function AdminMenuPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                     Price (₹) *
                   </label>
                   <input
@@ -416,13 +416,13 @@ export default function AdminMenuPage() {
                     min={1}
                     value={formPrice}
                     onChange={(e) => setFormPrice(Number(e.target.value))}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                   Image URL / Asset Path
                 </label>
                 <input
@@ -430,12 +430,12 @@ export default function AdminMenuPage() {
                   required
                   value={formImage}
                   onChange={(e) => setFormImage(e.target.value)}
-                  className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white font-mono text-[11px]"
+                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                   Short Description (English) *
                 </label>
                 <textarea
@@ -443,84 +443,84 @@ export default function AdminMenuPage() {
                   required
                   value={formShortDescEn}
                   onChange={(e) => setFormShortDescEn(e.target.value)}
-                  className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl p-3 text-xs text-white"
+                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl p-3 text-xs text-[#292D29] dark:text-white outline-none"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                     Prep Time (Minutes)
                   </label>
                   <input
                     type="number"
                     value={formPrepTime}
                     onChange={(e) => setFormPrepTime(Number(e.target.value))}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                     Serving Size
                   </label>
                   <input
                     type="text"
                     value={formServingSize}
                     onChange={(e) => setFormServingSize(e.target.value)}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
               </div>
 
               {/* Checkboxes */}
               <div className="flex items-center gap-6 pt-2">
-                <label className="flex items-center gap-2 text-xs text-white cursor-pointer">
+                <label className="flex items-center gap-2 text-xs text-[#292D29] dark:text-white cursor-pointer">
                   <input
                     type="checkbox"
                     checked={formIsBestseller}
                     onChange={(e) => setFormIsBestseller(e.target.checked)}
-                    className="rounded text-[#D4AF37]"
+                    className="rounded text-[#174D35] dark:text-[#D4AF37]"
                   />
                   <span>Bestseller</span>
                 </label>
 
-                <label className="flex items-center gap-2 text-xs text-white cursor-pointer">
+                <label className="flex items-center gap-2 text-xs text-[#292D29] dark:text-white cursor-pointer">
                   <input
                     type="checkbox"
                     checked={formIsChef}
                     onChange={(e) => setFormIsChef(e.target.checked)}
-                    className="rounded text-[#D4AF37]"
+                    className="rounded text-[#174D35] dark:text-[#D4AF37]"
                   />
                   <span>Chef Recommendation</span>
                 </label>
 
-                <label className="flex items-center gap-2 text-xs text-white cursor-pointer">
+                <label className="flex items-center gap-2 text-xs text-[#292D29] dark:text-white cursor-pointer">
                   <input
                     type="checkbox"
                     checked={formIsSignature}
                     onChange={(e) => setFormIsSignature(e.target.checked)}
-                    className="rounded text-[#D4AF37]"
+                    className="rounded text-[#174D35] dark:text-[#D4AF37]"
                   />
                   <span>Signature Dish</span>
                 </label>
               </div>
 
               {/* Save CTA */}
-              <div className="pt-4 border-t border-[#2A3140] flex justify-end gap-3">
+              <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#2A3140] flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => {
                     setIsAddingNew(false);
                     setEditingDish(null);
                   }}
-                  className="px-4 py-2 rounded-xl text-xs text-gray-400 hover:text-white"
+                  className="px-4 py-2 rounded-xl text-xs text-[#6D756D] hover:text-[#292D29] dark:text-gray-400 dark:hover:text-white"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] transition-colors shadow-lg"
+                  className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] transition-colors shadow-md"
                 >
                   <Save className="w-3.5 h-3.5" />
                   <span>{isAddingNew ? "Add Dish to Live Menu" : "Save Changes"}</span>

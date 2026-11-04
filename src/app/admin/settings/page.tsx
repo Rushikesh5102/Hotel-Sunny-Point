@@ -55,22 +55,22 @@ export default function AdminSettingsPage() {
 
       {/* Header */}
       <div>
-        <h2 className="font-serif text-2xl font-bold text-white">Restaurant Configuration & Branding</h2>
-        <p className="text-xs text-[#9DA4B0] mt-0.5">
+        <h2 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">Restaurant Configuration & Branding</h2>
+        <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] mt-0.5">
           Tenant identity settings for Hotel Sunny Point. Used across headers, footers, and metadata.
         </p>
       </div>
 
       <form onSubmit={handleSave} className="space-y-6">
         {/* Brand Card */}
-        <div className="bg-[#12151C] border border-[#2A3140] p-6 rounded-2xl space-y-4">
-          <h3 className="font-serif font-bold text-base text-white border-b border-[#2A3140] pb-3">
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl space-y-4 shadow-sm dark:shadow-none transition-colors">
+          <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white border-b border-[#E7E2D6] dark:border-[#2A3140] pb-3">
             Restaurant Identity
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#D4AF37] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-1">
                 Restaurant Name (English)
               </label>
               <input
@@ -78,12 +78,12 @@ export default function AdminSettingsPage() {
                 required
                 value={nameEn}
                 onChange={(e) => setNameEn(e.target.value)}
-                className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#D4AF37] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-1">
                 Restaurant Name (मराठी)
               </label>
               <input
@@ -91,47 +91,47 @@ export default function AdminSettingsPage() {
                 required
                 value={nameMr}
                 onChange={(e) => setNameMr(e.target.value)}
-                className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                 Tagline (English)
               </label>
               <input
                 type="text"
                 value={taglineEn}
                 onChange={(e) => setTaglineEn(e.target.value)}
-                className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                 Tagline (मराठी)
               </label>
               <input
                 type="text"
                 value={taglineMr}
                 onChange={(e) => setTaglineMr(e.target.value)}
-                className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
           </div>
         </div>
 
         {/* Contact Numbers & Hours */}
-        <div className="bg-[#12151C] border border-[#2A3140] p-6 rounded-2xl space-y-4">
-          <h3 className="font-serif font-bold text-base text-white border-b border-[#2A3140] pb-3">
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl space-y-4 shadow-sm dark:shadow-none transition-colors">
+          <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white border-b border-[#E7E2D6] dark:border-[#2A3140] pb-3">
             Contact Information & Operating Hours
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#D4AF37] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-1">
                 Primary Phone Number *
               </label>
               <input
@@ -139,90 +139,90 @@ export default function AdminSettingsPage() {
                 required
                 value={primaryPhone}
                 onChange={(e) => setPrimaryPhone(e.target.value)}
-                className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white font-mono"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                 Secondary Phone Number
               </label>
               <input
                 type="text"
                 value={secondaryPhone}
                 onChange={(e) => setSecondaryPhone(e.target.value)}
-                className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white font-mono"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono outline-none transition-colors"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                 Operating Days
               </label>
               <input
                 type="text"
                 value={operatingHoursDays}
                 onChange={(e) => setOperatingHoursDays(e.target.value)}
-                className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                 Operating Hours
               </label>
               <input
                 type="text"
                 value={operatingHoursTiming}
                 onChange={(e) => setOperatingHoursTiming(e.target.value)}
-                className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white font-mono"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono outline-none transition-colors"
               />
             </div>
           </div>
         </div>
 
         {/* Address & Social Links */}
-        <div className="bg-[#12151C] border border-[#2A3140] p-6 rounded-2xl space-y-4">
-          <h3 className="font-serif font-bold text-base text-white border-b border-[#2A3140] pb-3">
+        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl space-y-4 shadow-sm dark:shadow-none transition-colors">
+          <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white border-b border-[#E7E2D6] dark:border-[#2A3140] pb-3">
             Address & Social Presence
           </h3>
 
           <div>
-            <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+            <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
               Physical Street Address (English)
             </label>
             <input
               type="text"
               value={addressEn}
               onChange={(e) => setAddressEn(e.target.value)}
-              className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white"
+              className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                 Instagram Profile URL
               </label>
               <input
                 type="url"
                 value={instagramUrl}
                 onChange={(e) => setInstagramUrl(e.target.value)}
-                className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white font-mono text-[11px]"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                 Google Maps Navigation URL
               </label>
               <input
                 type="url"
                 value={googleMapsUrl}
                 onChange={(e) => setGoogleMapsUrl(e.target.value)}
-                className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3.5 py-2.5 text-xs text-white font-mono text-[11px]"
+                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none transition-colors"
               />
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function AdminSettingsPage() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] uppercase tracking-wider transition-colors shadow-xl"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-md"
           >
             <Save className="w-4 h-4" />
             <span>Save All Restaurant Settings</span>

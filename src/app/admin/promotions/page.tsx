@@ -112,15 +112,15 @@ export default function AdminPromotionsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="font-serif text-2xl font-bold text-white">Promotions & Campaigns</h2>
-          <p className="text-xs text-[#9DA4B0]">
+          <h2 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">Promotions & Campaigns</h2>
+          <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             Manage seasonal specials, Monsoon Affairs banners, and coupon vouchers.
           </p>
         </div>
 
         <button
           onClick={handleOpenAdd}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] shadow-lg transition-colors shrink-0"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-colors shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Create Promotion</span>
@@ -132,10 +132,10 @@ export default function AdminPromotionsPage() {
         {restaurant.promotions.map((promo) => (
           <div
             key={promo.id}
-            className="bg-[#12151C] border border-[#2A3140] rounded-2xl overflow-hidden shadow-xl p-5 flex flex-col justify-between space-y-4"
+            className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl p-5 flex flex-col justify-between space-y-4 transition-colors"
           >
             <div className="space-y-3">
-              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-black border border-[#2A3140]">
+              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-black border border-[#E7E2D6] dark:border-[#2A3140]">
                 <Image
                   src={promo.bannerImage}
                   alt={promo.title.en}
@@ -143,33 +143,33 @@ export default function AdminPromotionsPage() {
                   className="object-cover"
                 />
                 <div className="absolute top-3 left-3">
-                  <span className="text-[10px] font-bold bg-[#D4AF37] text-[#0F1115] px-2.5 py-0.5 rounded-full uppercase shadow">
+                  <span className="text-[10px] font-bold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] px-2.5 py-0.5 rounded-full uppercase shadow">
                     {promo.badgeText}
                   </span>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-serif font-bold text-white text-lg">{promo.title.en}</h3>
-                <p className="text-xs text-[#D4AF37] font-medium">{promo.subtitle.en}</p>
-                <p className="text-xs text-[#9DA4B0] mt-1 line-clamp-2">{promo.description.en}</p>
+                <h3 className="font-serif font-bold text-[#292D29] dark:text-white text-lg">{promo.title.en}</h3>
+                <p className="text-xs text-[#174D35] dark:text-[#D4AF37] font-medium">{promo.subtitle.en}</p>
+                <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] mt-1 line-clamp-2">{promo.description.en}</p>
               </div>
 
-              <div className="flex items-center gap-4 text-[11px] text-[#C9CDD5] pt-1">
+              <div className="flex items-center gap-4 text-[11px] text-[#6D756D] dark:text-[#C9CDD5] pt-1">
                 <span className="flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37]" />
                   <span>Valid till {promo.endDate}</span>
                 </span>
                 {promo.couponCode && (
-                  <span className="flex items-center gap-1 font-mono text-[#F9E79F] bg-[#0F1115] px-2 py-0.5 rounded border border-[#2A3140]">
-                    <Tag className="w-3 h-3 text-[#D4AF37]" />
+                  <span className="flex items-center gap-1 font-mono text-[#174D35] dark:text-[#F9E79F] bg-[#FAF9F3] dark:bg-[#0F1115] px-2 py-0.5 rounded border border-[#E7E2D6] dark:border-[#2A3140]">
+                    <Tag className="w-3 h-3 text-[#174D35] dark:text-[#D4AF37]" />
                     <span>{promo.couponCode}</span>
                   </span>
                 )}
               </div>
             </div>
 
-            <div className="pt-3 border-t border-[#2A3140] flex items-center justify-between">
+            <div className="pt-3 border-t border-[#E7E2D6] dark:border-[#2A3140] flex items-center justify-between">
               <button
                 onClick={() => {
                   togglePromotion(promo.id);
@@ -178,7 +178,7 @@ export default function AdminPromotionsPage() {
                 className={`px-3 py-1 rounded-full text-xs font-bold transition-colors ${
                   promo.isActive
                     ? "bg-[#22C55E]/15 text-[#22C55E] border border-[#22C55E]/30"
-                    : "bg-gray-800 text-gray-400 border border-gray-700"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700"
                 }`}
               >
                 {promo.isActive ? "Active on Home" : "Inactive / Draft"}
@@ -187,13 +187,13 @@ export default function AdminPromotionsPage() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => handleOpenEdit(promo)}
-                  className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#252C3B] transition-colors"
+                  className="p-1.5 rounded-lg text-gray-500 hover:text-[#174D35] dark:text-gray-400 dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors"
                 >
-                  <Edit2 className="w-4 h-4 text-[#D4AF37]" />
+                  <Edit2 className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                 </button>
                 <button
                   onClick={() => handleDelete(promo)}
-                  className="p-1.5 rounded-lg text-gray-400 hover:text-red-400 hover:bg-[#252C3B] transition-colors"
+                  className="p-1.5 rounded-lg text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400 hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -205,25 +205,25 @@ export default function AdminPromotionsPage() {
 
       {/* Modal */}
       {(isAddingNew || editingPromo) && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
-          <div className="relative w-full max-w-lg bg-[#171A21] border border-[#D4AF37]/40 rounded-3xl p-6 sm:p-8 shadow-2xl my-8">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm overflow-y-auto">
+          <div className="relative w-full max-w-lg bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl p-6 sm:p-8 shadow-2xl my-8 transition-colors">
             <button
               onClick={() => {
                 setIsAddingNew(false);
                 setEditingPromo(null);
               }}
-              className="absolute top-5 right-5 text-gray-400 hover:text-white"
+              className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 dark:hover:text-white"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <h3 className="font-serif text-xl font-bold text-white mb-6">
+            <h3 className="font-serif text-xl font-bold text-[#292D29] dark:text-white mb-6">
               {isAddingNew ? "Create Promotion" : `Edit "${editingPromo?.title.en}"`}
             </h3>
 
             <form onSubmit={handleSaveForm} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-[#D4AF37] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-1">
                   Title (English) *
                 </label>
                 <input
@@ -231,37 +231,37 @@ export default function AdminPromotionsPage() {
                   required
                   value={formTitleEn}
                   onChange={(e) => setFormTitleEn(e.target.value)}
-                  className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                   Subtitle
                 </label>
                 <input
                   type="text"
                   value={formSubtitleEn}
                   onChange={(e) => setFormSubtitleEn(e.target.value)}
-                  className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                     Badge Text
                   </label>
                   <input
                     type="text"
                     value={formBadgeText}
                     onChange={(e) => setFormBadgeText(e.target.value)}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                     Coupon Code (Optional)
                   </label>
                   <input
@@ -269,14 +269,14 @@ export default function AdminPromotionsPage() {
                     value={formCouponCode}
                     onChange={(e) => setFormCouponCode(e.target.value)}
                     placeholder="e.g. FESTIVE10"
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white font-mono uppercase"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white font-mono uppercase outline-none"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                     Start Date
                   </label>
                   <input
@@ -284,12 +284,12 @@ export default function AdminPromotionsPage() {
                     required
                     value={formStartDate}
                     onChange={(e) => setFormStartDate(e.target.value)}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                     End Date
                   </label>
                   <input
@@ -297,13 +297,13 @@ export default function AdminPromotionsPage() {
                     required
                     value={formEndDate}
                     onChange={(e) => setFormEndDate(e.target.value)}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                   Banner Image URL
                 </label>
                 <input
@@ -311,36 +311,36 @@ export default function AdminPromotionsPage() {
                   required
                   value={formBannerImage}
                   onChange={(e) => setFormBannerImage(e.target.value)}
-                  className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white font-mono text-[11px]"
+                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                   Description
                 </label>
                 <textarea
                   rows={2}
                   value={formDescEn}
                   onChange={(e) => setFormDescEn(e.target.value)}
-                  className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl p-3 text-xs text-white"
+                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl p-3 text-xs text-[#292D29] dark:text-white outline-none"
                 />
               </div>
 
-              <div className="pt-4 border-t border-[#2A3140] flex justify-end gap-3">
+              <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#2A3140] flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => {
                     setIsAddingNew(false);
                     setEditingPromo(null);
                   }}
-                  className="px-4 py-2 rounded-xl text-xs text-gray-400 hover:text-white"
+                  className="px-4 py-2 rounded-xl text-xs text-[#6D756D] hover:text-[#292D29] dark:text-gray-400 dark:hover:text-white"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] transition-colors shadow-lg"
+                  className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] transition-colors shadow-md"
                 >
                   <Save className="w-3.5 h-3.5" />
                   <span>Save Campaign</span>

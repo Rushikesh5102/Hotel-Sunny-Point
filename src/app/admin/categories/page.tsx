@@ -116,15 +116,15 @@ export default function AdminCategoriesPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="font-serif text-2xl font-bold text-white">Category Management</h2>
-          <p className="text-xs text-[#9DA4B0]">
+          <h2 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">Category Management</h2>
+          <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             Organize the {restaurant.categories.length} food divisions of Hotel Sunny Point.
           </p>
         </div>
 
         <button
           onClick={handleOpenAdd}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] shadow-lg transition-colors shrink-0"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-colors shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Category</span>
@@ -132,18 +132,18 @@ export default function AdminCategoriesPage() {
       </div>
 
       {/* Categories Grid/Table */}
-      <div className="bg-[#12151C] border border-[#2A3140] rounded-2xl overflow-hidden shadow-xl">
-        <div className="divide-y divide-[#2A3140]/60">
+      <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl transition-colors">
+        <div className="divide-y divide-[#E7E2D6] dark:divide-[#2A3140]/60">
           {sortedCategories.map((cat, idx) => {
             const count = restaurant.items.filter((i) => i.categoryId === cat.id).length;
 
             return (
               <div
                 key={cat.id}
-                className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-[#171A21] transition-colors"
+                className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-[#FAF9F3] dark:hover:bg-[#171A21] transition-colors"
               >
                 <div className="flex items-center gap-4">
-                  <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-black shrink-0 border border-[#2A3140]">
+                  <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-black shrink-0 border border-[#E7E2D6] dark:border-[#2A3140]">
                     <Image
                       src={cat.image}
                       alt={cat.name.en}
@@ -154,17 +154,17 @@ export default function AdminCategoriesPage() {
 
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-serif font-bold text-white text-base">
+                      <span className="font-serif font-bold text-[#292D29] dark:text-white text-base">
                         {cat.name.en}
                       </span>
-                      <span className="text-xs text-[#D4AF37] font-medium">({cat.name.mr})</span>
+                      <span className="text-xs text-[#174D35] dark:text-[#D4AF37] font-medium">({cat.name.mr})</span>
                       {cat.badge && (
-                        <span className="text-[10px] bg-[#D4AF37]/15 text-[#D4AF37] px-2 py-0.5 rounded-full border border-[#D4AF37]/30">
+                        <span className="text-[10px] bg-[#174D35]/10 text-[#174D35] border border-[#174D35]/20 dark:bg-[#D4AF37]/15 dark:text-[#D4AF37] dark:border-[#D4AF37]/30 px-2 py-0.5 rounded-full">
                           {cat.badge.en}
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-[#9DA4B0] max-w-lg line-clamp-1">{cat.description.en}</p>
+                    <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] max-w-lg line-clamp-1">{cat.description.en}</p>
                     <span className="inline-block text-[11px] text-[#22C55E] font-medium">
                       {count} Dishes assigned
                     </span>
@@ -176,7 +176,7 @@ export default function AdminCategoriesPage() {
                   <button
                     disabled={idx === 0}
                     onClick={() => handleMoveOrder(cat, "up")}
-                    className="p-1.5 rounded-lg bg-[#0F1115] text-gray-400 hover:text-white disabled:opacity-30 border border-[#2A3140]"
+                    className="p-1.5 rounded-lg bg-[#FAF9F3] dark:bg-[#0F1115] text-[#6D756D] dark:text-gray-400 hover:text-[#292D29] dark:hover:text-white disabled:opacity-30 border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
                     title="Move Up"
                   >
                     <ArrowUp className="w-4 h-4" />
@@ -185,7 +185,7 @@ export default function AdminCategoriesPage() {
                   <button
                     disabled={idx === sortedCategories.length - 1}
                     onClick={() => handleMoveOrder(cat, "down")}
-                    className="p-1.5 rounded-lg bg-[#0F1115] text-gray-400 hover:text-white disabled:opacity-30 border border-[#2A3140]"
+                    className="p-1.5 rounded-lg bg-[#FAF9F3] dark:bg-[#0F1115] text-[#6D756D] dark:text-gray-400 hover:text-[#292D29] dark:hover:text-white disabled:opacity-30 border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
                     title="Move Down"
                   >
                     <ArrowDown className="w-4 h-4" />
@@ -193,15 +193,15 @@ export default function AdminCategoriesPage() {
 
                   <button
                     onClick={() => handleOpenEdit(cat)}
-                    className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#252C3B] transition-colors ml-2"
+                    className="p-1.5 rounded-lg text-gray-500 hover:text-[#174D35] dark:text-gray-400 dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors ml-2"
                     title="Edit Category"
                   >
-                    <Edit2 className="w-4 h-4 text-[#D4AF37]" />
+                    <Edit2 className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                   </button>
 
                   <button
                     onClick={() => handleDelete(cat)}
-                    className="p-1.5 rounded-lg text-gray-400 hover:text-red-400 hover:bg-[#252C3B] transition-colors"
+                    className="p-1.5 rounded-lg text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400 hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors"
                     title="Delete Category"
                   >
                     <Trash2 className="w-4 h-4" />
@@ -215,26 +215,26 @@ export default function AdminCategoriesPage() {
 
       {/* Modal for Add / Edit Category */}
       {(isAddingNew || editingCat) && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
-          <div className="relative w-full max-w-lg bg-[#171A21] border border-[#D4AF37]/40 rounded-3xl p-6 sm:p-8 shadow-2xl my-8">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm overflow-y-auto">
+          <div className="relative w-full max-w-lg bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl p-6 sm:p-8 shadow-2xl my-8 transition-colors">
             <button
               onClick={() => {
                 setIsAddingNew(false);
                 setEditingCat(null);
               }}
-              className="absolute top-5 right-5 text-gray-400 hover:text-white"
+              className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 dark:hover:text-white"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <h3 className="font-serif text-xl font-bold text-white mb-6">
+            <h3 className="font-serif text-xl font-bold text-[#292D29] dark:text-white mb-6">
               {isAddingNew ? "Add New Category" : `Edit "${editingCat?.name.en}"`}
             </h3>
 
             <form onSubmit={handleSaveForm} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#D4AF37] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-1">
                     Category Name (English) *
                   </label>
                   <input
@@ -242,37 +242,37 @@ export default function AdminCategoriesPage() {
                     required
                     value={formNameEn}
                     onChange={(e) => setFormNameEn(e.target.value)}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#D4AF37] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-1">
                     Category Name (मराठी)
                   </label>
                   <input
                     type="text"
                     value={formNameMr}
                     onChange={(e) => setFormNameMr(e.target.value)}
-                    className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                   Optional Badge Text (e.g. Signature, Under ₹120)
                 </label>
                 <input
                   type="text"
                   value={formBadgeEn}
                   onChange={(e) => setFormBadgeEn(e.target.value)}
-                  className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white"
+                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                   Cover Image URL
                 </label>
                 <input
@@ -280,12 +280,12 @@ export default function AdminCategoriesPage() {
                   required
                   value={formImage}
                   onChange={(e) => setFormImage(e.target.value)}
-                  className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl px-3 py-2 text-xs text-white font-mono text-[11px]"
+                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#9DA4B0] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                   Description
                 </label>
                 <textarea
@@ -293,24 +293,24 @@ export default function AdminCategoriesPage() {
                   required
                   value={formDescEn}
                   onChange={(e) => setFormDescEn(e.target.value)}
-                  className="w-full bg-[#0F1115] border border-[#2A3140] rounded-xl p-3 text-xs text-white"
+                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl p-3 text-xs text-[#292D29] dark:text-white outline-none"
                 />
               </div>
 
-              <div className="pt-4 border-t border-[#2A3140] flex justify-end gap-3">
+              <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#2A3140] flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => {
                     setIsAddingNew(false);
                     setEditingCat(null);
                   }}
-                  className="px-4 py-2 rounded-xl text-xs text-gray-400 hover:text-white"
+                  className="px-4 py-2 rounded-xl text-xs text-[#6D756D] hover:text-[#292D29] dark:text-gray-400 dark:hover:text-white"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] transition-colors shadow-lg"
+                  className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] transition-colors shadow-md"
                 >
                   <Save className="w-3.5 h-3.5" />
                   <span>{isAddingNew ? "Create Category" : "Save Changes"}</span>

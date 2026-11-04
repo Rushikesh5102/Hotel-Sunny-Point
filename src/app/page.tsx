@@ -17,15 +17,15 @@ export default function HomePage() {
   const { restaurant, t } = useRestaurant();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0F1115] pb-16 md:pb-0">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] pb-16 md:pb-0 transition-colors">
       {/* Interactive Demonstration Banner */}
-      <div className="bg-[#171A21] border-b border-[#D4AF37]/30 py-2 px-4 text-center">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-[#9DA4B0] gap-2">
+      <div className="bg-[#F5F0E6] dark:bg-[#171A21] border-b border-[#E7E2D6] dark:border-[#D4AF37]/30 py-2 px-4 text-center">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-[#6D756D] dark:text-[#9DA4B0] gap-2">
           <div className="flex items-center gap-2">
-            <ShieldAlert className="w-4 h-4 text-[#D4AF37] shrink-0" />
+            <ShieldAlert className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37] shrink-0" />
             <span>
               <strong>Client Demonstration Mode:</strong> Local reactive database active. Any price or availability edit in{" "}
-              <Link href="/admin" className="text-[#D4AF37] underline font-semibold">
+              <Link href="/admin" className="text-[#174D35] dark:text-[#D4AF37] underline font-semibold">
                 Admin Dashboard
               </Link>{" "}
               immediately reflects across this menu in real-time.
@@ -34,7 +34,7 @@ export default function HomePage() {
 
           <Link
             href="/admin"
-            className="text-[11px] font-bold text-[#0F1115] bg-[#D4AF37] px-3 py-1 rounded-full uppercase tracking-wider hover:bg-[#F9E79F] transition-colors shrink-0"
+            className="text-[11px] font-bold text-white dark:text-[#0F1115] bg-[#174D35] dark:bg-[#D4AF37] px-3 py-1 rounded-full uppercase tracking-wider hover:bg-[#123C29] dark:hover:bg-[#F9E79F] transition-colors shrink-0 shadow-sm"
           >
             Launch Admin
           </Link>
@@ -64,14 +64,14 @@ export default function HomePage() {
         <SeasonalSpecialsSection />
 
         {/* 7. Customer Testimonials & Heritage Voices */}
-        <section className="py-20 bg-[#0B0D10] border-t border-[#2A3140]/60">
+        <section className="py-20 bg-[#F5F0E6] dark:bg-[#0B0D10] border-t border-[#E7E2D6] dark:border-[#2A3140]/60 transition-colors">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto space-y-3 mb-14">
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D4AF37] uppercase tracking-widest">
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-widest">
                 <MessageSquareQuote className="w-3.5 h-3.5" />
                 <span>{t({ en: "Three Decades of Trust", mr: "ग्राहकांचे प्रेम आणि विश्वास" })}</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#292D29] dark:text-white">
                 {t({ en: "What Bhadrawati Says", mr: "आमच्या ग्राहकांचे मनोगत" })}
               </h2>
             </div>
@@ -80,22 +80,22 @@ export default function HomePage() {
               {restaurant.feedback.slice(0, 3).map((fb) => (
                 <div
                   key={fb.id}
-                  className="bg-[#171A21] border border-[#2A3140] p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-lg"
+                  className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center gap-1">
                       {Array.from({ length: fb.overallRating }).map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
+                        <Star key={i} className="w-4 h-4 fill-[#C6A45C] text-[#C6A45C] dark:fill-[#D4AF37] dark:text-[#D4AF37]" />
                       ))}
                     </div>
-                    <p className="text-xs sm:text-sm text-[#C9CDD5] italic leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#292D29] dark:text-[#C9CDD5] italic leading-relaxed">
                       &ldquo;{fb.comment}&rdquo;
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-[#2A3140] flex items-center justify-between text-xs">
-                    <span className="font-semibold text-white">{fb.customerName}</span>
-                    <span className="text-[#9DA4B0] text-[11px]">{fb.tableNumber || "Verified Guest"}</span>
+                  <div className="pt-3 border-t border-[#E7E2D6] dark:border-[#2A3140] flex items-center justify-between text-xs">
+                    <span className="font-semibold text-[#292D29] dark:text-white">{fb.customerName}</span>
+                    <span className="text-[#6D756D] dark:text-[#9DA4B0] text-[11px]">{fb.tableNumber || "Verified Guest"}</span>
                   </div>
                 </div>
               ))}
@@ -104,7 +104,7 @@ export default function HomePage() {
             <div className="text-center mt-10">
               <Link
                 href="/feedback"
-                className="inline-flex items-center gap-2 text-xs font-semibold text-[#D4AF37] hover:text-[#F9E79F] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-semibold text-[#174D35] hover:text-[#225E43] dark:text-[#D4AF37] dark:hover:text-[#F9E79F] transition-colors"
               >
                 <span>{t({ en: "Share Your Experience with Us", mr: "आपला अभिप्राय येथे नोंदवा" })}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -114,17 +114,17 @@ export default function HomePage() {
         </section>
 
         {/* 8. Visit Information & Map Navigation Callout */}
-        <section className="py-16 bg-[#171A21] border-t border-[#2A3140]">
+        <section className="py-16 bg-white dark:bg-[#171A21] border-t border-[#E7E2D6] dark:border-[#2A3140] transition-colors">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#0F1115] border border-[#D4AF37]/40 rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#174D35]/30 dark:border-[#D4AF37]/40 rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="space-y-3 text-center lg:text-left">
-                <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider">
                   Hotel Sunny Point — Pure Veg
                 </span>
-                <h3 className="font-serif text-2xl sm:text-4xl font-bold text-white">
+                <h3 className="font-serif text-2xl sm:text-4xl font-bold text-[#292D29] dark:text-white">
                   {t({ en: "Join Us for a Taste of Legacy", mr: "भद्रावतीतील स्वादाच्या वारशाचा अनुभव घ्या" })}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#C9CDD5] max-w-xl">
+                <p className="text-xs sm:text-sm text-[#6D756D] dark:text-[#C9CDD5] max-w-xl">
                   {t({
                     en: "Located on Main Road, Bhadrawati. Family dining with air-conditioned comfort, generous parking, and genuine hospitality.",
                     mr: "मुख्य रस्ता, भद्रावती. वातानुकूलित कौटुंबिक आसनव्यवस्था, प्रशस्त पार्किंग आणि आपुलकीचे आदरातिथ्य.",
@@ -135,7 +135,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full lg:w-auto">
                 <a
                   href={`tel:${restaurant.settings.primaryPhone}`}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold bg-[#D4AF37] hover:bg-[#B89324] text-[#0F1115] uppercase tracking-wider transition-colors shadow-lg"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-lg"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call {restaurant.settings.primaryPhone}</span>
@@ -145,7 +145,7 @@ export default function HomePage() {
                   href={restaurant.settings.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-semibold bg-[#212631] hover:bg-[#2A3140] text-white border border-[#2A3140] transition-colors"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-semibold bg-white hover:bg-[#F5F0E6] text-[#292D29] border border-[#E7E2D6] hover:border-[#174D35]/50 dark:bg-[#212631] dark:hover:bg-[#2A3140] dark:text-white dark:border-[#2A3140] shadow-sm transition-colors"
                 >
                   <MapPin className="w-4 h-4 text-[#E07A2B]" />
                   <span>Google Maps Directions</span>
