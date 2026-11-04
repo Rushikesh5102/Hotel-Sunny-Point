@@ -1,13 +1,68 @@
-# Hotel Sunny Point — Pure Veg, Bhadrawati
-### *The Taste of Legacy — Serving Bhadrawati Since 1965*
+<div align="center">
+  <img src="public/assets/brand/logo.jpg" alt="Hotel Sunny Point Logo" width="130" style="border-radius: 50%; border: 3px solid #D4AF37; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);" />
 
-[![Next.js 15](https://img.shields.io/badge/Next.js-15.1.4-black?style=flat&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7.2-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.16-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
-[![React 19](https://img.shields.io/badge/React-19.0.0-61DAFB?style=flat&logo=react)](https://react.dev/)
-[![Supabase Ready](https://img.shields.io/badge/Supabase-Multi--Tenant_Ready-3ECF8E?style=flat&logo=supabase)](https://supabase.com/)
-[![Pure Vegetarian](https://img.shields.io/badge/Dietary-100%25_Pure_Veg-22C55E?style=flat)]()
-[![FSSAI Certified](https://img.shields.io/badge/FSSAI-0000907350-D4AF37?style=flat)]()
+  # Hotel Sunny Point — Pure Veg, Bhadrawati
+  ### *The Taste of Legacy — Serving Bhadrawati Since 1965*
+
+  <p align="center">
+    <b>Main Road, Near Old Bus Stand, Bhadrawati, Chandrapur District, Maharashtra 442902</b><br />
+    <i>South Indian Dosa Traditions Since 1995 • 100% Pure Vegetarian Multi-Cuisine Dining</i>
+  </p>
+
+  <p align="center">
+    <a href="https://rushikesh5102.github.io/Hotel-Sunny-Point/"><img src="https://img.shields.io/badge/🌐_Live_Preview-GitHub_Pages-22C55E?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live GitHub Pages Preview" /></a>
+    <a href="https://github.com/Rushikesh5102/Hotel-Sunny-Point"><img src="https://img.shields.io/badge/🐙_Source_Code-GitHub_Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository" /></a>
+  </p>
+
+  <p align="center">
+    <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-15.1.4-black?style=flat-square&logo=next.js" alt="Next.js 15" /></a>
+    <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.7.2-blue?style=flat-square&logo=typescript" alt="TypeScript" /></a>
+    <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind-3.4.16-38B2AC?style=flat-square&logo=tailwind-css" alt="Tailwind CSS" /></a>
+    <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-19.0.0-61DAFB?style=flat-square&logo=react" alt="React 19" /></a>
+    <a href="https://supabase.com/"><img src="https://img.shields.io/badge/Supabase-Multi--Tenant_Ready-3ECF8E?style=flat-square&logo=supabase" alt="Supabase Ready" /></a>
+    <img src="https://img.shields.io/badge/Tri--Lingual-EN_%7C_मराठी_%7C_हिन्दी-D4AF37?style=flat-square" alt="Tri-lingual" />
+    <img src="https://img.shields.io/badge/Dietary-100%25_Pure_Veg-22C55E?style=flat-square" alt="Pure Veg" />
+    <img src="https://img.shields.io/badge/FSSAI-0000907350-D4AF37?style=flat-square" alt="FSSAI" />
+  </p>
+
+  <p align="center">
+    <b>Quick Links:</b><br />
+    <a href="https://rushikesh5102.github.io/Hotel-Sunny-Point/">🌐 <b>GitHub Pages Live Preview</b></a> • 
+    <a href="https://github.com/Rushikesh5102/Hotel-Sunny-Point">🐙 <b>GitHub Repository</b></a> • 
+    <a href="#-visual-previews--platform-gallery">📸 <b>Visual Gallery</b></a> • 
+    <a href="#7-phase-14-documentation-index">📖 <b>Documentation Suite</b></a>
+  </p>
+</div>
+
+---
+
+## 📸 Visual Previews & Platform Gallery
+
+Here is a visual overview of the application verified under external browser automation:
+
+### 1. Desktop Experience & Heritage Showcase
+| Desktop Hero Banner & Bilingual Navigation | 1965 Vintage Gazette & 1995 Iconic Dosa |
+| :---: | :---: |
+| <img src="public/screenshots/01_homepage_desktop.png" width="480" alt="Homepage Desktop Hero" /> | <img src="public/screenshots/02_gazette_and_dosa_feature.png" width="480" alt="Heritage Gazette & Dosa Feature" /> |
+| *Atmospheric cinematic hero with warm gold accents* | *Authentic vintage 1965 newsprint and 1995 Dosa feature* |
+
+### 2. Tri-Lingual Menu & Dish Inspection Modal
+| Tri-Lingual Menu (Hindi / Devanagari) | Dish Details Modal & Pairings |
+| :---: | :---: |
+| <img src="public/screenshots/03_menu_hindi.png" width="480" alt="Tri-Lingual Menu" /> | <img src="public/screenshots/04_dish_modal_desktop.png" width="480" alt="Dish Inspection Modal" /> |
+| *Instant switch between English, मराठी, and हिन्दी* | *Heritage notes, spice meter, ingredients, and beverage pairings* |
+
+### 3. Mobile-First Viewport (iPhone 14 Viewport — 390x844)
+| High-Density Compact List View | Slide-Up Category Bottom Sheet |
+| :---: | :---: |
+| <img src="public/screenshots/05_mobile_compact_menu.png" width="340" alt="Mobile Compact Menu" /> | <img src="public/screenshots/06_mobile_category_bottom_sheet.png" width="340" alt="Mobile Category Drawer" /> |
+| *Sticky 5-tab bottom dock & high-density food cards* | *Thumb-friendly floating Category Action Button (FAB)* |
+
+### 4. Operations Admin Portal & Permanent QR Studio
+| Operations Dashboard & Stock Controls | Permanent QR Code & Printable Table Tent |
+| :---: | :---: |
+| <img src="public/screenshots/07_admin_dashboard.png" width="480" alt="Admin Dashboard" /> | <img src="public/screenshots/08_admin_qr_and_table_tent.png" width="480" alt="QR Code & Table Tent" /> |
+| *Real-time KPI metric counters and instant availability switches* | *Permanent target `/menu` with table parameter & print CSS* |
 
 ---
 
@@ -16,6 +71,9 @@
 **Hotel Sunny Point** is an iconic 3-story pure vegetarian culinary institution located at Main Road, Near Old Bus Stand, Bhadrawati, Chandrapur District, Maharashtra. Founded in 1965 and pioneering authentic South Indian dosa traditions in Bhadrawati since 1995, the restaurant serves thousands of local families, commuters, and travelers daily.
 
 This application is a **custom-engineered digital menu and restaurant operations platform** designed specifically for Hotel Sunny Point. It combines a mobile-first, cartless digital dining experience with an administrative dashboard and a multi-tenant Supabase relational backend architecture.
+
+- **GitHub Repository**: [https://github.com/Rushikesh5102/Hotel-Sunny-Point](https://github.com/Rushikesh5102/Hotel-Sunny-Point)
+- **Live GitHub Pages Preview**: [https://rushikesh5102.github.io/Hotel-Sunny-Point/](https://rushikesh5102.github.io/Hotel-Sunny-Point/)
 
 ---
 
@@ -67,6 +125,7 @@ This application is a **custom-engineered digital menu and restaurant operations
 
 ```
 Hotel Sunny Point/
+├── README.md                       # Master documentation & visual showcase
 ├── ASSET_CATALOG.md                # 80-file raw media catalog (photos, videos, metadata)
 ├── CONTENT_RESEARCH.md             # Extracted brand story, history & culinary notes
 ├── MISSING_INFORMATION.md          # Client clarification questions & rate inquiries
@@ -136,7 +195,6 @@ Hotel Sunny Point/
 - **Package Manager**: `npm`
 
 ### 5.2 Installation
-Clone the repository and install dependencies:
 ```bash
 git clone https://github.com/Rushikesh5102/Hotel-Sunny-Point.git
 cd Hotel-Sunny-Point
@@ -183,10 +241,34 @@ npx tsc --noEmit
 - **Email**: `contact@hotelsunnypoint.com`
 - **FSSAI License Registration**: `0000907350`
 - **Instagram**: [@hotelsunnypoint](https://www.instagram.com/hotelsunnypoint/)
+- **Live Preview**: [https://rushikesh5102.github.io/Hotel-Sunny-Point/](https://rushikesh5102.github.io/Hotel-Sunny-Point/)
+- **GitHub Repository**: [https://github.com/Rushikesh5102/Hotel-Sunny-Point](https://github.com/Rushikesh5102/Hotel-Sunny-Point)
 
 ---
 
-## 7. License & Credits
+## 7. Phase 1–4 Documentation Index
+
+| Phase / Focus Area | Document File | Description |
+|:---|:---|:---|
+| **Asset Audit** | [ASSET_CATALOG.md](ASSET_CATALOG.md) | Audit of all 80 original files in `Hotel Sunny Point Data/` |
+| **Content Research** | [CONTENT_RESEARCH.md](CONTENT_RESEARCH.md) | Historical timeline, brand voice, slogans & regional Marathi copy |
+| **Missing Info** | [MISSING_INFORMATION.md](MISSING_INFORMATION.md) | Client inquiries and physical menu tariff verifications |
+| **Design System** | [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) | Color palettes, typography hierarchy, UI tokens & responsive grid |
+| **Frontend Architecture** | [FRONTEND_ARCHITECTURE.md](FRONTEND_ARCHITECTURE.md) | React App Router structure, component hierarchy & repository |
+| **Frontend QA** | [FRONTEND_TEST_REPORT.md](FRONTEND_TEST_REPORT.md) | Native Chrome automation report & 8 high-resolution screenshots |
+| **Frontend Audit** | [FRONTEND_AUDIT.md](FRONTEND_AUDIT.md) | Component tree tracing, bundle size (103 kB) & dependency audit |
+| **Security Audit** | [SECURITY_AUDIT.md](SECURITY_AUDIT.md) | Vulnerability analysis & Supabase SSR Auth migration blueprint |
+| **Data Verification** | [DATA_VERIFICATION_REPORT.md](DATA_VERIFICATION_REPORT.md) | Registry of all 39 dishes, photo mappings & price status tags |
+| **Supabase Architecture** | [SUPABASE_FINAL_SCHEMA.md](SUPABASE_FINAL_SCHEMA.md) | Final ERD, 9 tables DDL, foreign keys, indexes & storage buckets |
+| **Row Level Security** | [RLS_SECURITY_MATRIX.md](RLS_SECURITY_MATRIX.md) | Access control matrix, tenant isolation & attack mitigations |
+| **Authentication Spec** | [AUTHENTICATION_IMPLEMENTATION.md](AUTHENTICATION_IMPLEMENTATION.md) | Next.js 15 Middleware session sync & role verification |
+| **Data Migration Spec** | [DATABASE_MIGRATION_REPORT.md](DATABASE_MIGRATION_REPORT.md) | Multi-lingual JSONB mapping & seed execution manifest |
+| **Backend Testing** | [BACKEND_TEST_REPORT.md](BACKEND_TEST_REPORT.md) | 12 security test suites & pre-flight compilation results |
+| **Phase 4 Completion** | [PHASE_4_COMPLETION_REPORT.md](PHASE_4_COMPLETION_REPORT.md) | Phase 4 readiness report & environment configuration |
+
+---
+
+## 8. License & Credits
 
 Developed for **Hotel Sunny Point**, Bhadrawati, Maharashtra.  
 All photographic assets and brand logos are copyrighted by Hotel Sunny Point.
