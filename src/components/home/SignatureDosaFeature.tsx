@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRestaurant } from "@/context/RestaurantContext";
 import { MenuItem } from "@/types";
 import { DishModal } from "@/components/ui/DishModal";
+import { DosaSizzleASMR } from "@/components/ui/DosaSizzleASMR";
 import { Sparkles, ArrowRight, Award, Coffee, Star } from "lucide-react";
 
 export function SignatureDosaFeature() {
@@ -131,7 +132,9 @@ export function SignatureDosaFeature() {
                 </div>
               </div>
 
-              <div className="pt-2 flex items-center gap-4">
+              <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
+                <DosaSizzleASMR />
+
                 <button
                   onClick={() => setSelectedDish(masalaDosa)}
                   className="px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"

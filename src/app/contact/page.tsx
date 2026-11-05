@@ -29,8 +29,8 @@ export default function ContactPage() {
 
             <p className="text-xs sm:text-sm text-[#6D756D] dark:text-[#9DA4B0] leading-relaxed">
               {t({
-                en: "Serving Bhadrawati with warmth and authenticity since 1965. Reach out for table reservations, family gatherings, or directions.",
-                mr: "१९६५ पासून अखंड सेवेत. टेबल बुकिंग, कौटुंबिक स्नेहभोजन किंवा माहितीसाठी संपर्क करा.",
+                en: "Serving Bhadrawati with warmth and authenticity since 1995. Reach out for table reservations, family gatherings, or directions.",
+                mr: "१९९५ पासून अखंड सेवेत. टेबल बुकिंग, कौटुंबिक स्नेहभोजन किंवा माहितीसाठी संपर्क करा.",
               })}
             </p>
           </div>

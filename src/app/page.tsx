@@ -10,6 +10,7 @@ import { SignatureDosaFeature } from "@/components/home/SignatureDosaFeature";
 import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { GlobalBitesSection } from "@/components/home/GlobalBitesSection";
 import { SeasonalSpecialsSection } from "@/components/home/SeasonalSpecialsSection";
+import { FoodMoodDial } from "@/components/ui/FoodMoodDial";
 import { useRestaurant } from "@/context/RestaurantContext";
 import { ShieldAlert, Star, MessageSquareQuote, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 
@@ -18,29 +19,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] pb-16 md:pb-0 transition-colors">
-      {/* Interactive Demonstration Banner */}
-      <div className="bg-[#F5F0E6] dark:bg-[#171A21] border-b border-[#E7E2D6] dark:border-[#D4AF37]/30 py-2 px-4 text-center">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-[#6D756D] dark:text-[#9DA4B0] gap-2">
-          <div className="flex items-center gap-2">
-            <ShieldAlert className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37] shrink-0" />
-            <span>
-              <strong>Client Demonstration Mode:</strong> Local reactive database active. Any price or availability edit in{" "}
-              <Link href="/admin" className="text-[#174D35] dark:text-[#D4AF37] underline font-semibold">
-                Admin Dashboard
-              </Link>{" "}
-              immediately reflects across this menu in real-time.
-            </span>
-          </div>
-
-          <Link
-            href="/admin"
-            className="text-[11px] font-bold text-white dark:text-[#0F1115] bg-[#174D35] dark:bg-[#D4AF37] px-3 py-1 rounded-full uppercase tracking-wider hover:bg-[#123C29] dark:hover:bg-[#F9E79F] transition-colors shrink-0 shadow-sm"
-          >
-            Launch Admin
-          </Link>
-        </div>
-      </div>
-
       {/* Main Navigation Header */}
       <Header />
 
@@ -155,6 +133,9 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+
+      {/* Food Mood Dial Decider Widget */}
+      <FoodMoodDial />
 
       {/* Footer */}
       <Footer />

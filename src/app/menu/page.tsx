@@ -7,6 +7,8 @@ import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import { FoodCard } from "@/components/ui/FoodCard";
 import { DishModal } from "@/components/ui/DishModal";
+import { DosaSizzleASMR } from "@/components/ui/DosaSizzleASMR";
+import { FoodMoodDial } from "@/components/ui/FoodMoodDial";
 import { useRestaurant } from "@/context/RestaurantContext";
 import { MenuItem } from "@/types";
 import {
@@ -101,10 +103,15 @@ function MenuContent() {
 
             <p className="text-xs sm:text-sm text-[#6D756D] dark:text-[#9DA4B0] max-w-xl mx-auto">
               {t({
-                en: "Authentic 1965 legacy, South Indian specialties, sizzlers & Global Bites. Tap any dish for details.",
-                mr: "१९६५ पासूनचा वारसा, खास डोसे, सूप्स आणि आंतरराष्ट्रीय पदार्थ. सविस्तर माहितीसाठी पदार्थावर क्लिक करा.",
+                en: "Authentic 1995 legacy, South Indian specialties, sizzlers & Global Bites. Tap any dish for details.",
+                mr: "१९९५ पासूनचा वारसा, खास डोसे, सूप्स आणि आंतरराष्ट्रीय पदार्थ. सविस्तर माहितीसाठी पदार्थावर क्लिक करा.",
               })}
             </p>
+
+            {/* Crispy Dosa Sizzle ASMR Sound Bite Trigger */}
+            <div className="flex justify-center pt-2">
+              <DosaSizzleASMR variant="compact" />
+            </div>
 
             {/* Fast Search Input Bar */}
             <div className="max-w-md mx-auto pt-3">
@@ -409,6 +416,9 @@ function MenuContent() {
 
       {/* Dish Details Modal */}
       <DishModal dish={activeDish} onClose={() => setActiveDish(null)} />
+
+      {/* Futuristic Food Mood Dial Decider */}
+      <FoodMoodDial />
 
       <Footer />
     </div>

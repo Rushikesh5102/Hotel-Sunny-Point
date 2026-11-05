@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { MenuItem } from "@/types";
 import { useRestaurant } from "@/context/RestaurantContext";
-import { X, Clock, Sparkles, CheckCircle2, Share2, Flame, Heart } from "lucide-react";
+import { X, Clock, Sparkles, CheckCircle2, Share2, Flame, Heart, MessageCircle } from "lucide-react";
+import { DosaSizzleASMR } from "@/components/ui/DosaSizzleASMR";
 
 interface DishModalProps {
   dish: MenuItem | null;
@@ -24,6 +25,16 @@ export function DishModal({ dish, onClose }: DishModalProps) {
       navigator.clipboard.writeText(url);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  const handleWhatsAppShare = () => {
+    if (typeof window !== "undefined") {
+      const dishTitle = t(dish.name);
+      const text = encodeURIComponent(
+        `🍽️ *Hotel Sunny Point, Bhadrawati* (Pure Veg • Est. 1995)\n\nLook at this delicious dish:\n*${dishTitle}* — ₹${dish.price}\n"${dish.shortDescription.en}"\n\nExplore digital menu:\n${window.location.origin}/menu`
+      );
+      window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
     }
   };
 
@@ -178,19 +189,40 @@ export function DishModal({ dish, onClose }: DishModalProps) {
             </div>
           )}
 
-          {/* Share Button */}
-          <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#2A3140] flex items-center justify-between">
-            <button
-              onClick={handleShare}
-              className="flex items-center gap-2 text-xs font-semibold text-[#174D35] hover:text-[#225E43] dark:text-[#D4AF37] dark:hover:text-[#F9E79F] transition-colors"
-            >
-              <Share2 className="w-4 h-4" />
-              <span>{copied ? "Link Copied to Clipboard!" : "Share this Dish"}</span>
-            </button>
+          {/* Dosa Sizzle ASMR for South Indian items */}
+          {(dish.categoryId === "cat-south-indian" || dish.name.en.toLowerCase().includes("dosa")) && (
+            <div className="p-3 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-between">
+              <span className="text-xs font-semibold text-[#174D35] dark:text-[#D4AF37]">
+                Tawa Audio Preview
+              </span>
+              <DosaSizzleASMR variant="compact" />
+            </div>
+          )}
+
+          {/* Share Actions */}
+          <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#2A3140] flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleWhatsAppShare}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#128C7E] dark:text-[#25D366] border border-[#25D366]/30 transition-all active:scale-95"
+                title="Share dish details with family on WhatsApp"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp Family</span>
+              </button>
+
+              <button
+                onClick={handleShare}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-[#6D756D] hover:text-[#292D29] dark:text-[#9DA4B0] dark:hover:text-white border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
+              >
+                <Share2 className="w-3.5 h-3.5" />
+                <span>{copied ? "Copied!" : "Copy Link"}</span>
+              </button>
+            </div>
 
             <button
               onClick={onClose}
-              className="px-5 py-2 rounded-xl text-xs font-semibold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#212631] dark:hover:bg-[#2A3140] shadow-sm transition-colors"
+              className="px-5 py-2 rounded-xl text-xs font-semibold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#212631] dark:hover:bg-[#2A3140] shadow-sm transition-colors ml-auto"
             >
               Close
             </button>

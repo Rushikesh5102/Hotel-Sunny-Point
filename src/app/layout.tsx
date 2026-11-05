@@ -3,6 +3,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { RestaurantProvider } from "@/context/RestaurantContext";
 import { MobileBottomBar } from "@/components/ui/MobileBottomBar";
+import { LateNightWhisper } from "@/components/ui/LateNightWhisper";
+import { MarigoldConfetti } from "@/components/ui/MarigoldConfetti";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hotelsunnypoint.com";
 
@@ -13,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Hotel Sunny Point",
   },
   description:
-    "Serving Bhadrawati since 1965. Iconic Masala Dosa, authentic South Indian delicacies, and curated Global Bites in a modern pure vegetarian family restaurant.",
+    "Serving Bhadrawati since 1995. Iconic Masala Dosa, authentic South Indian delicacies, and curated Global Bites in a modern pure vegetarian family restaurant.",
   keywords: [
     "Hotel Sunny Point",
     "Bhadrawati restaurant",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "Hotel Sunny Point",
     title: "Hotel Sunny Point — The Taste of Legacy | 100% Pure Veg, Bhadrawati",
     description:
-      "Historic culinary landmark serving Bhadrawati since 1965. Pioneers of Dosa culture since 1995. Explore our full digital menu.",
+      "Historic culinary landmark serving Bhadrawati since 1995. Pioneers of Dosa culture since 1995. Explore our full digital menu.",
     images: [
       {
         url: "/assets/brand/facade.jpg",
@@ -65,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hotel Sunny Point — Pure Veg Restaurant in Bhadrawati",
     description:
-      "Serving authentic South Indian dosas and Global Bites since 1965. Browse full digital menu with live pricing.",
+      "Serving authentic South Indian dosas and Global Bites since 1995. Browse full digital menu with live pricing.",
     images: ["/assets/brand/facade.jpg"],
   },
   robots: {
@@ -196,6 +198,8 @@ export default function RootLayout({
           <RestaurantProvider>
             {children}
             <MobileBottomBar />
+            <MarigoldConfetti />
+            <LateNightWhisper />
           </RestaurantProvider>
         </ThemeProvider>
       </body>

@@ -2,11 +2,11 @@
   <img src="public/assets/brand/logo.jpg" alt="Hotel Sunny Point Logo" width="130" style="border-radius: 50%; border: 3px solid #D4AF37; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);" />
 
   # Hotel Sunny Point — Pure Veg, Bhadrawati
-  ### *The Taste of Legacy — Serving Bhadrawati Since 1965*
+  ### *The Taste of Legacy — Serving Bhadrawati Since 1995*
 
   <p align="center">
     <b>Main Road, Near Old Bus Stand, Bhadrawati, Chandrapur District, Maharashtra 442902</b><br />
-    <i>South Indian Dosa Traditions Since 1995 • 100% Pure Vegetarian Multi-Cuisine Dining</i>
+    <i>South Indian Dosa Traditions & Curated Global Bites Since 1995 • 100% Pure Vegetarian Multi-Cuisine Dining</i>
   </p>
 
   <p align="center">
@@ -69,7 +69,7 @@ Here is a visual overview of the application verified under external browser aut
 
 ## 1. Executive Overview
 
-**Hotel Sunny Point** is an iconic 3-story pure vegetarian culinary institution located at Main Road, Near Old Bus Stand, Bhadrawati, Chandrapur District, Maharashtra. Founded in 1965 and pioneering authentic South Indian dosa traditions in Bhadrawati since 1995, the restaurant serves thousands of local families, commuters, and travelers daily.
+**Hotel Sunny Point** is an iconic 3-story pure vegetarian culinary institution located at Main Road, Near Old Bus Stand, Bhadrawati, Chandrapur District, Maharashtra. Founded in 1995 and pioneering authentic South Indian dosa traditions and Global Bites in Bhadrawati, the restaurant serves thousands of local families, commuters, and travelers daily.
 
 This application is a **custom-engineered digital menu and restaurant operations platform** designed specifically for Hotel Sunny Point. It combines a mobile-first, cartless digital dining experience with an administrative dashboard and a multi-tenant Supabase relational backend architecture.
 

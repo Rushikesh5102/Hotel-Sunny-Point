@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useRestaurant } from "@/context/RestaurantContext";
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
 import {
@@ -20,25 +20,61 @@ import {
   RotateCcw,
   CheckCircle2,
   ShieldCheck,
+  LogOut,
+  Lock,
 } from "lucide-react";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
   const { restaurant, resetToDefaults } = useRestaurant();
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [resetSuccess, setResetSuccess] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
 
-  // If on /admin/login, don't show the dashboard sidebar
+  // If on /admin/login, don't show the dashboard sidebar or check auth
   const isLoginPage = pathname === "/admin/login";
+
+  useEffect(() => {
+    if (isLoginPage) return;
+    if (typeof window !== "undefined") {
+      const auth =
+        sessionStorage.getItem("sunny_point_admin_auth") === "true" ||
+        localStorage.getItem("sunny_point_admin_auth") === "true";
+      if (!auth) {
+        setIsAuthenticated(false);
+        router.push("/admin/login");
+      } else {
+        setIsAuthenticated(true);
+      }
+    }
+  }, [pathname, isLoginPage, router]);
+
   if (isLoginPage) {
     return <>{children}</>;
+  }
+
+  // Prevent flash of admin dashboard while verifying authentication
+  if (isAuthenticated === null) {
+    return (
+      <div className="min-h-screen bg-[#0F1115] flex flex-col items-center justify-center p-4 text-white">
+        <div className="w-8 h-8 border-2 border-[#D4AF37] border-t-transparent rounded-full animate-spin mb-4" />
+        <p className="text-xs font-semibold tracking-wider text-[#9DA4B0] uppercase">
+          Verifying Admin Authorization...
+        </p>
+      </div>
+    );
+  }
+
+  if (isAuthenticated === false) {
+    return null;
   }
 
   const navItems = [
     { href: "/admin", label: "Dashboard Overview", icon: LayoutDashboard },
     { href: "/admin/menu", label: "Menu Management", icon: UtensilsCrossed },
     { href: "/admin/categories", label: "Category Manager", icon: Layers },
-    { href: "/admin/promotions", label: "Promotions & Offers", icon: Sparkles },
+    { href: "/admin/promotions", label: "Promotions & Coupons", icon: Sparkles },
     { href: "/admin/feedback", label: "Guest Feedback", icon: MessageSquare },
     { href: "/admin/qr", label: "QR Code Generator", icon: QrCode },
     { href: "/admin/settings", label: "Restaurant Settings", icon: Settings },
@@ -50,6 +86,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       setResetSuccess(true);
       setTimeout(() => setResetSuccess(false), 3000);
     }
+  };
+
+  const handleLogout = () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("sunny_point_admin_auth");
+      sessionStorage.removeItem("sunny_point_admin_auth");
+    }
+    router.push("/admin/login");
   };
 
   return (
@@ -121,6 +165,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <RotateCcw className="w-3 h-3 text-[#E07A2B]" />
             <span>{resetSuccess ? "Reset Applied!" : "Reset Demo Data"}</span>
           </button>
+
+          {/* Sign Out Button */}
+          <button
+            onClick={handleLogout}
+            className="flex items-center justify-center gap-2 w-full px-3.5 py-2 rounded-xl text-[11px] font-semibold text-red-600 dark:text-red-400 hover:bg-red-500/10 border border-red-500/20 transition-colors"
+          >
+            <LogOut className="w-3 h-3" />
+            <span>Sign Out</span>
+          </button>
         </div>
       </aside>
 
@@ -159,12 +212,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <ExternalLink className="w-3 h-3" />
             </Link>
 
-            <div className="flex items-center gap-2 pl-3 border-l border-[#E7E2D6] dark:border-[#2A3140] text-xs">
-              <div className="w-7 h-7 rounded-full bg-[#174D35]/15 dark:bg-[#D4AF37]/20 border border-[#174D35] dark:border-[#D4AF37] flex items-center justify-center font-bold text-[#174D35] dark:text-[#D4AF37] text-xs">
-                A
-              </div>
-              <span className="hidden md:inline font-medium text-[#6D756D] dark:text-gray-300">Admin</span>
-            </div>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-red-600 dark:text-red-400 hover:bg-red-500/10 border border-red-500/20 transition-colors"
+              title="Sign Out of Admin"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Sign Out</span>
+            </button>
           </div>
         </header>
 
@@ -229,6 +284,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   <span>Customer Menu</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </Link>
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center justify-center gap-2 w-full py-2 rounded-xl text-xs font-semibold text-red-500 hover:bg-red-500/10 border border-red-500/30 transition-colors"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                  <span>Sign Out</span>
+                </button>
               </div>
             </div>
           </div>

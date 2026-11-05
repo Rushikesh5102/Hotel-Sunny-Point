@@ -10,6 +10,7 @@ import { DishModal } from "@/components/ui/DishModal";
 import { useRestaurant } from "@/context/RestaurantContext";
 import { MenuItem } from "@/types";
 import { Sparkles, Tag, CloudRain, Copy, Check, ArrowRight } from "lucide-react";
+import { triggerMarigoldConfetti } from "@/components/ui/MarigoldConfetti";
 
 export default function OffersPage() {
   const { restaurant, t } = useRestaurant();
@@ -20,7 +21,8 @@ export default function OffersPage() {
     if (typeof window !== "undefined") {
       navigator.clipboard.writeText(code);
       setCopiedCode(code);
-      setTimeout(() => setCopiedCode(null), 2000);
+      triggerMarigoldConfetti();
+      setTimeout(() => setCopiedCode(null), 2500);
     }
   };
 

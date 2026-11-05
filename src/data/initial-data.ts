@@ -1494,11 +1494,11 @@ export const initialSunnyPointRestaurant: Restaurant = {
       hi: "द टेस्ट ऑफ लेगेसी — १००% शुद्ध शाकाहारी",
     },
     heritageText: {
-      en: "Serving Bhadrawati Since 1965. Bringing authentic South Indian dosa traditions since 1995.",
-      mr: "१९६५ पासून भद्रावतीकरांच्या सेवेत. १९९५ पासून डोशाचा अस्सल स्वाद सादर करणारी अग्रगण्य संस्था.",
-      hi: "१९६५ से भद्रावती में सेवारत। १९९५ से प्रामाणिक दक्षिण भारतीय डोसा परंपरा के अग्रणी।",
+      en: "Serving Bhadrawati Since 1995. The pioneer of authentic South Indian dosas and curated Global Bites.",
+      mr: "१९९५ पासून भद्रावतीकरांच्या सेवेत. डोशाचा अस्सल स्वाद आणि समृद्ध शाकाहारी मेजवानी.",
+      hi: "१९९५ से भद्रावती में सेवारत। प्रामाणिक दक्षिण भारतीय डोसा और समृद्ध शाकाहारी व्यंजन।",
     },
-    foundingYear: 1965,
+    foundingYear: 1995,
     southIndianOriginYear: 1995,
     dietaryNote: {
       en: "100% Pure Vegetarian Restaurant. Jain food options available on request.",
@@ -1518,7 +1518,7 @@ export const initialSunnyPointRestaurant: Restaurant = {
       lat: 20.1017,
       lng: 79.1205,
     },
-    googleMapsUrl: "https://maps.google.com/?q=Hotel+Sunny+Point+Bhadrawati",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Sunny+Point+Bhadrawati+Maharashtra+442902",
     instagramUrl: "https://www.instagram.com/hotelsunnypoint/",
     operatingHours: {
       days: {

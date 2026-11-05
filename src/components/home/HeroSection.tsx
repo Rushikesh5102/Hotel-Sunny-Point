@@ -34,7 +34,7 @@ export function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 dark:bg-[#171A21]/90 border border-[#174D35]/30 dark:border-[#D4AF37]/50 shadow-md text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-widest backdrop-blur-md"
         >
           <Sparkles className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37] animate-pulse" />
-          <span>{t({ en: "Serving Bhadrawati Since 1965", mr: "१९६५ पासून भद्रावतीकरांच्या सेवेत" })}</span>
+          <span>{t({ en: "Serving Bhadrawati Since 1995", mr: "१९९५ पासून भद्रावतीकरांच्या सेवेत" })}</span>
         </motion.div>
 
         {/* Master Logo Medallion */}
@@ -106,7 +106,7 @@ export function HeroSection() {
             href="/about"
             className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-semibold bg-white hover:bg-[#F5F0E6] text-[#292D29] border border-[#E7E2D6] hover:border-[#174D35]/50 dark:bg-[#171A21]/90 dark:hover:bg-[#212631] dark:text-white dark:border-[#2A3140] dark:hover:border-[#D4AF37]/60 shadow-sm hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
           >
-            <span>{t({ en: "Our 1965 Heritage", mr: "आमचा १९६५ चा इतिहास" })}</span>
+            <span>{t({ en: "Our 1995 Heritage", mr: "आमचा १९९५ चा इतिहास" })}</span>
           </Link>
         </motion.div>
 

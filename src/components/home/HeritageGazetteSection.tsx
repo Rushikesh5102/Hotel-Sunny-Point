@@ -26,7 +26,7 @@ export function HeritageGazetteSection() {
               <div className="relative aspect-[3/4] w-full bg-[#FAF9F3] dark:bg-[#171A21]">
                 <Image
                   src="/assets/brand/gazette-history.jpg"
-                  alt="Sunny Point Gazette - 1965 Heritage"
+                  alt="Sunny Point Gazette - 1995 Heritage"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -60,8 +60,8 @@ export function HeritageGazetteSection() {
             <div className="space-y-4 text-sm sm:text-base text-[#292D29] dark:text-[#C9CDD5] leading-relaxed">
               <p>
                 {t({
-                  en: "Before Sunny Point became a beloved destination for generations across Chandrapur district, it was a humble dream that began in 1965. Originally situated right where the current customer parking lot is today, our kitchen prepared authentic, homely meals every day with heart and dedication.",
-                  mr: "हॉटेल सनी पॉईंट हे पिढ्यान्-पिढ्यांचे लाडके ठिकाण बनण्यापूर्वी, १९६५ मध्ये एका साध्या स्वप्नातून ही सुरुवात झाली. सुरुवातीला आजच्या पार्किंगच्या जागेवर सुरू झालेले हे हॉटेल शुद्ध, घरगुती आणि मनस्वी जेवण देण्यासाठी प्रसिद्ध झाले.",
+                  en: "Before Sunny Point became a beloved destination for generations across Chandrapur district, it was a humble dream that began in 1995. Originally situated right where the current customer parking lot is today, our kitchen prepared authentic, homely meals every day with heart and dedication.",
+                  mr: "हॉटेल सनी पॉईंट हे पिढ्यान्-पिढ्यांचे लाडके ठिकाण बनण्यापूर्वी, १९९५ मध्ये एका साध्या स्वप्नातून ही सुरुवात झाली. सुरुवातीला आजच्या पार्किंगच्या जागेवर सुरू झालेले हे हॉटेल शुद्ध, घरगुती आणि मनस्वी जेवण देण्यासाठी प्रसिद्ध झाले.",
                 })}
               </p>
 
@@ -102,7 +102,7 @@ export function HeritageGazetteSection() {
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-semibold bg-white hover:bg-[#FAF9F3] text-[#174D35] border border-[#E7E2D6] dark:bg-[#171A21] dark:hover:bg-[#212631] dark:text-[#D4AF37] dark:border-[#2A3140] shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37]" />
-                <span>{t({ en: "Inspect 1965 Newspaper Poster", mr: "१९६५ चे वृत्तपत्र पोस्टर पहा" })}</span>
+                <span>{t({ en: "Inspect 1995 Newspaper Poster", mr: "१९९५ चे वृत्तपत्र पोस्टर पहा" })}</span>
               </button>
             </div>
           </div>

@@ -37,8 +37,8 @@ export function Footer() {
 
             <p className="text-xs leading-relaxed text-[#292D29] dark:text-[#C9CDD5]">
               {t({
-                en: "Serving Bhadrawati with pride since 1965. Introducing authentic South Indian dosa traditions in 1995 and curated Global Bites in a modern pure vegetarian family setting.",
-                mr: "१९६५ पासून भद्रावतीकरांच्या सेवेत अविरत सुरू असलेला स्वाद. १९९५ मध्ये अस्सल दाक्षिणात्य डोसा संस्कृती आणून आज आंतरराष्ट्रीय स्वादांची समृद्ध मेजवानी.",
+                en: "Serving Bhadrawati with pride since 1995. Bringing authentic South Indian dosa traditions and curated Global Bites in a modern pure vegetarian family setting.",
+                mr: "१९९५ पासून भद्रावतीकरांच्या सेवेत अविरत सुरू असलेला स्वाद. अस्सल दाक्षिणात्य डोसा संस्कृती आणि आंतरराष्ट्रीय स्वादांची समृद्ध मेजवानी.",
               })}
             </p>
 
@@ -89,9 +89,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/admin" className="text-[#174D35] dark:text-[#D4AF37] hover:text-[#225E43] dark:hover:text-[#F9E79F] transition-colors font-semibold flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>{t({ en: "Admin Dashboard", mr: "प्रशासन डॅशबोर्ड" })}</span>
+                <Link href="/contact" className="hover:text-[#174D35] dark:hover:text-[#D4AF37] transition-colors font-semibold">
+                  {t({ en: "Contact & Location", mr: "संपर्क व पत्ता" })}
                 </Link>
               </li>
             </ul>
@@ -147,7 +146,18 @@ export function Footer() {
                 </div>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 flex flex-col gap-2">
+                <a
+                  href={restaurant.settings.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] hover:brightness-110 font-semibold text-xs shadow-sm transition-all"
+                  title="Open Hotel Sunny Point in Google Maps"
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>{t({ en: "Get Directions on Google Maps", mr: "गुगल मॅप्सवर दिशा मिळवा" })}</span>
+                </a>
+
                 <a
                   href={restaurant.settings.instagramUrl}
                   target="_blank"

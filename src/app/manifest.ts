@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Hotel Sunny Point — The Taste of Legacy",
     short_name: "Sunny Point",
-    description: "100% Pure Vegetarian Restaurant in Bhadrawati. Iconic Masala Dosa, South Indian legacy & Global Bites since 1965.",
+    description: "100% Pure Vegetarian Restaurant in Bhadrawati. Iconic Masala Dosa, South Indian legacy & Global Bites since 1995.",
     start_url: "/",
     display: "standalone",
     background_color: "#0F1115",

@@ -14,9 +14,9 @@ export default function AboutPage() {
 
   const posters = [
     {
-      title: "Sunny Point Gazette — History Since 1965",
+      title: "Sunny Point Gazette — History Since 1995",
       src: "/assets/brand/gazette-history.jpg",
-      caption: "Documenting our 1965 humble beginnings at the current parking lot and the original ribbon-cutting ceremony.",
+      caption: "Documenting our 1995 humble beginnings at the current parking lot and the original opening ceremony.",
     },
     {
       title: "The Iconic Masala Dosa Feature",
@@ -40,7 +40,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#174D35]/10 border border-[#174D35]/20 text-[#174D35] dark:bg-[#D4AF37]/10 dark:border-[#D4AF37]/30 dark:text-[#D4AF37] text-xs font-semibold uppercase tracking-widest">
               <History className="w-3.5 h-3.5" />
-              <span>{t({ en: "Our Story • Est. 1965", mr: "आमची जीवनगाथा • स्था. १९६५" })}</span>
+              <span>{t({ en: "Our Story • Est. 1995", mr: "आमची जीवनगाथा • स्था. १९९५" })}</span>
             </div>
 
             <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-[#292D29] dark:text-white tracking-tight">
@@ -53,8 +53,8 @@ export default function AboutPage() {
 
             <p className="text-xs sm:text-sm text-[#6D756D] dark:text-[#C9CDD5] max-w-2xl mx-auto leading-relaxed">
               {t({
-                en: "For over 60 years, Hotel Sunny Point has been at the culinary heart of Bhadrawati. A pure vegetarian legacy built on uncompromising quality, authentic spices, and heartfelt hospitality.",
-                mr: "गेल्या ६ दशकांपासून हॉटेल सनी पॉईंट हे भद्रावती शहराचे एक प्रमुख खाद्यवैशिष्ट्य राहिले आहे. अस्सल मसाले, शुद्ध शाकाहारी परंपरा आणि आपुलकीचे आदरातिथ्य.",
+                en: "For 30 years since 1995, Hotel Sunny Point has been at the culinary heart of Bhadrawati. A pure vegetarian legacy built on uncompromising quality, authentic spices, and heartfelt hospitality.",
+                mr: "१९९५ पासून गेल्या ३ दशकांपासून हॉटेल सनी पॉईंट हे भद्रावती शहराचे एक प्रमुख खाद्यवैशिष्ट्य राहिले आहे. अस्सल मसाले, शुद्ध शाकाहारी परंपरा आणि आपुलकीचे आदरातिथ्य.",
               })}
             </p>
           </div>
@@ -63,11 +63,11 @@ export default function AboutPage() {
         {/* Milestone Timeline Section */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="space-y-12 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:w-0.5 before:bg-[#E7E2D6] dark:before:bg-[#2A3140]">
-            {/* Timeline Item 1: 1965 */}
+            {/* Timeline Item 1: 1995 */}
             <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div className="sm:w-5/12 sm:text-right space-y-2 pl-10 sm:pl-0 order-2 sm:order-1">
                 <span className="text-xs font-bold text-[#174D35] dark:text-[#D4AF37] tracking-widest uppercase">The Foundation</span>
-                <h3 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">1965 — Humble Beginnings</h3>
+                <h3 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">1995 — Humble Beginnings</h3>
                 <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] leading-relaxed">
                   Before Sunny Point became a landmark for generations, it began as a humble dream with simple ideas, hard work, and a passion for good food. The original kitchen and dining setup was situated where today&apos;s customer parking is located.
                 </p>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E7E2D6] dark:border-[#D4AF37]/30 shadow-lg">
                   <Image
                     src="/assets/brand/gazette-history.jpg"
-                    alt="Original opening 1965"
+                    alt="Original opening 1995"
                     fill
                     className="object-cover"
                   />

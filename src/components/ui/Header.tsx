@@ -6,7 +6,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useRestaurant } from "@/context/RestaurantContext";
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
-import { Menu, X, Globe, Phone, MapPin, Sparkles, ShieldCheck, ChevronRight } from "lucide-react";
+import { AnimatedHamburger } from "@/components/ui/AnimatedHamburger";
+import { SecretHeritageEasterEgg } from "@/components/ui/SecretHeritageEasterEgg";
+import { Globe, Phone, MapPin, Sparkles, ChevronRight, X } from "lucide-react";
 
 export function Header() {
   const pathname = usePathname();
@@ -41,9 +43,9 @@ export function Header() {
             </span>
             <span className="text-[#6D756D] dark:text-[#9DA4B0] font-medium sm:hidden">
               {t({
-                en: "Pure Veg • Since 1965",
-                mr: "शुद्ध शाकाहारी • १९६५ पासून",
-                hi: "शुद्ध शाकाहारी • १९६५ से",
+                en: "Pure Veg • Since 1995",
+                mr: "शुद्ध शाकाहारी • १९९५ पासून",
+                hi: "शुद्ध शाकाहारी • १९९५ से",
               })}
             </span>
           </div>
@@ -57,13 +59,16 @@ export function Header() {
               <span className="font-semibold">{restaurant.settings.primaryPhone}</span>
             </a>
             <span className="text-[#C6A45C]/60 dark:text-[#4A5568] hidden sm:inline">•</span>
-            <Link
-              href="/admin"
+            <a
+              href={restaurant.settings.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-1 text-[#174D35] hover:text-[#225E43] dark:text-[#D4AF37]/90 dark:hover:text-[#F9E79F] transition-colors font-medium"
+              title="Open Hotel Sunny Point on Google Maps"
             >
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Admin Dashboard</span>
-            </Link>
+              <MapPin className="w-3.5 h-3.5" />
+              <span>{t({ en: "Locate on Maps", mr: "गुगल मॅप्सवर शोधा", hi: "गूगल मैप्स पर देखें" })}</span>
+            </a>
           </div>
         </div>
       </div>
@@ -93,9 +98,11 @@ export function Header() {
                     <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></div>
                   </div>
                 </div>
-                <span className="text-[10px] sm:text-[11px] xl:text-xs text-[#174D35] dark:text-[#D4AF37] font-semibold tracking-wider uppercase whitespace-nowrap">
-                  {t({ en: "The Taste of Legacy • Est. 1965", mr: "द टेस्ट ऑफ लेगसी • स्था. १९६५" })}
-                </span>
+                <SecretHeritageEasterEgg>
+                  <span className="text-[10px] sm:text-[11px] xl:text-xs text-[#174D35] dark:text-[#D4AF37] font-semibold tracking-wider uppercase whitespace-nowrap hover:underline cursor-pointer">
+                    {t({ en: "The Taste of Legacy • Est. 1995", mr: "द टेस्ट ऑफ लेगसी • स्था. १९९५" })}
+                  </span>
+                </SecretHeritageEasterEgg>
               </div>
             </Link>
 
@@ -156,14 +163,13 @@ export function Header() {
                 <span>{t({ en: "View Menu", mr: "मेनू पहा", hi: "मेनू देखें" })}</span>
               </Link>
 
-              {/* Mobile Menu Toggle Button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-[#292D29] dark:text-[#C9CDD5] hover:text-[#174D35] dark:hover:text-white hover:bg-[#F5F0E6] dark:hover:bg-[#171A21] transition-colors"
-                aria-label="Toggle mobile menu"
-              >
-                {mobileMenuOpen ? <X className="w-6 h-6 text-[#174D35] dark:text-[#D4AF37]" /> : <Menu className="w-6 h-6" />}
-              </button>
+              {/* Mobile Animated Hamburger Button */}
+              <div className="lg:hidden">
+                <AnimatedHamburger
+                  isOpen={mobileMenuOpen}
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -265,23 +271,25 @@ export function Header() {
               </div>
             </div>
 
-            {/* Mobile Drawer Footer */}
+            {/* Mobile Drawer Footer: Direct Google Maps & Brand Legacy */}
             <div className="pt-6 border-t border-[#E7E2D6] dark:border-[#2A3140] space-y-4">
-              <Link
-                href="/admin"
+              <a
+                href={restaurant.settings.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-semibold bg-[#FFFFFF] dark:bg-[#212631] text-[#174D35] dark:text-[#D4AF37] border border-[#E7E2D6] dark:border-[#2A3140] hover:bg-[#F5F0E6] dark:hover:bg-[#2A3140] shadow-sm transition-colors"
+                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-semibold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow-md hover:brightness-110 transition-all active:scale-95"
               >
-                <ShieldCheck className="w-4 h-4" />
-                <span>Admin Management Portal</span>
-              </Link>
+                <MapPin className="w-4 h-4" />
+                <span>{t({ en: "Get Directions on Google Maps", mr: "गुगल मॅप्सवर दिशा मिळवा", hi: "गूगल मैप्स पर रास्ता देखें" })}</span>
+              </a>
 
               <div className="text-center text-[11px] text-[#6D756D] dark:text-[#9DA4B0] space-y-1">
-                <p className="flex items-center justify-center gap-1.5">
+                <p className="flex items-center justify-center gap-1.5 font-medium">
                   <MapPin className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37]" />
-                  <span>Bhadrawati, Maharashtra</span>
+                  <span>Main Road, Near Overbridge, Bhadrawati</span>
                 </p>
-                <p>Pure Vegetarian • Serving Since 1965</p>
+                <p>Pure Vegetarian • Serving Since 1995</p>
               </div>
             </div>
           </div>

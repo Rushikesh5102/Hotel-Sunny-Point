@@ -132,6 +132,9 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
         {/* Gradient overlay for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-[#171A21] via-transparent to-black/30 pointer-events-none" />
 
+        {/* Futuristic Specular Sheen Shimmer on Hover */}
+        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/15 dark:via-[#D4AF37]/15 to-transparent pointer-events-none z-20" />
+
         {/* Top Badges: Pure Veg symbol & Spiciness */}
         <div className="absolute top-3 left-3 flex items-center gap-1.5 z-10">
           <div

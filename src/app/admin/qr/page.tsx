@@ -215,7 +215,7 @@ export default function AdminQRPage() {
                 The Taste of Legacy • Pure Veg
               </p>
               <p className="text-[10px] text-gray-500">
-                Serving Bhadrawati Since 1965
+                Serving Bhadrawati Since 1995
               </p>
             </div>
           </div>
