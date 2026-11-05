@@ -5,6 +5,7 @@ import { RestaurantProvider } from "@/context/RestaurantContext";
 import { MobileBottomBar } from "@/components/ui/MobileBottomBar";
 import { LateNightWhisper } from "@/components/ui/LateNightWhisper";
 import { MarigoldConfetti } from "@/components/ui/MarigoldConfetti";
+import { Analytics } from "@vercel/analytics/next";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hotelsunnypoint.com";
 
@@ -202,6 +203,7 @@ export default function RootLayout({
             <LateNightWhisper />
           </RestaurantProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
