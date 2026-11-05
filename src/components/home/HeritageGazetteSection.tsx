@@ -11,7 +11,10 @@ export function HeritageGazetteSection() {
   const [showGazetteModal, setShowGazetteModal] = useState(false);
 
   return (
-    <section className="py-20 bg-[#F5F0E6] dark:bg-[#0F1115] border-t border-b border-[#E7E2D6] dark:border-[#2A3140]/60 relative overflow-hidden transition-colors">
+    <section
+      id="heritage-section"
+      className="py-20 bg-[#F5F0E6] dark:bg-[#0F1115] border-t border-b border-[#E7E2D6] dark:border-[#2A3140]/60 relative overflow-hidden transition-colors"
+    >
       {/* Subtle warm background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#174D35]/5 dark:bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
 
