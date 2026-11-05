@@ -9,7 +9,11 @@ import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
 import { NetworkStatusBanner } from "@/components/pwa/NetworkStatusBanner";
 import { PwaInstallPrompt } from "@/components/pwa/PwaInstallPrompt";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hotelsunnypoint.com";
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://hotel-sunny-point.vercel.app");
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -59,10 +63,11 @@ export const metadata: Metadata = {
       "Historic culinary landmark serving Bhadrawati since 1995. Pioneers of Dosa culture since 1995. Explore our full digital menu.",
     images: [
       {
-        url: "/assets/brand/facade.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Hotel Sunny Point Landmark Restaurant Building in Bhadrawati",
+        type: "image/jpeg",
+        alt: "Hotel Sunny Point — 100% Pure Veg Heritage Restaurant Since 1995, Bhadrawati",
       },
     ],
   },
@@ -71,7 +76,7 @@ export const metadata: Metadata = {
     title: "Hotel Sunny Point — Pure Veg Restaurant in Bhadrawati",
     description:
       "Serving authentic South Indian dosas and Global Bites since 1995. Browse full digital menu with live pricing.",
-    images: ["/assets/brand/facade.jpg"],
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -106,7 +111,7 @@ const restaurantSchema = {
   "@type": "Restaurant",
   name: "Hotel Sunny Point",
   alternateName: "हॉटेल सनी पॉईंट",
-  image: `${SITE_URL}/assets/brand/facade.jpg`,
+  image: `${SITE_URL}/og-image.jpg`,
   logo: `${SITE_URL}/assets/brand/logo.jpg`,
   url: SITE_URL,
   telephone: "+919511724562",
