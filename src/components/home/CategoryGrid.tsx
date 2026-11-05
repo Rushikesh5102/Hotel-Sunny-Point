@@ -10,7 +10,7 @@ export function CategoryGrid() {
   const { restaurant, t } = useRestaurant();
 
   return (
-    <section id="menu-section" className="py-20 bg-[#F5F0E6] dark:bg-[#0F1115] relative transition-colors">
+    <section id="menu-section" className="py-20 bg-[#F5F0E6] dark:bg-black relative transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -41,7 +41,7 @@ export function CategoryGrid() {
               <Link
                 key={cat.id}
                 href={`/menu?category=${cat.slug}`}
-                className="group relative flex flex-col justify-end h-72 rounded-2xl overflow-hidden border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/70 shadow-md hover:shadow-2xl hover:-translate-y-1.5 active:scale-[0.98] transition-all duration-300"
+                className="group relative flex flex-col justify-end h-72 rounded-2xl overflow-hidden border border-[#E7E2D6] dark:border-[#1c2028] hover:border-[#174D35] dark:hover:border-[#D4AF37]/70 shadow-md hover:shadow-2xl hover:-translate-y-1.5 active:scale-[0.98] transition-all duration-300"
               >
                 {/* Background Image */}
                 <Image
@@ -57,7 +57,7 @@ export function CategoryGrid() {
                 {/* Top Badge (if any) */}
                 {cat.badge && (
                   <div className="absolute top-3 left-3 z-10">
-                    <span className="bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md uppercase">
+                    <span className="bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md uppercase">
                       {t(cat.badge)}
                     </span>
                   </div>
@@ -69,7 +69,7 @@ export function CategoryGrid() {
                     <span className="text-[11px] font-semibold text-[#F5E8BA] dark:text-[#D4AF37] tracking-wider uppercase">
                       {itemCount} {t({ en: "Dishes", mr: "पदार्थ" })}
                     </span>
-                    <span className="w-6 h-6 rounded-full bg-white/20 group-hover:bg-[#174D35] dark:group-hover:bg-[#D4AF37] group-hover:text-white dark:group-hover:text-[#0F1115] text-white flex items-center justify-center transition-colors">
+                    <span className="w-6 h-6 rounded-full bg-white/20 group-hover:bg-[#174D35] dark:group-hover:bg-[#D4AF37] group-hover:text-white dark:group-hover:text-black text-white flex items-center justify-center transition-colors">
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>

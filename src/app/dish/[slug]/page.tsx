@@ -26,7 +26,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
 
   if (!dish) {
     return (
-      <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] text-[#292D29] dark:text-white transition-colors">
+      <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-black text-[#292D29] dark:text-white transition-colors">
         <Header />
         <main className="flex-1 flex flex-col items-center justify-center p-8 text-center space-y-4">
           <h2 className="font-serif text-3xl font-bold text-[#292D29] dark:text-white">Dish Not Found</h2>
@@ -35,7 +35,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
           </p>
           <Link
             href="/menu"
-            className="px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-all duration-300"
+            className="px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black shadow-md transition-all duration-300"
           >
             Browse Full Menu
           </Link>
@@ -51,7 +51,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] pb-16 md:pb-0 transition-colors">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-black pb-16 md:pb-0 transition-colors">
       <Header />
 
       <main className="flex-1 pb-24">
@@ -68,10 +68,10 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
 
         {/* Dish Showcase Area */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-          <div className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl overflow-hidden shadow-xl">
+          <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl overflow-hidden shadow-xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               {/* Left Column: Authentic Photography */}
-              <div className="lg:col-span-6 relative aspect-[4/3] lg:aspect-auto min-h-[350px] lg:min-h-[500px] bg-[#F5F0E6] dark:bg-[#0F1115]">
+              <div className="lg:col-span-6 relative aspect-[4/3] lg:aspect-auto min-h-[350px] lg:min-h-[500px] bg-[#F5F0E6] dark:bg-black">
                 <Image
                   src={dish.image}
                   alt={t(dish.name)}
@@ -79,14 +79,14 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-[#171A21] via-transparent to-transparent lg:hidden" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-black via-transparent to-transparent lg:hidden" />
 
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <div className="w-6 h-6 bg-white/90 dark:bg-[#0F1115]/90 border border-[#22C55E] flex items-center justify-center rounded p-1 shadow-md">
+                  <div className="w-6 h-6 bg-white/90 dark:bg-black/90 border border-[#22C55E] flex items-center justify-center rounded p-1 shadow-md">
                     <div className="w-3 h-3 rounded-full bg-[#22C55E]"></div>
                   </div>
                   {dish.isSignature && (
-                    <span className="flex items-center gap-1 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] text-xs font-bold px-2.5 py-1 rounded-full shadow-md uppercase tracking-wider">
+                    <span className="flex items-center gap-1 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black text-xs font-bold px-2.5 py-1 rounded-full shadow-md uppercase tracking-wider">
                       <Sparkles className="w-3 h-3" />
                       <span>Signature</span>
                     </span>
@@ -125,7 +125,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                         <span>Verified Price</span>
                       </span>
                     ) : (
-                      <span className="text-xs text-[#6D756D] bg-[#F5F0E6] dark:text-[#9DA4B0] dark:bg-[#0F1115] px-2 py-0.5 rounded border border-[#E7E2D6] dark:border-[#2A3140]">
+                      <span className="text-xs text-[#6D756D] bg-[#F5F0E6] dark:text-[#9DA4B0] dark:bg-black px-2 py-0.5 rounded border border-[#E7E2D6] dark:border-[#1c2028]">
                         Provisional Demo Rate
                       </span>
                     )}
@@ -138,7 +138,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                   {/* Attributes */}
                   <div className="grid grid-cols-2 gap-3 pt-2">
                     {dish.servingSize && (
-                      <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-center gap-2.5">
+                      <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-3 rounded-xl flex items-center gap-2.5">
                         <Heart className="w-4 h-4 text-[#E07A2B]" />
                         <div>
                           <p className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-bold">Portion</p>
@@ -148,7 +148,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                     )}
 
                     {dish.preparationTimeMinutes && (
-                      <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-center gap-2.5">
+                      <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-3 rounded-xl flex items-center gap-2.5">
                         <Clock className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                         <div>
                           <p className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-bold">Prep Time</p>
@@ -168,7 +168,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                         {dish.ingredients.map((ing, i) => (
                           <span
                             key={i}
-                            className="text-xs px-3 py-1 rounded-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] text-[#292D29] dark:text-[#E2E8F0] font-medium"
+                            className="text-xs px-3 py-1 rounded-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] text-[#292D29] dark:text-[#E2E8F0] font-medium"
                           >
                             {ing}
                           </span>
@@ -179,7 +179,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                 </div>
 
                 {/* Call to Order/Dine In */}
-                <div className="pt-6 border-t border-[#E7E2D6] dark:border-[#2A3140] flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="pt-6 border-t border-[#E7E2D6] dark:border-[#1c2028] flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">
                     <p className="font-semibold text-[#292D29] dark:text-white">Pure Veg Kitchen</p>
                     <p>Prepared fresh on order at Hotel Sunny Point</p>
@@ -187,7 +187,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
 
                   <a
                     href={`tel:${restaurant.settings.primaryPhone}`}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-md"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black uppercase tracking-wider transition-colors shadow-md"
                   >
                     <Phone className="w-4 h-4" />
                     <span>Call Restaurant</span>
@@ -210,7 +210,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
                 <Link
                   key={rel.id}
                   href={`/dish/${rel.slug}`}
-                  className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 rounded-2xl p-4 flex items-center gap-4 group shadow-sm hover:shadow-md transition-all"
+                  className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 rounded-2xl p-4 flex items-center gap-4 group shadow-sm hover:shadow-md transition-all"
                 >
                   <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-[#F5F0E6] dark:bg-black shrink-0">
                     <Image

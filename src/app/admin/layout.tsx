@@ -57,7 +57,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   // Prevent flash of admin dashboard while verifying authentication
   if (isAuthenticated === null) {
     return (
-      <div className="min-h-screen bg-[#0F1115] flex flex-col items-center justify-center p-4 text-white">
+      <div className="min-h-screen bg-black flex flex-col items-center justify-center p-4 text-white">
         <div className="w-8 h-8 border-2 border-[#D4AF37] border-t-transparent rounded-full animate-spin mb-4" />
         <p className="text-xs font-semibold tracking-wider text-[#9DA4B0] uppercase">
           Verifying Admin Authorization...
@@ -97,12 +97,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F3] dark:bg-[#0B0D10] text-[#292D29] dark:text-[#F8F9FA] flex flex-col lg:flex-row transition-colors duration-200">
+    <div className="min-h-screen bg-[#FAF9F3] dark:bg-black text-[#292D29] dark:text-[#F8F9FA] flex flex-col lg:flex-row transition-colors duration-200">
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex flex-col justify-between w-64 bg-white dark:bg-[#12151C] border-r border-[#E7E2D6] dark:border-[#2A3140] p-5 shrink-0 min-h-screen sticky top-0 h-screen overflow-y-auto transition-colors">
+      <aside className="hidden lg:flex flex-col justify-between w-64 bg-white dark:bg-black border-r border-[#E7E2D6] dark:border-[#1c2028] p-5 shrink-0 min-h-screen sticky top-0 h-screen overflow-y-auto transition-colors">
         <div className="space-y-6">
           {/* Brand Card in Admin */}
-          <div className="flex items-center gap-3 pb-5 border-b border-[#E7E2D6] dark:border-[#2A3140]">
+          <div className="flex items-center gap-3 pb-5 border-b border-[#E7E2D6] dark:border-[#1c2028]">
             <div className="relative w-11 h-11 rounded-full overflow-hidden border border-[#174D35] dark:border-[#D4AF37] shrink-0">
               <Image
                 src={restaurant.settings.logoUrl}
@@ -130,11 +130,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   href={item.href}
                   className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                     isActive
-                      ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow-md"
-                      : "text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#174D35] dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#1C212C]"
+                      ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black shadow-md"
+                      : "text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#174D35] dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#111111]"
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? "text-white dark:text-[#0F1115]" : "text-[#174D35] dark:text-[#D4AF37]"}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? "text-white dark:text-black" : "text-[#174D35] dark:text-[#D4AF37]"}`} />
                   <span>{item.label}</span>
                 </Link>
               );
@@ -143,12 +143,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
 
         {/* Sidebar Bottom Controls */}
-        <div className="space-y-3 pt-6 border-t border-[#E7E2D6] dark:border-[#2A3140]">
+        <div className="space-y-3 pt-6 border-t border-[#E7E2D6] dark:border-[#1c2028]">
           {/* Quick link to live customer menu */}
           <Link
             href="/menu"
             target="_blank"
-            className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-[#FAF9F3] dark:bg-[#1C212C] hover:bg-[#F5F0E6] dark:hover:bg-[#252C3B] text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
+            className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-[#FAF9F3] dark:bg-black hover:bg-[#F5F0E6] dark:hover:bg-[#111111] text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] border border-[#E7E2D6] dark:border-[#1c2028] transition-colors"
           >
             <span className="flex items-center gap-2">
               <ExternalLink className="w-3.5 h-3.5" />
@@ -160,7 +160,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           {/* Reset Demo Data Button */}
           <button
             onClick={handleReset}
-            className="flex items-center justify-center gap-2 w-full px-3.5 py-2 rounded-xl text-[11px] font-medium text-[#6D756D] hover:text-[#292D29] bg-[#FAF9F3] hover:bg-[#F5F0E6] dark:text-gray-400 dark:hover:text-white dark:bg-[#0F1115] dark:hover:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
+            className="flex items-center justify-center gap-2 w-full px-3.5 py-2 rounded-xl text-[11px] font-medium text-[#6D756D] hover:text-[#292D29] bg-[#FAF9F3] hover:bg-[#F5F0E6] dark:text-gray-400 dark:hover:text-white dark:bg-black dark:hover:bg-[#111111] border border-[#E7E2D6] dark:border-[#1c2028] transition-colors"
           >
             <RotateCcw className="w-3 h-3 text-[#E07A2B]" />
             <span>{resetSuccess ? "Reset Applied!" : "Reset Demo Data"}</span>
@@ -180,11 +180,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Main Admin Area */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top Header Bar */}
-        <header className="sticky top-0 z-30 bg-white/90 dark:bg-[#12151C]/90 backdrop-blur-md border-b border-[#E7E2D6] dark:border-[#2A3140] px-4 sm:px-6 py-3 flex items-center justify-between transition-colors">
+        <header className="sticky top-0 z-30 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-[#E7E2D6] dark:border-[#1c2028] px-4 sm:px-6 py-3 flex items-center justify-between transition-colors">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-              className="lg:hidden p-2 rounded-lg text-[#6D756D] dark:text-gray-400 hover:text-[#292D29] dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#1C212C]"
+              className="lg:hidden p-2 rounded-lg text-[#6D756D] dark:text-gray-400 hover:text-[#292D29] dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#111111]"
             >
               {mobileSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -206,7 +206,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <Link
               href="/menu"
               target="_blank"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow transition-colors"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black shadow transition-colors"
             >
               <span>Customer View</span>
               <ExternalLink className="w-3 h-3" />
@@ -230,9 +230,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               className="fixed inset-0 bg-black/70 backdrop-blur-sm"
               onClick={() => setMobileSidebarOpen(false)}
             />
-            <div className="fixed inset-y-0 left-0 w-64 bg-white dark:bg-[#12151C] border-r border-[#E7E2D6] dark:border-[#2A3140] p-5 shadow-2xl flex flex-col justify-between transition-colors">
+            <div className="fixed inset-y-0 left-0 w-64 bg-white dark:bg-black border-r border-[#E7E2D6] dark:border-[#1c2028] p-5 shadow-2xl flex flex-col justify-between transition-colors">
               <div className="space-y-6">
-                <div className="flex items-center justify-between pb-4 border-b border-[#E7E2D6] dark:border-[#2A3140]">
+                <div className="flex items-center justify-between pb-4 border-b border-[#E7E2D6] dark:border-[#1c2028]">
                   <div className="flex items-center gap-2">
                     <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#174D35] dark:border-[#D4AF37]">
                       <Image
@@ -260,8 +260,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                         onClick={() => setMobileSidebarOpen(false)}
                         className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold ${
                           isActive
-                            ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115]"
-                            : "text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#174D35] dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#1C212C]"
+                            ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black"
+                            : "text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#174D35] dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#111111]"
                         }`}
                       >
                         <Icon className="w-4 h-4" />
@@ -272,14 +272,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 </nav>
               </div>
 
-              <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#2A3140] space-y-2">
+              <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#1c2028] space-y-2">
                 <div className="flex justify-center pb-2">
                   <ThemeSwitcher variant="pill" />
                 </div>
                 <Link
                   href="/menu"
                   target="_blank"
-                  className="flex items-center justify-center gap-2 w-full py-2 rounded-xl bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] text-xs font-bold transition-colors"
+                  className="flex items-center justify-center gap-2 w-full py-2 rounded-xl bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black text-xs font-bold transition-colors"
                 >
                   <span>Customer Menu</span>
                   <ExternalLink className="w-3.5 h-3.5" />

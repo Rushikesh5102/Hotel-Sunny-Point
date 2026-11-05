@@ -46,7 +46,7 @@ export function MobileBottomBar() {
   return (
     <nav
       aria-label="Mobile Navigation"
-      className="fixed bottom-0 inset-x-0 z-40 bg-[#FAF9F3]/95 dark:bg-[#0F1115]/95 backdrop-blur-xl border-t border-[#E7E2D6] dark:border-[#2A3140]/90 md:hidden shadow-[0_-8px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_-8px_30px_rgba(0,0,0,0.6)] pb-safe transition-all"
+      className="fixed bottom-0 inset-x-0 z-40 bg-[#FAF9F3]/95 dark:bg-black/95 backdrop-blur-xl border-t border-[#E7E2D6] dark:border-[#1c2028] md:hidden shadow-[0_-8px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_-8px_30px_rgba(0,0,0,0.6)] pb-safe transition-all"
     >
       <div className="grid grid-cols-5 items-center justify-around h-16 max-w-lg mx-auto px-2">
         {navItems.map((item) => {

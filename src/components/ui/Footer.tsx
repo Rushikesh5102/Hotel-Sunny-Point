@@ -11,9 +11,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#F5F0E6] dark:bg-[#0B0D10] text-[#6D756D] dark:text-[#9DA4B0] border-t border-[#E7E2D6] dark:border-[#2A3140]/80 pt-16 pb-10 transition-colors">
+    <footer className="bg-[#F5F0E6] dark:bg-black text-[#6D756D] dark:text-[#9DA4B0] border-t border-[#E7E2D6] dark:border-[#1c2028] pt-16 pb-10 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#E7E2D6] dark:border-[#1F2532]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#E7E2D6] dark:border-[#1c2028]">
           {/* Col 1: Brand & Legacy */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -151,7 +151,7 @@ export function Footer() {
                   href={restaurant.settings.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] hover:brightness-110 font-semibold text-xs shadow-sm transition-all"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black hover:brightness-110 font-semibold text-xs shadow-sm transition-all"
                   title="Open Hotel Sunny Point in Google Maps"
                 >
                   <MapPin className="w-3.5 h-3.5" />
@@ -162,7 +162,7 @@ export function Footer() {
                   href={restaurant.settings.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white dark:bg-[#171A21] hover:bg-[#FAF9F3] dark:hover:bg-[#212631] text-[#174D35] dark:text-[#D4AF37] border border-[#E7E2D6] dark:border-[#2A3140] transition-colors shadow-sm"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white dark:bg-black hover:bg-[#FAF9F3] dark:hover:bg-[#111111] text-[#174D35] dark:text-[#D4AF37] border border-[#E7E2D6] dark:border-[#1c2028] transition-colors shadow-sm"
                 >
                   <Instagram className="w-4 h-4 text-[#E1306C]" />
                   <span className="font-medium">@hotelsunnypoint</span>
@@ -189,7 +189,7 @@ export function Footer() {
               href="https://github.com/Rushikesh5102"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 text-[#174D35] dark:text-[#D4AF37] hover:border-[#174D35] dark:hover:border-[#D4AF37] font-semibold transition-all hover:scale-105 shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/40 text-[#174D35] dark:text-[#D4AF37] hover:border-[#174D35] dark:hover:border-[#D4AF37] font-semibold transition-all hover:scale-105 shadow-sm"
               title="Designed & Developed by Rushikesh Pattiwar"
             >
               <span>Designed &amp; Developed by <strong>Rushikesh Pattiwar</strong></span>

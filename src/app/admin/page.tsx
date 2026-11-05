@@ -77,13 +77,13 @@ export default function AdminDashboardPage() {
         <div className="flex items-center gap-3">
           <Link
             href="/admin/menu"
-            className="px-4 py-2 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-colors"
+            className="px-4 py-2 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black shadow-md transition-colors"
           >
             + Add New Dish
           </Link>
           <Link
             href="/admin/qr"
-            className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-[#1C212C] hover:bg-[#F5F0E6] dark:hover:bg-[#252C3B] text-[#292D29] dark:text-white border border-[#E7E2D6] dark:border-[#2A3140] flex items-center gap-1.5 transition-colors shadow-sm dark:shadow-none"
+            className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-black hover:bg-[#F5F0E6] dark:hover:bg-[#111111] text-[#292D29] dark:text-white border border-[#E7E2D6] dark:border-[#1c2028] flex items-center gap-1.5 transition-colors shadow-sm dark:shadow-none"
           >
             <QrCode className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37]" />
             <span>Print QR Card</span>
@@ -93,7 +93,7 @@ export default function AdminDashboardPage() {
 
       {/* Stat Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
+        <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
           <div className="flex items-center justify-between text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             <span>Total Menu Items</span>
             <UtensilsCrossed className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
@@ -104,7 +104,7 @@ export default function AdminDashboardPage() {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
+        <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
           <div className="flex items-center justify-between text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             <span>Live Availability</span>
             <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
@@ -117,7 +117,7 @@ export default function AdminDashboardPage() {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
+        <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
           <div className="flex items-center justify-between text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             <span>Active Categories</span>
             <Layers className="w-4 h-4 text-[#E07A2B]" />
@@ -128,7 +128,7 @@ export default function AdminDashboardPage() {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
+        <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-5 rounded-2xl space-y-2 shadow-sm dark:shadow-none transition-colors">
           <div className="flex items-center justify-between text-xs text-[#6D756D] dark:text-[#9DA4B0]">
             <span>Guest Rating</span>
             <Star className="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]" />
@@ -141,8 +141,8 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Quick Dish Live Controls Table */}
-      <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl space-y-4 p-5 sm:p-6 transition-colors">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E7E2D6] dark:border-[#2A3140]">
+      <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl space-y-4 p-5 sm:p-6 transition-colors">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E7E2D6] dark:border-[#1c2028]">
           <div>
             <h3 className="font-serif font-bold text-lg text-[#292D29] dark:text-white">Dishes Quick Control & Price Editor</h3>
             <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">
@@ -161,7 +161,7 @@ export default function AdminDashboardPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs min-w-[580px]">
             <thead>
-              <tr className="border-b border-[#E7E2D6] dark:border-[#2A3140] text-[#6D756D] dark:text-[#9DA4B0] uppercase text-[10px] tracking-wider">
+              <tr className="border-b border-[#E7E2D6] dark:border-[#1c2028] text-[#6D756D] dark:text-[#9DA4B0] uppercase text-[10px] tracking-wider">
                 <th className="pb-3 font-semibold">Dish</th>
                 <th className="pb-3 font-semibold">Category</th>
                 <th className="pb-3 font-semibold">Price (₹)</th>
@@ -170,13 +170,13 @@ export default function AdminDashboardPage() {
                 <th className="pb-3 font-semibold text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#E7E2D6] dark:divide-[#2A3140]/60">
+            <tbody className="divide-y divide-[#E7E2D6] dark:divide-[#1c2028]">
               {restaurant.items.slice(0, 8).map((dish) => {
                 const cat = restaurant.categories.find((c) => c.id === dish.categoryId);
                 const isEditingThisPrice = editingPriceId === dish.id;
 
                 return (
-                  <tr key={dish.id} className="hover:bg-[#FAF9F3] dark:hover:bg-[#171A21] transition-colors">
+                  <tr key={dish.id} className="hover:bg-[#FAF9F3] dark:hover:bg-[#111111] transition-colors">
                     {/* Dish Name + Thumbnail */}
                     <td className="py-3 pr-4">
                       <div className="flex items-center gap-3">
@@ -209,7 +209,7 @@ export default function AdminDashboardPage() {
                             type="number"
                             value={priceInput}
                             onChange={(e) => setPriceInput(Number(e.target.value))}
-                            className="w-16 bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#174D35] dark:border-[#D4AF37] rounded px-1.5 py-0.5 text-xs text-[#292D29] dark:text-white"
+                            className="w-16 bg-[#FAF9F3] dark:bg-black border border-[#174D35] dark:border-[#D4AF37] rounded px-1.5 py-0.5 text-xs text-[#292D29] dark:text-white"
                             autoFocus
                           />
                           <button

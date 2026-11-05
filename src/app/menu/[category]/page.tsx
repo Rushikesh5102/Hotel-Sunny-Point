@@ -23,12 +23,12 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
     : [];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] pb-16 md:pb-0 transition-colors">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-black pb-16 md:pb-0 transition-colors">
       <Header />
 
       <main className="flex-1 pb-24">
         {/* Category Header */}
-        <section className="bg-gradient-to-b from-[#F5F0E6] to-[#FAF9F3] dark:from-[#171A21] dark:to-[#0F1115] border-b border-[#E7E2D6] dark:border-[#2A3140]/60 py-12 px-4 sm:px-6 lg:px-8">
+        <section className="bg-gradient-to-b from-[#F5F0E6] to-[#FAF9F3] dark:from-black dark:to-black border-b border-[#E7E2D6] dark:border-[#1c2028] py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto space-y-4">
             <Link
               href="/menu"

@@ -66,7 +66,7 @@ export function Header() {
         }`}
       >
         {/* Top Banner Notice: Pure Veg & Legacy */}
-        <div className="bg-[#F5F0E6] dark:bg-gradient-to-r dark:from-[#0F1115] dark:via-[#1A1813] dark:to-[#0F1115] border-b border-[#E7E2D6] dark:border-[#2A3140]/60 text-xs py-1.5 px-4 transition-colors">
+        <div className="bg-[#F5F0E6] dark:bg-black border-b border-[#E7E2D6] dark:border-[#1c2028] text-xs py-1.5 px-4 transition-colors">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="flex h-2 w-2 relative">
@@ -113,7 +113,7 @@ export function Header() {
         </div>
 
         {/* Main Sticky Header */}
-        <header className="bg-[#FAF9F3]/95 dark:bg-[#0F1115]/95 backdrop-blur-md border-b border-[#E7E2D6] dark:border-[#2A3140]/80 transition-all shadow-md">
+        <header className="bg-[#FAF9F3]/95 dark:bg-black/95 backdrop-blur-md border-b border-[#E7E2D6] dark:border-[#1c2028] transition-all shadow-md">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               {/* Brand Logo & Name with Morph Entrance Animation */}
@@ -162,7 +162,7 @@ export function Header() {
                       className={`px-2.5 xl:px-3.5 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-all ${
                         isActive
                           ? "text-[#174D35] dark:text-[#D4AF37] bg-[#174D35]/10 dark:bg-[#D4AF37]/10 border border-[#174D35]/30 dark:border-[#D4AF37]/30 font-semibold"
-                          : "text-[#6D756D] dark:text-[#C9CDD5] hover:text-[#292D29] dark:hover:text-white hover:bg-[#F5F0E6] dark:hover:bg-[#171A21]"
+                          : "text-[#6D756D] dark:text-[#C9CDD5] hover:text-[#292D29] dark:hover:text-white hover:bg-[#F5F0E6] dark:hover:bg-black"
                       }`}
                     >
                       {t(link.label)}
@@ -179,7 +179,7 @@ export function Header() {
                 {/* Compact Multilingual Selector Button */}
                 <button
                   onClick={handleOpenLanguageModal}
-                  className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/50 text-[#174D35] dark:text-[#D4AF37] hover:border-[#174D35] dark:hover:border-[#D4AF37] shadow-sm text-xs font-bold transition-all shrink-0 hover:scale-105 active:scale-95"
+                  className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/50 text-[#174D35] dark:text-[#D4AF37] hover:border-[#174D35] dark:hover:border-[#D4AF37] shadow-sm text-xs font-bold transition-all shrink-0 hover:scale-105 active:scale-95"
                   title="Change Language / भाषा बदला / भाषा बदलें"
                   aria-label="Change Language"
                 >
@@ -192,7 +192,7 @@ export function Header() {
                 {/* Order/Browse Menu CTA (Desktop - on xl+ screens) */}
                 <Link
                   href="/menu"
-                  className="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-gradient-to-r dark:from-[#D4AF37] dark:to-[#B89324] dark:hover:from-[#E5C158] dark:hover:to-[#D4AF37] dark:text-[#0F1115] shadow-md transition-all transform active:scale-95 whitespace-nowrap shrink-0"
+                  className="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-gradient-to-r dark:from-[#D4AF37] dark:to-[#B89324] dark:hover:from-[#E5C158] dark:hover:to-[#D4AF37] dark:text-black shadow-md transition-all transform active:scale-95 whitespace-nowrap shrink-0"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>{t({ en: "View Menu", mr: "मेनू पहा", hi: "मेनू देखें" })}</span>
@@ -221,9 +221,9 @@ export function Header() {
           />
 
           {/* Drawer Content */}
-          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-[#FAF9F3] dark:bg-[#171A21] border-l border-[#E7E2D6] dark:border-[#2A3140] p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-[#FAF9F3] dark:bg-black border-l border-[#E7E2D6] dark:border-[#1c2028] p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
             <div>
-              <div className="flex items-center justify-between pb-5 border-b border-[#E7E2D6] dark:border-[#2A3140]">
+              <div className="flex items-center justify-between pb-5 border-b border-[#E7E2D6] dark:border-[#1c2028]">
                 <div className="flex items-center gap-2.5">
                   <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[#174D35] dark:border-[#D4AF37]">
                     <Image
@@ -240,14 +240,14 @@ export function Header() {
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-1.5 rounded-lg text-gray-500 hover:text-[#292D29] dark:text-gray-400 dark:hover:text-white hover:bg-[#F5F0E6] dark:hover:bg-[#212631]"
+                  className="p-1.5 rounded-lg text-gray-500 hover:text-[#292D29] dark:text-gray-400 dark:hover:text-white hover:bg-[#F5F0E6] dark:hover:bg-[#111111]"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Mobile Drawer Theme & Language Controls */}
-              <div className="my-4 p-3 bg-[#F5F0E6] dark:bg-[#0F1115] rounded-xl border border-[#E7E2D6] dark:border-[#2A3140] space-y-3">
+              <div className="my-4 p-3 bg-[#F5F0E6] dark:bg-black rounded-xl border border-[#E7E2D6] dark:border-[#1c2028] space-y-3">
                 {/* Theme Switcher Row */}
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-bold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider">
@@ -257,7 +257,7 @@ export function Header() {
                 </div>
 
                 {/* Language Selector */}
-                <div className="pt-2 border-t border-[#E7E2D6] dark:border-[#2A3140]">
+                <div className="pt-2 border-t border-[#E7E2D6] dark:border-[#1c2028]">
                   <p className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-bold tracking-wider mb-2 flex items-center gap-1.5">
                     <Globe className="w-3 h-3 text-[#174D35] dark:text-[#D4AF37]" />
                     <span>{t({ en: "Language / भाषा", mr: "भाषा निवडा", hi: "भाषा चुनें" })}</span>
@@ -272,8 +272,8 @@ export function Header() {
                           onClick={() => setLanguage(code)}
                           className={`py-1.5 px-2 rounded-lg text-xs font-bold text-center transition-all ${
                             isSelected
-                              ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow"
-                              : "bg-white dark:bg-[#171A21] text-[#292D29] dark:text-gray-300 hover:text-[#174D35] dark:hover:text-white border border-[#E7E2D6] dark:border-[#2A3140]"
+                              ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black shadow"
+                              : "bg-white dark:bg-black text-[#292D29] dark:text-gray-300 hover:text-[#174D35] dark:hover:text-white border border-[#E7E2D6] dark:border-[#1c2028]"
                           }`}
                         >
                           {labels[code]}
@@ -296,7 +296,7 @@ export function Header() {
                       className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium transition-all ${
                         isActive
                           ? "text-[#174D35] dark:text-[#D4AF37] bg-[#174D35]/10 dark:bg-[#D4AF37]/15 font-semibold"
-                          : "text-[#292D29] dark:text-[#C9CDD5] hover:text-[#174D35] dark:hover:text-white hover:bg-[#F5F0E6] dark:hover:bg-[#212631]"
+                          : "text-[#292D29] dark:text-[#C9CDD5] hover:text-[#174D35] dark:hover:text-white hover:bg-[#F5F0E6] dark:hover:bg-[#111111]"
                       }`}
                     >
                       <span>{t(link.label)}</span>
@@ -308,13 +308,13 @@ export function Header() {
             </div>
 
             {/* Mobile Drawer Footer: Direct Google Maps & Brand Legacy */}
-            <div className="pt-6 border-t border-[#E7E2D6] dark:border-[#2A3140] space-y-4">
+            <div className="pt-6 border-t border-[#E7E2D6] dark:border-[#1c2028] space-y-4">
               <a
                 href={restaurant.settings.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-semibold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow-md hover:brightness-110 transition-all active:scale-95"
+                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-semibold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black shadow-md hover:brightness-110 transition-all active:scale-95"
               >
                 <MapPin className="w-4 h-4" />
                 <span>{t({ en: "Get Directions on Google Maps", mr: "गुगल मॅप्सवर दिशा मिळवा", hi: "गूगल मैप्स पर रास्ता देखें" })}</span>

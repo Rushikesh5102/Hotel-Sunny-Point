@@ -32,7 +32,7 @@ export default function AdminQRPage() {
         width: 600,
         margin: 2,
         color: {
-          dark: "#0F1115",
+          dark: "#000000",
           light: "#FFFFFF",
         },
       },
@@ -48,7 +48,7 @@ export default function AdminQRPage() {
         type: "svg",
         margin: 2,
         color: {
-          dark: "#0F1115",
+          dark: "#000000",
           light: "#FFFFFF",
         },
       },
@@ -96,7 +96,7 @@ export default function AdminQRPage() {
 
         <button
           onClick={handlePrint}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-colors"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black shadow-md transition-colors"
         >
           <Printer className="w-4 h-4" />
           <span>Print Table Tent Card</span>
@@ -106,7 +106,7 @@ export default function AdminQRPage() {
       {/* Configuration & Downloads (Hidden in Print) */}
       <div className="no-print grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left Config Panel */}
-        <div className="lg:col-span-5 bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl space-y-6 shadow-sm dark:shadow-none transition-colors">
+        <div className="lg:col-span-5 bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-6 rounded-2xl space-y-6 shadow-sm dark:shadow-none transition-colors">
           <div className="space-y-2">
             <h3 className="font-serif font-bold text-lg text-[#292D29] dark:text-white">QR Target URL</h3>
             <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0]">
@@ -124,7 +124,7 @@ export default function AdminQRPage() {
                 value={tableNumber}
                 onChange={(e) => setTableNumber(e.target.value)}
                 placeholder="e.g. 5, 12, or leave blank for General"
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
 
@@ -132,7 +132,7 @@ export default function AdminQRPage() {
               <label className="block text-xs font-semibold text-[#6D756D] dark:text-[#9DA4B0] uppercase tracking-wider mb-1">
                 Generated Permanent URL
               </label>
-              <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl text-xs text-[#174D35] dark:text-[#F9E79F] font-mono break-all flex items-center justify-between gap-2 transition-colors">
+              <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-3 rounded-xl text-xs text-[#174D35] dark:text-[#F9E79F] font-mono break-all flex items-center justify-between gap-2 transition-colors">
                 <span>{menuUrl}</span>
                 <a href={menuUrl} target="_blank" className="text-gray-400 hover:text-[#174D35] dark:hover:text-white shrink-0">
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -146,7 +146,7 @@ export default function AdminQRPage() {
             <div className="grid grid-cols-2 gap-3">
               <button
                 onClick={handleDownloadPNG}
-                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold bg-[#F5F0E6] hover:bg-[#EAE4D7] text-[#292D29] dark:bg-[#1C212C] dark:hover:bg-[#252C3B] dark:text-white border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
+                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold bg-[#F5F0E6] hover:bg-[#EAE4D7] text-[#292D29] dark:bg-black dark:hover:bg-[#111111] dark:text-white border border-[#E7E2D6] dark:border-[#1c2028] transition-colors"
               >
                 <Download className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37]" />
                 <span>PNG (600px)</span>
@@ -154,7 +154,7 @@ export default function AdminQRPage() {
 
               <button
                 onClick={handleDownloadSVG}
-                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold bg-[#F5F0E6] hover:bg-[#EAE4D7] text-[#292D29] dark:bg-[#1C212C] dark:hover:bg-[#252C3B] dark:text-white border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
+                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold bg-[#F5F0E6] hover:bg-[#EAE4D7] text-[#292D29] dark:bg-black dark:hover:bg-[#111111] dark:text-white border border-[#E7E2D6] dark:border-[#1c2028] transition-colors"
               >
                 <Download className="w-3.5 h-3.5 text-[#22C55E]" />
                 <span>Vector SVG</span>
@@ -164,7 +164,7 @@ export default function AdminQRPage() {
         </div>
 
         {/* Right Preview Card */}
-        <div className="lg:col-span-7 bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl flex flex-col items-center justify-center space-y-4 shadow-sm dark:shadow-none transition-colors">
+        <div className="lg:col-span-7 bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-6 rounded-2xl flex flex-col items-center justify-center space-y-4 shadow-sm dark:shadow-none transition-colors">
           <span className="text-xs text-[#6D756D] dark:text-[#9DA4B0] uppercase font-bold tracking-wider">
             Live Preview
           </span>
@@ -195,7 +195,7 @@ export default function AdminQRPage() {
           Table Tent Card Design (Print Ready)
         </h3>
 
-        <div className="max-w-md mx-auto bg-white text-[#0F1115] border-4 border-[#D4AF37] rounded-3xl p-8 shadow-2xl space-y-6 text-center">
+        <div className="max-w-md mx-auto bg-white text-black border-4 border-[#D4AF37] rounded-3xl p-8 shadow-2xl space-y-6 text-center">
           {/* Brand Header */}
           <div className="space-y-2">
             <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#D4AF37] mx-auto shadow-md relative">
@@ -208,7 +208,7 @@ export default function AdminQRPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-2xl font-bold tracking-wide text-[#0F1115] uppercase">
+              <h2 className="font-serif text-2xl font-bold tracking-wide text-black uppercase">
                 Hotel Sunny Point
               </h2>
               <p className="text-[11px] font-bold text-[#D4AF37] tracking-widest uppercase">
@@ -240,7 +240,7 @@ export default function AdminQRPage() {
 
           {/* Instructions */}
           <div className="space-y-1 text-xs">
-            <p className="font-bold text-sm text-[#0F1115]">
+            <p className="font-bold text-sm text-black">
               SCAN TO BROWSE DIGITAL MENU
             </p>
             <p className="text-gray-600 text-[11px]">

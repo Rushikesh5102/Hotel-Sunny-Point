@@ -21,7 +21,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
     return (
       <div
         onClick={() => onSelectDish && onSelectDish(dish)}
-        className={`group relative flex items-center justify-between gap-3 bg-white dark:bg-[#171A21] p-3.5 rounded-2xl border border-[#E7E2D6] dark:border-[#2A3140]/80 shadow-sm hover:border-[#174D35]/50 dark:hover:border-[#D4AF37]/50 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 cursor-pointer ${
+        className={`group relative flex items-center justify-between gap-3 bg-white dark:bg-black p-3.5 rounded-2xl border border-[#E7E2D6] dark:border-[#1c2028] shadow-sm hover:border-[#174D35]/50 dark:hover:border-[#D4AF37]/50 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 cursor-pointer ${
           !dish.isAvailable ? "opacity-75 grayscale-[30%]" : ""
         }`}
       >
@@ -30,14 +30,14 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
           <div className="flex items-center gap-1.5 mb-1 flex-wrap">
             {/* Pure Veg Badge */}
             <div
-              className="w-4 h-4 bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#22C55E] flex items-center justify-center rounded p-0.5 shrink-0"
+              className="w-4 h-4 bg-[#FAF9F3] dark:bg-black border border-[#22C55E] flex items-center justify-center rounded p-0.5 shrink-0"
               title="100% Pure Veg"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" />
             </div>
 
             {dish.isSignature && (
-              <span className="flex items-center gap-0.5 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wider">
+              <span className="flex items-center gap-0.5 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wider">
                 <Sparkles className="w-2 h-2" />
                 <span>Signature</span>
               </span>
@@ -51,7 +51,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
             )}
 
             {dish.spicinessLevel && dish.spicinessLevel > 1 && (
-              <span className="flex items-center bg-[#FAF9F3] dark:bg-[#0F1115] px-1 py-0.5 rounded text-[9px] text-[#E07A2B] font-bold border border-[#E07A2B]/40">
+              <span className="flex items-center bg-[#FAF9F3] dark:bg-black px-1 py-0.5 rounded text-[9px] text-[#E07A2B] font-bold border border-[#E07A2B]/40">
                 {Array.from({ length: dish.spicinessLevel }).map((_, i) => (
                   <Flame key={i} className="w-2 h-2 fill-[#E07A2B]" />
                 ))}
@@ -75,7 +75,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
                 <span>Verified</span>
               </span>
             ) : (
-              <span className="text-[8px] text-[#6D756D] bg-[#F5F0E6] dark:text-[#9DA4B0] dark:bg-[#212631] px-1 py-0.5 rounded">
+              <span className="text-[8px] text-[#6D756D] bg-[#F5F0E6] dark:text-[#9DA4B0] dark:bg-[#111111] px-1 py-0.5 rounded">
                 Demo Rate
               </span>
             )}
@@ -89,7 +89,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
         </div>
 
         {/* Right Image Thumbnail */}
-        <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-[#F5F0E6] dark:bg-[#1F2532] shrink-0 border border-[#E7E2D6] dark:border-[#2A3140]">
+        <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-[#F5F0E6] dark:bg-black shrink-0 border border-[#E7E2D6] dark:border-[#1c2028]">
           <Image
             src={imageError ? "/assets/brand/logo.jpg" : dish.image}
             alt={t(dish.name)}
@@ -114,12 +114,12 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
   return (
     <div
       onClick={() => onSelectDish && onSelectDish(dish)}
-      className={`group relative flex flex-col justify-between bg-white dark:bg-[#171A21] rounded-2xl border border-[#E7E2D6] dark:border-[#2A3140]/80 overflow-hidden shadow-sm hover:border-[#174D35]/50 dark:hover:border-[#D4AF37]/50 hover:shadow-xl hover:-translate-y-1.5 active:scale-[0.98] transition-all duration-300 cursor-pointer ${
+      className={`group relative flex flex-col justify-between bg-white dark:bg-black rounded-2xl border border-[#E7E2D6] dark:border-[#1c2028] overflow-hidden shadow-sm hover:border-[#174D35]/50 dark:hover:border-[#D4AF37]/50 hover:shadow-xl hover:-translate-y-1.5 active:scale-[0.98] transition-all duration-300 cursor-pointer ${
         !dish.isAvailable ? "opacity-75 grayscale-[30%]" : ""
       }`}
     >
       {/* Top Media Area */}
-      <div className="relative w-full aspect-[4/3] bg-[#F5F0E6] dark:bg-[#1F2532] overflow-hidden">
+      <div className="relative w-full aspect-[4/3] bg-[#F5F0E6] dark:bg-black overflow-hidden">
         <Image
           src={imageError ? "/assets/brand/logo.jpg" : dish.image}
           alt={t(dish.name)}
@@ -130,7 +130,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
         />
 
         {/* Gradient overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-[#171A21] via-transparent to-black/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-black via-transparent to-black/30 pointer-events-none" />
 
         {/* Futuristic Specular Sheen Shimmer on Hover */}
         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/15 dark:via-[#D4AF37]/15 to-transparent pointer-events-none z-20" />
@@ -138,14 +138,14 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
         {/* Top Badges: Pure Veg symbol & Spiciness */}
         <div className="absolute top-3 left-3 flex items-center gap-1.5 z-10">
           <div
-            className="w-5 h-5 bg-[#FAF9F3]/95 dark:bg-[#0F1115]/90 backdrop-blur-md border border-[#22C55E] flex items-center justify-center rounded p-0.5 shadow-md"
+            className="w-5 h-5 bg-[#FAF9F3]/95 dark:bg-black/90 backdrop-blur-md border border-[#22C55E] flex items-center justify-center rounded p-0.5 shadow-md"
             title="100% Pure Veg"
           >
             <div className="w-2.5 h-2.5 rounded-full bg-[#22C55E]"></div>
           </div>
 
           {dish.spicinessLevel && dish.spicinessLevel > 1 && (
-            <div className="flex items-center bg-[#FAF9F3]/90 dark:bg-[#0F1115]/80 backdrop-blur-sm px-1.5 py-0.5 rounded text-[10px] text-[#E07A2B] font-bold border border-[#E07A2B]/40">
+            <div className="flex items-center bg-[#FAF9F3]/90 dark:bg-black/80 backdrop-blur-sm px-1.5 py-0.5 rounded text-[10px] text-[#E07A2B] font-bold border border-[#E07A2B]/40">
               {Array.from({ length: dish.spicinessLevel }).map((_, i) => (
                 <Flame key={i} className="w-2.5 h-2.5 fill-[#E07A2B]" />
               ))}
@@ -156,7 +156,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
         {/* Top Right Badges: Bestseller / Signature / Chef */}
         <div className="absolute top-3 right-3 flex flex-col items-end gap-1 z-10">
           {dish.isSignature && (
-            <span className="flex items-center gap-1 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md tracking-wider uppercase">
+            <span className="flex items-center gap-1 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md tracking-wider uppercase">
               <Sparkles className="w-2.5 h-2.5" />
               <span>Signature</span>
             </span>
@@ -168,7 +168,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
             </span>
           )}
           {dish.isChefRecommendation && !dish.isSignature && !dish.isBestseller && (
-            <span className="bg-[#FAF9F3] dark:bg-[#212631]/95 text-[#174D35] dark:text-[#D4AF37] border border-[#174D35]/30 dark:border-[#D4AF37]/50 text-[10px] font-semibold px-2 py-0.5 rounded-full shadow-md">
+            <span className="bg-[#FAF9F3] dark:bg-black/95 text-[#174D35] dark:text-[#D4AF37] border border-[#174D35]/30 dark:border-[#D4AF37]/50 text-[10px] font-semibold px-2 py-0.5 rounded-full shadow-md">
               Chef&apos;s Pick
             </span>
           )}
@@ -205,7 +205,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
         </div>
 
         {/* Footer Area: Price & Prep Time */}
-        <div className="pt-2 border-t border-[#E7E2D6] dark:border-[#2A3140]/60 flex items-center justify-between">
+        <div className="pt-2 border-t border-[#E7E2D6] dark:border-[#1c2028] flex items-center justify-between">
           <div className="flex flex-col">
             <div className="flex items-baseline gap-1">
               <span className="font-bold text-lg sm:text-xl text-[#174D35] dark:text-[#F9E79F]">
@@ -221,7 +221,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
                 </span>
               ) : (
                 <span
-                  className="text-[9px] text-[#6D756D] bg-[#F5F0E6] dark:text-[#9DA4B0] dark:bg-[#212631] px-1.5 py-0.5 rounded"
+                  className="text-[9px] text-[#6D756D] bg-[#F5F0E6] dark:text-[#9DA4B0] dark:bg-[#111111] px-1.5 py-0.5 rounded"
                   title="Sample Rate for Demo. Editable in Admin."
                 >
                   Demo Rate
@@ -234,7 +234,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
           </div>
 
           {dish.preparationTimeMinutes && (
-            <div className="flex items-center gap-1 text-[11px] text-[#6D756D] dark:text-[#9DA4B0] bg-[#FAF9F3] dark:bg-[#0F1115] px-2 py-1 rounded-md border border-[#E7E2D6] dark:border-[#2A3140]/60">
+            <div className="flex items-center gap-1 text-[11px] text-[#6D756D] dark:text-[#9DA4B0] bg-[#FAF9F3] dark:bg-black px-2 py-1 rounded-md border border-[#E7E2D6] dark:border-[#1c2028]">
               <Clock className="w-3 h-3 text-[#174D35] dark:text-[#D4AF37]" />
               <span>{dish.preparationTimeMinutes} min</span>
             </div>

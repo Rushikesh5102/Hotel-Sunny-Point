@@ -46,7 +46,7 @@ export function DishModal({ dish, onClose }: DishModalProps) {
       />
 
       {/* Modal Dialog (Bottom Sheet on Mobile, Centered Card on Desktop) */}
-      <div className="relative w-full max-w-2xl bg-white dark:bg-[#171A21] border-t sm:border border-[#174D35]/30 dark:border-[#D4AF37]/40 rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 max-sm:max-h-[92vh] max-sm:mb-0 my-auto flex flex-col animate-in slide-in-from-bottom-6 sm:slide-in-from-bottom-2 duration-300">
+      <div className="relative w-full max-w-2xl bg-white dark:bg-black border-t sm:border border-[#174D35]/30 dark:border-[#D4AF37]/40 rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 max-sm:max-h-[92vh] max-sm:mb-0 my-auto flex flex-col animate-in slide-in-from-bottom-6 sm:slide-in-from-bottom-2 duration-300">
         {/* Mobile Pull Handle Indicator */}
         <div className="w-12 h-1.5 bg-gray-400/40 dark:bg-white/30 rounded-full mx-auto my-2 sm:hidden shrink-0" />
 
@@ -60,7 +60,7 @@ export function DishModal({ dish, onClose }: DishModalProps) {
         </button>
 
         {/* Hero Image */}
-        <div className="relative w-full h-52 sm:h-80 bg-[#F5F0E6] dark:bg-[#0F1115] shrink-0">
+        <div className="relative w-full h-52 sm:h-80 bg-[#F5F0E6] dark:bg-black shrink-0">
           <Image
             src={imageError ? "/assets/brand/logo.jpg" : dish.image}
             alt={t(dish.name)}
@@ -69,17 +69,17 @@ export function DishModal({ dish, onClose }: DishModalProps) {
             onError={() => setImageError(true)}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#171A21] via-transparent to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-black via-transparent to-black/40" />
 
           {/* Badges on Hero */}
           <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-white/90 dark:bg-[#0F1115]/90 border border-[#22C55E] flex items-center justify-center rounded p-1 shadow-md">
+              <div className="w-6 h-6 bg-white/90 dark:bg-black/90 border border-[#22C55E] flex items-center justify-center rounded p-1 shadow-md">
                 <div className="w-3 h-3 rounded-full bg-[#22C55E]"></div>
               </div>
 
               {dish.isSignature && (
-                <span className="flex items-center gap-1.5 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] text-xs font-bold px-3 py-1 rounded-full shadow-md tracking-wider uppercase">
+                <span className="flex items-center gap-1.5 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black text-xs font-bold px-3 py-1 rounded-full shadow-md tracking-wider uppercase">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Signature Creation</span>
                 </span>
@@ -124,7 +124,7 @@ export function DishModal({ dish, onClose }: DishModalProps) {
           {/* Key Attributes Pills */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
             {dish.preparationTimeMinutes && (
-              <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-center gap-2.5">
+              <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-3 rounded-xl flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                 <div>
                   <p className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-bold">Prep Time</p>
@@ -134,7 +134,7 @@ export function DishModal({ dish, onClose }: DishModalProps) {
             )}
 
             {dish.servingSize && (
-              <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-center gap-2.5">
+              <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-3 rounded-xl flex items-center gap-2.5">
                 <Heart className="w-4 h-4 text-[#E07A2B]" />
                 <div>
                   <p className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-bold">Serving Size</p>
@@ -144,7 +144,7 @@ export function DishModal({ dish, onClose }: DishModalProps) {
             )}
 
             {dish.spicinessLevel && (
-              <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-center gap-2.5 col-span-2 sm:col-span-1">
+              <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-3 rounded-xl flex items-center gap-2.5 col-span-2 sm:col-span-1">
                 <Flame className="w-4 h-4 text-red-500" />
                 <div>
                   <p className="text-[10px] text-[#6D756D] dark:text-[#9DA4B0] uppercase font-bold">Spice Level</p>
@@ -166,7 +166,7 @@ export function DishModal({ dish, onClose }: DishModalProps) {
                 {dish.ingredients.map((ing, i) => (
                   <span
                     key={i}
-                    className="text-xs px-3 py-1 rounded-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] text-[#292D29] dark:text-[#E2E8F0] font-medium"
+                    className="text-xs px-3 py-1 rounded-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] text-[#292D29] dark:text-[#E2E8F0] font-medium"
                   >
                     {ing}
                   </span>
@@ -177,7 +177,7 @@ export function DishModal({ dish, onClose }: DishModalProps) {
 
           {/* Pairings */}
           {dish.pairingSuggestions && dish.pairingSuggestions.length > 0 && (
-            <div className="bg-[#EDF2E9] dark:bg-[#0F1115]/70 border border-[#174D35]/30 dark:border-[#D4AF37]/30 p-4 rounded-2xl">
+            <div className="bg-[#EDF2E9] dark:bg-black/70 border border-[#174D35]/30 dark:border-[#D4AF37]/30 p-4 rounded-2xl">
               <h4 className="text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-2 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{t({ en: "Recommended Pairings", mr: "सोबत काय घ्यावे" })}</span>
@@ -189,7 +189,7 @@ export function DishModal({ dish, onClose }: DishModalProps) {
           )}
 
           {/* Share Actions */}
-          <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#2A3140] flex flex-wrap items-center justify-between gap-3">
+          <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#1c2028] flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <button
                 onClick={handleWhatsAppShare}
@@ -202,7 +202,7 @@ export function DishModal({ dish, onClose }: DishModalProps) {
 
               <button
                 onClick={handleShare}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-[#6D756D] hover:text-[#292D29] dark:text-[#9DA4B0] dark:hover:text-white border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-[#6D756D] hover:text-[#292D29] dark:text-[#9DA4B0] dark:hover:text-white border border-[#E7E2D6] dark:border-[#1c2028] transition-colors"
               >
                 <Share2 className="w-3.5 h-3.5" />
                 <span>{copied ? "Copied!" : "Copy Link"}</span>
@@ -211,7 +211,7 @@ export function DishModal({ dish, onClose }: DishModalProps) {
 
             <button
               onClick={onClose}
-              className="px-5 py-2 rounded-xl text-xs font-semibold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#212631] dark:hover:bg-[#2A3140] shadow-sm transition-colors ml-auto"
+              className="px-5 py-2 rounded-xl text-xs font-semibold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-white/10 dark:hover:bg-white/20 shadow-sm transition-colors ml-auto"
             >
               Close
             </button>

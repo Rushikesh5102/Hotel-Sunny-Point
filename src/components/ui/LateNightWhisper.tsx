@@ -38,7 +38,7 @@ export function LateNightWhisper() {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-300">
       <aside
         aria-label="Late Night Kitchen Whisper"
-        className="relative max-w-md w-full bg-[#12141A]/95 border-2 border-[#D4AF37]/50 rounded-3xl p-6 sm:p-7 shadow-2xl backdrop-blur-xl text-white text-center overflow-hidden animate-in zoom-in-95 duration-300"
+        className="relative max-w-md w-full bg-black/95 border-2 border-[#D4AF37]/50 rounded-3xl p-6 sm:p-7 shadow-2xl backdrop-blur-xl text-white text-center overflow-hidden animate-in zoom-in-95 duration-300"
       >
         {/* Ambient starry backdrop glow */}
         <div className="absolute -top-16 -right-16 w-36 h-36 bg-[#D4AF37]/20 rounded-full blur-3xl pointer-events-none" />
@@ -77,7 +77,7 @@ export function LateNightWhisper() {
           <Link
             href="/menu/south-indian"
             onClick={handleDismiss}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B89324] text-[#0F1115] font-bold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 transition-all active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B89324] text-black font-bold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 transition-all active:scale-95"
           >
             <Sunrise className="w-4 h-4 text-[#78350F]" />
             <span>Bookmark Tomorrow&apos;s Breakfast</span>

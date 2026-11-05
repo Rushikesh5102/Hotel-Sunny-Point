@@ -25,7 +25,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[94vh] flex flex-col items-center justify-center overflow-hidden bg-[#FAF9F3] dark:bg-[#0B0D10] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 transition-colors">
+    <section className="relative min-h-[94vh] flex flex-col items-center justify-center overflow-hidden bg-[#FAF9F3] dark:bg-black py-14 sm:py-20 px-4 sm:px-6 lg:px-8 transition-colors">
       {/* 1. Background Photography with Visible Landmark Architectural Silhouette */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <Image
@@ -36,8 +36,8 @@ export function HeroSection() {
           priority
         />
         {/* Architectural Silhouette overlay with balanced contrast in both light and dark mode */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F3] via-[#FAF9F3]/70 to-[#FAF9F3]/30 dark:from-[#0B0D10] dark:via-[#0B0D10]/75 dark:to-[#0B0D10]/35" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#FAF9F3]/30 to-[#FAF9F3]/85 dark:via-[#0B0D10]/40 dark:to-[#0B0D10]/95" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F3] via-[#FAF9F3]/70 to-[#FAF9F3]/30 dark:from-black dark:via-black/75 dark:to-black/35" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#FAF9F3]/30 to-[#FAF9F3]/85 dark:via-black/40 dark:to-black/95" />
       </div>
 
       {/* 2. Ambient Golden Embers & Floating Steam Canvas */}
@@ -92,7 +92,7 @@ export function HeroSection() {
           <a
             href="#menu-section"
             onClick={handleScrollToMenu}
-            className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full text-sm sm:text-base font-serif font-bold text-[#174D35] dark:text-[#D4AF37] hover:text-[#225E43] dark:hover:text-[#F9E79F] transition-all group border border-[#174D35]/30 dark:border-[#D4AF37]/40 bg-white/80 dark:bg-[#171A21]/80 backdrop-blur-md shadow-sm hover:shadow-md cursor-pointer"
+            className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full text-sm sm:text-base font-serif font-bold text-[#174D35] dark:text-[#D4AF37] hover:text-[#225E43] dark:hover:text-[#F9E79F] transition-all group border border-[#174D35]/30 dark:border-[#D4AF37]/40 bg-white/80 dark:bg-black/90 backdrop-blur-md shadow-sm hover:shadow-md cursor-pointer"
           >
             <span className="tracking-wide uppercase text-xs sm:text-sm">
               {t({ en: "Explore Full Digital Menu", mr: "डिजिटल मेनू पहा", hi: "डिजिटल मेनू देखें" })}
@@ -116,7 +116,7 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.45, ease: "easeOut" }}
           className="pt-2 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto text-xs"
         >
-          <div className="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-white/90 dark:bg-[#171A21]/80 border border-[#E7E2D6] dark:border-[#2A3140]/60 backdrop-blur-sm shadow-sm hover:border-[#22C55E]/60 transition-colors">
+          <div className="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-white/90 dark:bg-black/90 border border-[#E7E2D6] dark:border-[#1c2028] backdrop-blur-sm shadow-sm hover:border-[#22C55E]/60 transition-colors">
             <div className="w-2.5 h-2.5 rounded-full bg-[#22C55E] ring-4 ring-[#22C55E]/20" />
             <div className="text-left">
               <span className="font-bold text-xs text-[#292D29] dark:text-white block">100% Pure Veg</span>
@@ -124,7 +124,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-white/90 dark:bg-[#171A21]/80 border border-[#E7E2D6] dark:border-[#2A3140]/60 backdrop-blur-sm shadow-sm hover:border-[#174D35]/60 dark:hover:border-[#D4AF37]/60 transition-colors">
+          <div className="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-white/90 dark:bg-black/90 border border-[#E7E2D6] dark:border-[#1c2028] backdrop-blur-sm shadow-sm hover:border-[#174D35]/60 dark:hover:border-[#D4AF37]/60 transition-colors">
             <Clock className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37] shrink-0" />
             <div className="text-left">
               <span className="font-bold text-xs text-[#292D29] dark:text-white block">Since 1995</span>
@@ -132,7 +132,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-white/90 dark:bg-[#171A21]/80 border border-[#E7E2D6] dark:border-[#2A3140]/60 backdrop-blur-sm shadow-sm hover:border-[#174D35]/60 dark:hover:border-[#D4AF37]/60 transition-colors">
+          <div className="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-white/90 dark:bg-black/90 border border-[#E7E2D6] dark:border-[#1c2028] backdrop-blur-sm shadow-sm hover:border-[#174D35]/60 dark:hover:border-[#D4AF37]/60 transition-colors">
             <Sparkles className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37] shrink-0" />
             <div className="text-left">
               <span className="font-bold text-xs text-[#292D29] dark:text-white block">Dosa Pioneer</span>
@@ -140,7 +140,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-white/90 dark:bg-[#171A21]/80 border border-[#E7E2D6] dark:border-[#2A3140]/60 backdrop-blur-sm shadow-sm hover:border-[#E07A2B]/60 transition-colors">
+          <div className="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-white/90 dark:bg-black/90 border border-[#E7E2D6] dark:border-[#1c2028] backdrop-blur-sm shadow-sm hover:border-[#E07A2B]/60 transition-colors">
             <Star className="w-4 h-4 text-amber-500 fill-amber-500 shrink-0" />
             <div className="text-left">
               <span className="font-bold text-xs text-[#292D29] dark:text-white block">4.8 ★ Google Rating</span>

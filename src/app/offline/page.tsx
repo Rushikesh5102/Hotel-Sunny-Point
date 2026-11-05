@@ -39,7 +39,7 @@ export default function OfflinePage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] text-[#292D29] dark:text-white transition-colors">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-black text-[#292D29] dark:text-white transition-colors">
       <Header />
 
       <main className="flex-1 flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
@@ -75,7 +75,7 @@ export default function OfflinePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
             <Link
               href="/menu"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-lg hover:shadow-xl transition-all duration-300 active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black shadow-lg hover:shadow-xl transition-all duration-300 active:scale-95"
             >
               <Utensils className="w-4 h-4" />
               <span>Browse Saved Menu Offline</span>
@@ -84,7 +84,7 @@ export default function OfflinePage() {
             <button
               onClick={handleRetry}
               disabled={isChecking}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-semibold bg-white hover:bg-[#F5F0E6] text-[#292D29] dark:bg-[#171A21] dark:hover:bg-[#20242C] dark:text-white border border-[#E7E2D6] dark:border-[#2A3140] shadow-sm transition-all duration-300 active:scale-95 disabled:opacity-50"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-semibold bg-white hover:bg-[#F5F0E6] text-[#292D29] dark:bg-black dark:hover:bg-[#111111] dark:text-white border border-[#E7E2D6] dark:border-[#1c2028] shadow-sm transition-all duration-300 active:scale-95 disabled:opacity-50"
             >
               <RefreshCw className={`w-4 h-4 text-[#174D35] dark:text-[#D4AF37] ${isChecking ? "animate-spin" : ""}`} />
               <span>{isChecking ? "Checking Signal..." : "Check Connection / Refresh"}</span>
@@ -93,7 +93,7 @@ export default function OfflinePage() {
 
           {/* Offline Features Matrix */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left max-w-xl mx-auto">
-            <div className="p-4 rounded-2xl bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140]/60 shadow-sm space-y-1.5">
+            <div className="p-4 rounded-2xl bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] shadow-sm space-y-1.5">
               <div className="flex items-center gap-1.5 text-xs font-bold text-[#174D35] dark:text-[#D4AF37]">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E]" />
                 <span>Full Menu Access</span>
@@ -103,7 +103,7 @@ export default function OfflinePage() {
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140]/60 shadow-sm space-y-1.5">
+            <div className="p-4 rounded-2xl bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] shadow-sm space-y-1.5">
               <div className="flex items-center gap-1.5 text-xs font-bold text-[#174D35] dark:text-[#D4AF37]">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E]" />
                 <span>Offline Feedback Queue</span>
@@ -113,7 +113,7 @@ export default function OfflinePage() {
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140]/60 shadow-sm space-y-1.5">
+            <div className="p-4 rounded-2xl bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] shadow-sm space-y-1.5">
               <div className="flex items-center gap-1.5 text-xs font-bold text-[#174D35] dark:text-[#D4AF37]">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E]" />
                 <span>Direct Phone Call</span>
@@ -125,7 +125,7 @@ export default function OfflinePage() {
           </div>
 
           {/* Direct Contact Banner */}
-          <div className="p-5 rounded-2xl bg-[#F5F0E6] dark:bg-[#171A21]/70 border border-[#E7E2D6] dark:border-[#2A3140] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+          <div className="p-5 rounded-2xl bg-[#F5F0E6] dark:bg-black/70 border border-[#E7E2D6] dark:border-[#1c2028] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
             <div className="flex items-center gap-3 text-left">
               <div className="w-9 h-9 rounded-full bg-[#174D35]/10 dark:bg-[#D4AF37]/10 flex items-center justify-center text-[#174D35] dark:text-[#D4AF37] shrink-0">
                 <Phone className="w-4 h-4" />

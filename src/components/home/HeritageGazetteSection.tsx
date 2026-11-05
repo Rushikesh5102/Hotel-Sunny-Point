@@ -13,7 +13,7 @@ export function HeritageGazetteSection() {
   return (
     <section
       id="heritage-section"
-      className="py-20 bg-[#F5F0E6] dark:bg-[#0F1115] border-t border-b border-[#E7E2D6] dark:border-[#2A3140]/60 relative overflow-hidden transition-colors"
+      className="py-20 bg-[#F5F0E6] dark:bg-black border-t border-b border-[#E7E2D6] dark:border-[#1c2028] relative overflow-hidden transition-colors"
     >
       {/* Subtle warm background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#174D35]/5 dark:bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
@@ -26,7 +26,7 @@ export function HeritageGazetteSection() {
               onClick={() => setShowGazetteModal(true)}
               className="relative group cursor-pointer max-w-md w-full rounded-2xl overflow-hidden border-2 border-[#174D35]/40 dark:border-[#D4AF37]/40 shadow-2xl hover:border-[#174D35] dark:hover:border-[#D4AF37] transition-all duration-300"
             >
-              <div className="relative aspect-[3/4] w-full bg-[#FAF9F3] dark:bg-[#171A21]">
+              <div className="relative aspect-[3/4] w-full bg-[#FAF9F3] dark:bg-black">
                 <Image
                   src="/assets/brand/gazette-history.jpg"
                   alt="Sunny Point Gazette - 1995 Heritage"
@@ -68,7 +68,7 @@ export function HeritageGazetteSection() {
                 })}
               </p>
 
-              <div className="bg-white dark:bg-[#171A21] border-l-4 border-[#174D35] dark:border-[#D4AF37] border-y border-r border-[#E7E2D6] dark:border-transparent p-4 sm:p-5 rounded-r-2xl space-y-2 shadow-sm">
+              <div className="bg-white dark:bg-black border-l-4 border-[#174D35] dark:border-[#D4AF37] border-y border-r border-[#E7E2D6] dark:border-[#1c2028] p-4 sm:p-5 rounded-r-2xl space-y-2 shadow-sm">
                 <h3 className="font-serif font-bold text-lg text-[#292D29] dark:text-white">
                   {t({
                     en: "1995 — Bringing Dosa Culture to Bhadrawati",
@@ -94,7 +94,7 @@ export function HeritageGazetteSection() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
               >
                 <BookOpen className="w-3.5 h-3.5" />
                 <span>{t({ en: "Read Full Heritage Story", mr: "संपूर्ण इतिहास वाचा" })}</span>
@@ -102,7 +102,7 @@ export function HeritageGazetteSection() {
 
               <button
                 onClick={() => setShowGazetteModal(true)}
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-semibold bg-white hover:bg-[#FAF9F3] text-[#174D35] border border-[#E7E2D6] dark:bg-[#171A21] dark:hover:bg-[#212631] dark:text-[#D4AF37] dark:border-[#2A3140] shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-semibold bg-white hover:bg-[#FAF9F3] text-[#174D35] border border-[#E7E2D6] dark:bg-black dark:hover:bg-[#111111] dark:text-[#D4AF37] dark:border-[#1c2028] shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37]" />
                 <span>{t({ en: "Inspect 1995 Newspaper Poster", mr: "१९९५ चे वृत्तपत्र पोस्टर पहा" })}</span>
@@ -115,7 +115,7 @@ export function HeritageGazetteSection() {
       {/* Gazette Fullscreen Zoom Modal */}
       {showGazetteModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative max-w-2xl w-full max-h-[90vh] bg-white dark:bg-[#171A21] rounded-2xl overflow-hidden border border-[#174D35] dark:border-[#D4AF37] shadow-2xl animate-in zoom-in-95 duration-200">
+          <div className="relative max-w-2xl w-full max-h-[90vh] bg-white dark:bg-black rounded-2xl overflow-hidden border border-[#174D35] dark:border-[#D4AF37] shadow-2xl animate-in zoom-in-95 duration-200">
             <button
               onClick={() => setShowGazetteModal(false)}
               className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/70 text-white hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"

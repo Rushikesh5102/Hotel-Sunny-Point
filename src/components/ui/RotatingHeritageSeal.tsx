@@ -50,7 +50,7 @@ export function RotatingHeritageSeal({
       </svg>
 
       {/* Center Medallion with Gold Rim */}
-      <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-[#174D35] dark:border-[#D4AF37] shadow-2xl p-1 bg-white dark:bg-[#0F1115] group-hover:scale-105 transition-transform duration-500 z-10">
+      <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-[#174D35] dark:border-[#D4AF37] shadow-2xl p-1 bg-white dark:bg-black group-hover:scale-105 transition-transform duration-500 z-10">
         <Image
           src={logoUrl}
           alt="Hotel Sunny Point Heritage Medallion"

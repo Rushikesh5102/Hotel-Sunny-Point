@@ -23,7 +23,7 @@ export function AnimatedHamburger({ isOpen, onClick, className = "" }: AnimatedH
     <button
       onClick={handleClick}
       aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-      className={`relative w-10 h-10 rounded-xl flex flex-col items-center justify-center p-2 text-[#174D35] dark:text-[#D4AF37] hover:bg-[#F5F0E6] dark:hover:bg-[#171A21] focus:outline-none transition-colors active:scale-90 ${className}`}
+      className={`relative w-10 h-10 rounded-xl flex flex-col items-center justify-center p-2 text-[#174D35] dark:text-[#D4AF37] hover:bg-[#F5F0E6] dark:hover:bg-[#111111] focus:outline-none transition-colors active:scale-90 ${className}`}
     >
       <div className="w-5 h-4 flex flex-col justify-between">
         {/* Top Bar */}

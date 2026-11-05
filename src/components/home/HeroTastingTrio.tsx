@@ -16,7 +16,7 @@ export function HeroTastingTrio({ onSelectDish }: HeroTastingTrioProps) {
       marathiTitle: "अस्सल मसाला डोसा",
       price: "₹90",
       tag: "Legacy Since 1995",
-      tagColor: "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115]",
+      tagColor: "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black",
       image: "/assets/dishes/masala-dosa.jpg",
       slug: "masala-dosa",
       desc: "Slow-fermented batter, tempered spiced potato & fresh coconut chutney.",
@@ -36,7 +36,7 @@ export function HeroTastingTrio({ onSelectDish }: HeroTastingTrioProps) {
       marathiTitle: "बटर स्पेशल डोसा",
       price: "₹110",
       tag: "Pure Butter Crisp",
-      tagColor: "bg-amber-600 text-white dark:bg-amber-500 dark:text-[#0F1115]",
+      tagColor: "bg-amber-600 text-white dark:bg-amber-500 dark:text-black",
       image: "/assets/dishes/butter-dosa.jpg",
       slug: "butter-dosa",
       desc: "Lavishly roasted with rich Amul butter for an unmistakable golden aroma.",
@@ -66,7 +66,7 @@ export function HeroTastingTrio({ onSelectDish }: HeroTastingTrioProps) {
           <Link
             key={item.slug}
             href={`/dish/${item.slug}`}
-            className="group relative rounded-2xl overflow-hidden bg-white/90 dark:bg-[#171A21]/90 border border-[#E7E2D6] dark:border-[#2A3140]/80 shadow-md hover:shadow-xl hover:border-[#174D35]/50 dark:hover:border-[#D4AF37]/60 transition-all duration-300 p-3.5 flex flex-col justify-between backdrop-blur-sm text-left hover:-translate-y-1"
+            className="group relative rounded-2xl overflow-hidden bg-white/90 dark:bg-black/90 border border-[#E7E2D6] dark:border-[#1c2028] shadow-md hover:shadow-xl hover:border-[#174D35]/50 dark:hover:border-[#D4AF37]/60 transition-all duration-300 p-3.5 flex flex-col justify-between backdrop-blur-sm text-left hover:-translate-y-1"
           >
             {/* Top row: Badge and Pure Veg dot */}
             <div className="flex items-center justify-between mb-2.5">
@@ -104,7 +104,7 @@ export function HeroTastingTrio({ onSelectDish }: HeroTastingTrioProps) {
             </div>
 
             {/* Subtle View Recipe / Inspect Link */}
-            <div className="mt-3 pt-2.5 border-t border-[#E7E2D6] dark:border-[#2A3140]/60 flex items-center justify-between text-[11px] font-semibold text-[#174D35] dark:text-[#D4AF37]">
+            <div className="mt-3 pt-2.5 border-t border-[#E7E2D6] dark:border-[#1c2028] flex items-center justify-between text-[11px] font-semibold text-[#174D35] dark:text-[#D4AF37]">
               <span>View Recipe & Pairings</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </div>

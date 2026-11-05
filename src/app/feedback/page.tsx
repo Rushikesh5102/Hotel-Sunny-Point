@@ -55,7 +55,7 @@ export default function FeedbackPage() {
     value: number;
     onChange: (val: number) => void;
   }) => (
-    <div className="flex flex-col sm:flex-row sm:items-center justify-between py-2 border-b border-[#E7E2D6] dark:border-[#2A3140]/60 gap-2">
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between py-2 border-b border-[#E7E2D6] dark:border-[#1c2028] gap-2">
       <span className="text-xs font-medium text-[#292D29] dark:text-[#C9CDD5]">{label}</span>
       <div className="flex items-center gap-1">
         {[1, 2, 3, 4, 5].map((star) => (
@@ -78,12 +78,12 @@ export default function FeedbackPage() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] text-[#292D29] dark:text-[#F5F5F5] pb-16 md:pb-0 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-black text-[#292D29] dark:text-[#F5F5F5] pb-16 md:pb-0 transition-colors duration-200">
       <Header />
 
       <main className="flex-1 pb-24">
         {/* Header */}
-        <section className="bg-gradient-to-b from-[#F5F0E6] to-[#FAF9F3] dark:from-[#171A21] dark:to-[#0F1115] border-b border-[#E7E2D6] dark:border-[#2A3140]/60 py-14 px-4 sm:px-6 lg:px-8 text-center">
+        <section className="bg-gradient-to-b from-[#F5F0E6] to-[#FAF9F3] dark:from-black dark:to-black border-b border-[#E7E2D6] dark:border-[#1c2028] py-14 px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-2xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#174D35]/10 border border-[#174D35]/20 text-[#174D35] dark:bg-[#D4AF37]/10 dark:border-[#D4AF37]/30 dark:text-[#D4AF37] text-xs font-semibold uppercase tracking-widest">
               <MessageSquareQuote className="w-3.5 h-3.5" />
@@ -106,7 +106,7 @@ export default function FeedbackPage() {
         {/* Feedback Form Card */}
         <section className="max-w-xl mx-auto px-4 sm:px-6 pt-12">
           {submitted ? (
-            <div className="bg-white dark:bg-[#171A21] border border-[#22C55E]/40 rounded-3xl p-8 sm:p-10 shadow-sm dark:shadow-2xl text-center space-y-6 transition-colors">
+            <div className="bg-white dark:bg-black border border-[#22C55E]/40 rounded-3xl p-8 sm:p-10 shadow-sm dark:shadow-2xl text-center space-y-6 transition-colors">
               <div className="w-16 h-16 rounded-full bg-[#22C55E]/10 border border-[#22C55E] flex items-center justify-center mx-auto text-[#22C55E]">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
@@ -123,7 +123,7 @@ export default function FeedbackPage() {
               </div>
 
               {/* Optional Google Review Redirect */}
-              <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#2A3140] space-y-3">
+              <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#1c2028] space-y-3">
                 <p className="text-xs text-[#6D756D] dark:text-[#C9CDD5]">
                   Would you like to share your review on Google as well?
                 </p>
@@ -131,7 +131,7 @@ export default function FeedbackPage() {
                   href={restaurant.settings.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold bg-[#F5F0E6] dark:bg-[#212631] hover:bg-[#EAE4D7] dark:hover:bg-[#2A3140] text-[#174D35] dark:text-[#D4AF37] border border-[#E7E2D6] dark:border-[#2A3140] transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold bg-[#F5F0E6] dark:bg-black hover:bg-[#EAE4D7] dark:hover:bg-[#111111] text-[#174D35] dark:text-[#D4AF37] border border-[#E7E2D6] dark:border-[#1c2028] transition-colors"
                 >
                   <span>Review Hotel Sunny Point on Google</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -152,7 +152,7 @@ export default function FeedbackPage() {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] rounded-3xl p-6 sm:p-8 shadow-sm dark:shadow-2xl space-y-6 transition-colors"
+              className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-3xl p-6 sm:p-8 shadow-sm dark:shadow-2xl space-y-6 transition-colors"
             >
               {/* Customer Contact Inputs */}
               <div className="space-y-4">
@@ -166,7 +166,7 @@ export default function FeedbackPage() {
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
                     placeholder="Enter your full name"
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none transition-colors"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none transition-colors"
                   />
                 </div>
 
@@ -180,7 +180,7 @@ export default function FeedbackPage() {
                       value={customerPhone}
                       onChange={(e) => setCustomerPhone(e.target.value)}
                       placeholder="e.g. 98234XXXXX"
-                      className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none transition-colors"
+                      className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none transition-colors"
                     />
                   </div>
 
@@ -193,7 +193,7 @@ export default function FeedbackPage() {
                       value={tableNumber}
                       onChange={(e) => setTableNumber(e.target.value)}
                       placeholder="e.g. Table 4 / AC Hall"
-                      className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none transition-colors"
+                      className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function FeedbackPage() {
                 <h4 className="text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider mb-2">
                   Rate Your Experience (1 - 5 Stars)
                 </h4>
-                <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl p-4 space-y-1 transition-colors">
+                <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-2xl p-4 space-y-1 transition-colors">
                   <StarRatingInput
                     label="Food Quality"
                     value={foodQualityRating}
@@ -243,7 +243,7 @@ export default function FeedbackPage() {
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
                   placeholder="Tell us what you loved or how we can improve your next visit..."
-                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl p-3.5 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none leading-relaxed transition-colors"
+                  className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl p-3.5 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none leading-relaxed transition-colors"
                 />
               </div>
 
@@ -251,7 +251,7 @@ export default function FeedbackPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2 py-4 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-300 disabled:opacity-50"
+                className="w-full flex items-center justify-center gap-2 py-4 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-300 disabled:opacity-50"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>{isSubmitting ? "Submitting..." : "Submit Confidential Feedback"}</span>

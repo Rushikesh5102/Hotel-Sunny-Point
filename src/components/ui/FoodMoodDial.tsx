@@ -134,12 +134,12 @@ export function FoodMoodDial() {
             spinDial();
           }
         }}
-        className="fixed bottom-24 right-4 sm:bottom-8 sm:right-8 z-30 group flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#174D35] dark:bg-[#D4AF37] text-white dark:text-[#0F1115] shadow-[0_4px_25px_rgba(23,77,53,0.35)] dark:shadow-[0_4px_25px_rgba(212,175,55,0.4)] border border-white/20 hover:scale-105 active:scale-95 transition-all duration-300"
+        className="fixed bottom-24 right-4 sm:bottom-8 sm:right-8 z-30 group flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#174D35] dark:bg-[#D4AF37] text-white dark:text-black shadow-[0_4px_25px_rgba(23,77,53,0.35)] dark:shadow-[0_4px_25px_rgba(212,175,55,0.4)] border border-white/20 hover:scale-105 active:scale-95 transition-all duration-300"
         aria-label="Open Food Mood Decider Dial"
       >
         <span className="relative flex h-3 w-3">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white dark:bg-[#0F1115] opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-white dark:bg-[#0F1115]"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white dark:bg-black opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-white dark:bg-black"></span>
         </span>
         <Compass className="w-5 h-5 animate-[spin_8s_linear_infinite]" />
         <span className="text-xs font-bold tracking-wide hidden sm:inline">
@@ -153,9 +153,9 @@ export function FoodMoodDial() {
       {/* Interactive Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-md rounded-3xl bg-[#FAF9F3] dark:bg-[#171A21] border border-[#D4AF37]/50 p-6 shadow-2xl text-[#292D29] dark:text-white">
+          <div className="relative w-full max-w-md rounded-3xl bg-[#FAF9F3] dark:bg-black border border-[#D4AF37]/50 p-6 shadow-2xl text-[#292D29] dark:text-white">
             {/* Header */}
-            <div className="flex items-center justify-between pb-4 border-b border-[#E7E2D6] dark:border-[#2A3140]">
+            <div className="flex items-center justify-between pb-4 border-b border-[#E7E2D6] dark:border-[#1c2028]">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-[#174D35]/10 dark:bg-[#D4AF37]/20 flex items-center justify-center text-[#174D35] dark:text-[#D4AF37]">
                   <Compass className="w-4 h-4" />
@@ -194,7 +194,7 @@ export function FoodMoodDial() {
                       className={`flex items-center gap-2 p-2.5 rounded-xl border text-xs font-semibold transition-all ${
                         isSelected
                           ? "border-[#174D35] dark:border-[#D4AF37] bg-[#174D35]/10 dark:bg-[#D4AF37]/15 text-[#174D35] dark:text-[#D4AF37] shadow-sm scale-[1.02]"
-                          : "border-[#E7E2D6] dark:border-[#2A3140] hover:border-gray-400 bg-white dark:bg-[#0F1115] text-[#292D29] dark:text-[#C9CDD5]"
+                          : "border-[#E7E2D6] dark:border-[#1c2028] hover:border-gray-400 bg-white dark:bg-black text-[#292D29] dark:text-[#C9CDD5]"
                       }`}
                     >
                       <span className="text-base">{mood.emoji}</span>
@@ -210,7 +210,7 @@ export function FoodMoodDial() {
               <button
                 onClick={spinDial}
                 disabled={isSpinning}
-                className="w-full py-3 px-6 rounded-2xl bg-gradient-to-r from-[#174D35] via-[#225E43] to-[#174D35] dark:from-[#D4AF37] dark:via-[#F9E79F] dark:to-[#D4AF37] text-white dark:text-[#0F1115] font-bold text-sm shadow-lg flex items-center justify-center gap-2 hover:brightness-110 active:scale-98 transition-all disabled:opacity-50"
+                className="w-full py-3 px-6 rounded-2xl bg-gradient-to-r from-[#174D35] via-[#225E43] to-[#174D35] dark:from-[#D4AF37] dark:via-[#F9E79F] dark:to-[#D4AF37] text-white dark:text-black font-bold text-sm shadow-lg flex items-center justify-center gap-2 hover:brightness-110 active:scale-98 transition-all disabled:opacity-50"
               >
                 <RotateCcw className={`w-4 h-4 ${isSpinning ? "animate-spin" : ""}`} />
                 <span>{isSpinning ? "Consulting Master Chefs..." : "Spin My Food Mood"}</span>
@@ -219,7 +219,7 @@ export function FoodMoodDial() {
 
             {/* Recommendation Result Card */}
             {recommendation && !isSpinning && (
-              <div className="mt-4 p-4 rounded-2xl bg-white dark:bg-[#0F1115] border border-[#174D35]/30 dark:border-[#D4AF37]/40 shadow-inner animate-in zoom-in-95 duration-300">
+              <div className="mt-4 p-4 rounded-2xl bg-white dark:bg-black border border-[#174D35]/30 dark:border-[#D4AF37]/40 shadow-inner animate-in zoom-in-95 duration-300">
                 <div className="flex gap-3">
                   <div className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-[#D4AF37]/30">
                     <Image

@@ -79,7 +79,7 @@ export function PwaInstallPrompt() {
       aria-label="Install Hotel Sunny Point Application"
       className="fixed bottom-20 md:bottom-6 left-4 sm:left-6 z-50 max-w-sm w-[calc(100%-2rem)] sm:w-auto animate-in fade-in slide-in-from-bottom-4 duration-300 pointer-events-auto"
     >
-      <div className="p-4 rounded-2xl bg-white/95 dark:bg-[#171A21]/95 backdrop-blur-md border border-[#174D35]/30 dark:border-[#D4AF37]/40 shadow-2xl flex items-center justify-between gap-3 text-xs">
+      <div className="p-4 rounded-2xl bg-white/95 dark:bg-black/95 backdrop-blur-md border border-[#174D35]/30 dark:border-[#D4AF37]/40 shadow-2xl flex items-center justify-between gap-3 text-xs">
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#174D35]/30 dark:border-[#D4AF37]/50 shadow shrink-0">
             <Image
@@ -105,7 +105,7 @@ export function PwaInstallPrompt() {
         <div className="flex items-center gap-1.5 shrink-0">
           <button
             onClick={handleInstall}
-            className="px-3 py-1.5 rounded-lg bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] font-bold text-[11px] shadow-sm flex items-center gap-1 active:scale-95 transition-all"
+            className="px-3 py-1.5 rounded-lg bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black font-bold text-[11px] shadow-sm flex items-center gap-1 active:scale-95 transition-all"
           >
             <Download className="w-3 h-3" />
             <span>Install</span>

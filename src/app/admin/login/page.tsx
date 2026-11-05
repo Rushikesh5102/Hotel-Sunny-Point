@@ -44,7 +44,7 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F3] dark:bg-[#0B0D10] flex flex-col items-center justify-center p-4 relative transition-colors duration-200">
+    <div className="min-h-screen bg-[#FAF9F3] dark:bg-black flex flex-col items-center justify-center p-4 relative transition-colors duration-200">
       <div className="absolute top-4 right-4 flex items-center gap-3">
         <Link
           href="/"
@@ -55,7 +55,7 @@ export default function AdminLoginPage() {
         <ThemeSwitcher variant="icon" />
       </div>
 
-      <div className="w-full max-w-md bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-3xl p-8 shadow-sm dark:shadow-2xl space-y-6 transition-colors">
+      <div className="w-full max-w-md bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-3xl p-8 shadow-sm dark:shadow-2xl space-y-6 transition-colors">
         {/* Logo & Header */}
         <div className="text-center space-y-3">
           <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#174D35] dark:border-[#D4AF37] mx-auto shadow-md">
@@ -79,7 +79,7 @@ export default function AdminLoginPage() {
         </div>
 
         {/* Security / Default credentials notice */}
-        <div className="bg-[#F5F0E6] dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/30 rounded-2xl p-4 text-xs space-y-2 text-[#6D756D] dark:text-[#C9CDD5] transition-colors">
+        <div className="bg-[#F5F0E6] dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/30 rounded-2xl p-4 text-xs space-y-2 text-[#6D756D] dark:text-[#C9CDD5] transition-colors">
           <div className="flex items-center gap-1.5 font-bold text-[#174D35] dark:text-[#D4AF37]">
             <KeyRound className="w-4 h-4" />
             <span>Secure Owner Authentication</span>
@@ -112,7 +112,7 @@ export default function AdminLoginPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+              className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
             />
           </div>
 
@@ -129,7 +129,7 @@ export default function AdminLoginPage() {
                 value={password}
                 placeholder="Enter admin password"
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 pr-10 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 pr-10 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
               <button
                 type="button"
@@ -145,7 +145,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-md disabled:opacity-50"
+            className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black uppercase tracking-wider transition-colors shadow-md disabled:opacity-50"
           >
             <span>{loading ? "Authenticating..." : "Sign In to Dashboard"}</span>
             <ArrowRight className="w-3.5 h-3.5" />

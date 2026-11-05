@@ -31,12 +31,12 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] text-[#292D29] dark:text-[#F5F5F5] pb-16 md:pb-0 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-black text-[#292D29] dark:text-[#F5F5F5] pb-16 md:pb-0 transition-colors duration-200">
       <Header />
 
       <main className="flex-1 pb-24">
         {/* About Hero */}
-        <section className="bg-gradient-to-b from-[#F5F0E6] to-[#FAF9F3] dark:from-[#171A21] dark:to-[#0F1115] border-b border-[#E7E2D6] dark:border-[#2A3140]/60 py-16 px-4 sm:px-6 lg:px-8 text-center">
+        <section className="bg-gradient-to-b from-[#F5F0E6] to-[#FAF9F3] dark:from-black dark:to-black border-b border-[#E7E2D6] dark:border-[#1c2028] py-16 px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#174D35]/10 border border-[#174D35]/20 text-[#174D35] dark:bg-[#D4AF37]/10 dark:border-[#D4AF37]/30 dark:text-[#D4AF37] text-xs font-semibold uppercase tracking-widest">
               <History className="w-3.5 h-3.5" />
@@ -62,7 +62,7 @@ export default function AboutPage() {
 
         {/* Milestone Timeline Section */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="space-y-12 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:w-0.5 before:bg-[#E7E2D6] dark:before:bg-[#2A3140]">
+          <div className="space-y-12 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:w-0.5 before:bg-[#E7E2D6] dark:before:bg-[#1c2028]">
             {/* Timeline Item 1: 1995 */}
             <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div className="sm:w-5/12 sm:text-right space-y-2 pl-10 sm:pl-0 order-2 sm:order-1">
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="absolute left-1.5 sm:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#174D35] dark:bg-[#D4AF37] border-4 border-[#FAF9F3] dark:border-[#0F1115] shadow-lg flex items-center justify-center z-10 order-1 sm:order-2" />
+              <div className="absolute left-1.5 sm:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#174D35] dark:bg-[#D4AF37] border-4 border-[#FAF9F3] dark:border-black shadow-lg flex items-center justify-center z-10 order-1 sm:order-2" />
 
               <div className="sm:w-5/12 pl-10 sm:pl-0 order-3">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E7E2D6] dark:border-[#D4AF37]/30 shadow-lg">
@@ -100,7 +100,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="absolute left-1.5 sm:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#22C55E] border-4 border-[#FAF9F3] dark:border-[#0F1115] shadow-lg flex items-center justify-center z-10 order-1 sm:order-2" />
+              <div className="absolute left-1.5 sm:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#22C55E] border-4 border-[#FAF9F3] dark:border-black shadow-lg flex items-center justify-center z-10 order-1 sm:order-2" />
 
               <div className="sm:w-5/12 space-y-2 pl-10 sm:pl-0 order-3">
                 <span className="text-xs font-bold text-[#22C55E] tracking-widest uppercase">The South Indian Pioneer</span>
@@ -121,7 +121,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="absolute left-1.5 sm:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#E07A2B] border-4 border-[#FAF9F3] dark:border-[#0F1115] shadow-lg flex items-center justify-center z-10 order-1 sm:order-2" />
+              <div className="absolute left-1.5 sm:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#E07A2B] border-4 border-[#FAF9F3] dark:border-black shadow-lg flex items-center justify-center z-10 order-1 sm:order-2" />
 
               <div className="sm:w-5/12 pl-10 sm:pl-0 order-3">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E7E2D6] dark:border-[#D4AF37]/30 shadow-lg">
@@ -138,7 +138,7 @@ export default function AboutPage() {
         </section>
 
         {/* Vintage Gazette Archives Section */}
-        <section className="bg-[#F5F0E6] dark:bg-[#171A21] border-t border-b border-[#E7E2D6] dark:border-[#2A3140] py-16 transition-colors">
+        <section className="bg-[#F5F0E6] dark:bg-black border-t border-b border-[#E7E2D6] dark:border-[#1c2028] py-16 transition-colors">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto space-y-2 mb-12">
               <h2 className="font-serif text-3xl font-bold text-[#292D29] dark:text-white">
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 <div
                   key={idx}
                   onClick={() => setSelectedPoster(poster.src)}
-                  className="bg-white dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/70 rounded-2xl overflow-hidden cursor-pointer group transition-all duration-300 shadow-sm hover:shadow-md dark:shadow-xl"
+                  className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] hover:border-[#174D35] dark:hover:border-[#D4AF37]/70 rounded-2xl overflow-hidden cursor-pointer group transition-all duration-300 shadow-sm hover:shadow-md dark:shadow-xl"
                 >
                   <div className="relative aspect-[3/4] w-full">
                     <Image
@@ -183,7 +183,7 @@ export default function AboutPage() {
       {/* Poster Zoom Modal */}
       {selectedPoster && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="relative max-w-2xl w-full max-h-[90vh] bg-white dark:bg-[#171A21] rounded-2xl overflow-hidden border border-[#174D35] dark:border-[#D4AF37] shadow-2xl">
+          <div className="relative max-w-2xl w-full max-h-[90vh] bg-white dark:bg-black rounded-2xl overflow-hidden border border-[#174D35] dark:border-[#D4AF37] shadow-2xl">
             <button
               onClick={() => setSelectedPoster(null)}
               className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/70 text-white hover:text-[#D4AF37] transition-colors"

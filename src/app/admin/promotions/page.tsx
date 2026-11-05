@@ -285,7 +285,7 @@ export default function AdminPromotionsPage() {
     <div className="space-y-6">
       {/* Toast Alert */}
       {toastMessage && (
-        <div className="fixed top-5 right-5 z-50 bg-[#22C55E] text-[#0F1115] px-4 py-3 rounded-xl text-xs font-bold shadow-2xl flex items-center gap-2">
+        <div className="fixed top-5 right-5 z-50 bg-[#22C55E] text-black px-4 py-3 rounded-xl text-xs font-bold shadow-2xl flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4" />
           <span>{toastMessage}</span>
         </div>
@@ -303,12 +303,12 @@ export default function AdminPromotionsPage() {
         </div>
 
         {/* View Switcher Tabs */}
-        <div className="flex items-center bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl p-1 shadow-sm shrink-0">
+        <div className="flex items-center bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-xl p-1 shadow-sm shrink-0">
           <button
             onClick={() => setActiveTab("coupons")}
             className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
               activeTab === "coupons"
-                ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow-sm"
+                ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black shadow-sm"
                 : "text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#292D29] dark:hover:text-white"
             }`}
           >
@@ -319,7 +319,7 @@ export default function AdminPromotionsPage() {
             onClick={() => setActiveTab("campaigns")}
             className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
               activeTab === "campaigns"
-                ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow-sm"
+                ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black shadow-sm"
                 : "text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#292D29] dark:hover:text-white"
             }`}
           >
@@ -335,7 +335,7 @@ export default function AdminPromotionsPage() {
           {/* Top Action Bar & Live Tester */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             {/* Create Coupon Card */}
-            <div className="lg:col-span-8 bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl p-6 shadow-sm dark:shadow-none space-y-4">
+            <div className="lg:col-span-8 bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-2xl p-6 shadow-sm dark:shadow-none space-y-4">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-serif font-bold text-lg text-[#292D29] dark:text-white flex items-center gap-2">
@@ -348,7 +348,7 @@ export default function AdminPromotionsPage() {
                 </div>
                 <button
                   onClick={handleOpenAddCoupon}
-                  className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow transition-all active:scale-95"
+                  className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black shadow transition-all active:scale-95"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Create New Coupon</span>
@@ -360,11 +360,11 @@ export default function AdminPromotionsPage() {
                 {coupons.map((coupon) => (
                   <div
                     key={coupon.id}
-                    className="p-4 rounded-xl border border-[#E7E2D6] dark:border-[#2A3140] bg-[#FAF9F3] dark:bg-[#171A21] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all hover:border-[#174D35]/40 dark:hover:border-[#D4AF37]/50"
+                    className="p-4 rounded-xl border border-[#E7E2D6] dark:border-[#1c2028] bg-[#FAF9F3] dark:bg-black flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all hover:border-[#174D35]/40 dark:hover:border-[#D4AF37]/50"
                   >
                     <div className="space-y-1">
                       <div className="flex items-center gap-2.5">
-                        <span className="font-mono text-base font-extrabold text-[#174D35] dark:text-[#F9E79F] bg-white dark:bg-[#0F1115] px-2.5 py-1 rounded-lg border border-[#E7E2D6] dark:border-[#2A3140]">
+                        <span className="font-mono text-base font-extrabold text-[#174D35] dark:text-[#F9E79F] bg-white dark:bg-black px-2.5 py-1 rounded-lg border border-[#E7E2D6] dark:border-[#1c2028]">
                           {coupon.code}
                         </span>
                         <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-[#174D35]/10 dark:bg-[#D4AF37]/15 text-[#174D35] dark:text-[#D4AF37]">
@@ -399,7 +399,7 @@ export default function AdminPromotionsPage() {
                         onClick={() => handleToggleCouponActive(coupon)}
                         className={`text-xs px-2.5 py-1.5 rounded-lg font-medium transition-colors ${
                           coupon.isActive
-                            ? "text-[#6D756D] hover:text-[#292D29] dark:text-gray-400 dark:hover:text-white bg-white dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140]"
+                            ? "text-[#6D756D] hover:text-[#292D29] dark:text-gray-400 dark:hover:text-white bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028]"
                             : "bg-[#22C55E] text-white"
                         }`}
                       >
@@ -408,7 +408,7 @@ export default function AdminPromotionsPage() {
 
                       <button
                         onClick={() => handleOpenEditCoupon(coupon)}
-                        className="p-2 rounded-lg text-gray-500 hover:text-[#174D35] dark:text-gray-400 dark:hover:text-[#D4AF37] hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors"
+                        className="p-2 rounded-lg text-gray-500 hover:text-[#174D35] dark:text-gray-400 dark:hover:text-[#D4AF37] hover:bg-[#EDF2E9] dark:hover:bg-[#111111] transition-colors"
                         title="Edit Coupon"
                       >
                         <Edit2 className="w-4 h-4" />
@@ -428,8 +428,8 @@ export default function AdminPromotionsPage() {
             </div>
 
             {/* Live Coupon Tester Card */}
-            <div className="lg:col-span-4 bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl p-6 shadow-sm dark:shadow-none space-y-4">
-              <div className="border-b border-[#E7E2D6] dark:border-[#2A3140] pb-3">
+            <div className="lg:col-span-4 bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-2xl p-6 shadow-sm dark:shadow-none space-y-4">
+              <div className="border-b border-[#E7E2D6] dark:border-[#1c2028] pb-3">
                 <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white flex items-center gap-2">
                   <Percent className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                   <span>Live Coupon Tester</span>
@@ -448,7 +448,7 @@ export default function AdminPromotionsPage() {
                     type="text"
                     value={testCode}
                     onChange={(e) => setTestCode(e.target.value.toUpperCase())}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2 text-xs font-mono font-bold text-[#174D35] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2 text-xs font-mono font-bold text-[#174D35] dark:text-white outline-none"
                     placeholder="E.g. LEGACY1995"
                   />
                 </div>
@@ -461,13 +461,13 @@ export default function AdminPromotionsPage() {
                     type="number"
                     value={testSubtotal}
                     onChange={(e) => setTestSubtotal(Number(e.target.value))}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2 text-xs font-mono text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2 text-xs font-mono text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
 
                 <button
                   onClick={handleTestCoupon}
-                  className="w-full py-2.5 rounded-xl text-xs font-bold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] hover:brightness-110 transition-all active:scale-95"
+                  className="w-full py-2.5 rounded-xl text-xs font-bold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black hover:brightness-110 transition-all active:scale-95"
                 >
                   Test Voucher Calculation
                 </button>
@@ -512,7 +512,7 @@ export default function AdminPromotionsPage() {
                 setIsAddingNewPromo(true);
                 setEditingPromo(null);
               }}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-colors shrink-0"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black shadow-md transition-colors shrink-0"
             >
               <Plus className="w-4 h-4" />
               <span>Create Campaign Banner</span>
@@ -523,10 +523,10 @@ export default function AdminPromotionsPage() {
             {restaurant.promotions.map((promo) => (
               <div
                 key={promo.id}
-                className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl p-5 flex flex-col justify-between space-y-4 transition-colors"
+                className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl p-5 flex flex-col justify-between space-y-4 transition-colors"
               >
                 <div className="space-y-3">
-                  <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-black border border-[#E7E2D6] dark:border-[#2A3140]">
+                  <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-black border border-[#E7E2D6] dark:border-[#1c2028]">
                     <Image
                       src={promo.bannerImage}
                       alt={promo.title.en}
@@ -534,7 +534,7 @@ export default function AdminPromotionsPage() {
                       className="object-cover"
                     />
                     <div className="absolute top-3 left-3">
-                      <span className="text-[10px] font-bold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] px-2.5 py-0.5 rounded-full uppercase shadow">
+                      <span className="text-[10px] font-bold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black px-2.5 py-0.5 rounded-full uppercase shadow">
                         {promo.badgeText}
                       </span>
                     </div>
@@ -552,7 +552,7 @@ export default function AdminPromotionsPage() {
                       <span>Valid till {promo.endDate}</span>
                     </span>
                     {promo.couponCode && (
-                      <span className="flex items-center gap-1 font-mono text-[#174D35] dark:text-[#F9E79F] bg-[#FAF9F3] dark:bg-[#0F1115] px-2 py-0.5 rounded border border-[#E7E2D6] dark:border-[#2A3140]">
+                      <span className="flex items-center gap-1 font-mono text-[#174D35] dark:text-[#F9E79F] bg-[#FAF9F3] dark:bg-black px-2 py-0.5 rounded border border-[#E7E2D6] dark:border-[#1c2028]">
                         <Tag className="w-3 h-3 text-[#174D35] dark:text-[#D4AF37]" />
                         <span>{promo.couponCode}</span>
                       </span>
@@ -560,7 +560,7 @@ export default function AdminPromotionsPage() {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#E7E2D6] dark:border-[#2A3140] flex items-center justify-between">
+                <div className="pt-3 border-t border-[#E7E2D6] dark:border-[#1c2028] flex items-center justify-between">
                   <button
                     onClick={() => {
                       togglePromotion(promo.id);
@@ -590,7 +590,7 @@ export default function AdminPromotionsPage() {
                         setFormCouponCode(promo.couponCode || "");
                         setIsAddingNewPromo(false);
                       }}
-                      className="p-1.5 rounded-lg text-gray-500 hover:text-[#174D35] dark:text-gray-400 dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors"
+                      className="p-1.5 rounded-lg text-gray-500 hover:text-[#174D35] dark:text-gray-400 dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#111111] transition-colors"
                     >
                       <Edit2 className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                     </button>
@@ -601,7 +601,7 @@ export default function AdminPromotionsPage() {
                           showToast("Campaign deleted!");
                         }
                       }}
-                      className="p-1.5 rounded-lg text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400 hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors"
+                      className="p-1.5 rounded-lg text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400 hover:bg-[#EDF2E9] dark:hover:bg-[#111111] transition-colors"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -616,7 +616,7 @@ export default function AdminPromotionsPage() {
       {/* MODAL: ADD / EDIT COUPON */}
       {isAddingCoupon && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm overflow-y-auto">
-          <div className="relative w-full max-w-md bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/50 rounded-3xl p-6 shadow-2xl transition-colors">
+          <div className="relative w-full max-w-md bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/50 rounded-3xl p-6 shadow-2xl transition-colors">
             <button
               onClick={() => {
                 setIsAddingCoupon(false);
@@ -643,7 +643,7 @@ export default function AdminPromotionsPage() {
                   value={couponCodeInput}
                   onChange={(e) => setCouponCodeInput(e.target.value.toUpperCase())}
                   placeholder="E.g. DIWALI25, SUNNY20"
-                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs font-mono font-bold text-[#174D35] dark:text-[#D4AF37] uppercase outline-none"
+                  className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs font-mono font-bold text-[#174D35] dark:text-[#D4AF37] uppercase outline-none"
                 />
               </div>
 
@@ -657,7 +657,7 @@ export default function AdminPromotionsPage() {
                   value={couponDescInput}
                   onChange={(e) => setCouponDescInput(e.target.value)}
                   placeholder="E.g. 15% off on your pure veg dinner"
-                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none"
+                  className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none"
                 />
               </div>
 
@@ -669,7 +669,7 @@ export default function AdminPromotionsPage() {
                   <select
                     value={couponTypeInput}
                     onChange={(e) => setCouponTypeInput(e.target.value as "percent" | "flat")}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3 py-2.5 text-xs text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3 py-2.5 text-xs text-[#292D29] dark:text-white outline-none"
                   >
                     <option value="percent">Percentage (%)</option>
                     <option value="flat">Flat Amount (₹)</option>
@@ -686,7 +686,7 @@ export default function AdminPromotionsPage() {
                     min={1}
                     value={couponValueInput}
                     onChange={(e) => setCouponValueInput(Number(e.target.value))}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs font-mono text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs font-mono text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
               </div>
@@ -702,7 +702,7 @@ export default function AdminPromotionsPage() {
                     min={0}
                     value={couponMinOrderInput}
                     onChange={(e) => setCouponMinOrderInput(Number(e.target.value))}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs font-mono text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs font-mono text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
 
@@ -715,7 +715,7 @@ export default function AdminPromotionsPage() {
                       type="number"
                       value={couponMaxDiscountInput}
                       onChange={(e) => setCouponMaxDiscountInput(Number(e.target.value))}
-                      className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs font-mono text-[#292D29] dark:text-white outline-none"
+                      className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs font-mono text-[#292D29] dark:text-white outline-none"
                     />
                   </div>
                 )}
@@ -731,7 +731,7 @@ export default function AdminPromotionsPage() {
                     required
                     value={couponExpiryInput}
                     onChange={(e) => setCouponExpiryInput(e.target.value)}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
 
@@ -742,7 +742,7 @@ export default function AdminPromotionsPage() {
                   <select
                     value={couponActiveInput ? "active" : "paused"}
                     onChange={(e) => setCouponActiveInput(e.target.value === "active")}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3 py-2.5 text-xs text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3 py-2.5 text-xs text-[#292D29] dark:text-white outline-none"
                   >
                     <option value="active">Active & Redeemable</option>
                     <option value="paused">Paused / Inactive</option>
@@ -763,7 +763,7 @@ export default function AdminPromotionsPage() {
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] hover:brightness-110 shadow"
+                  className="px-5 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black hover:brightness-110 shadow"
                 >
                   {editingCoupon ? "Save Changes" : "Create Coupon"}
                 </button>

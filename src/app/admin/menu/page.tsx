@@ -153,7 +153,7 @@ export default function AdminMenuPage() {
     <div className="space-y-6">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed top-5 right-5 z-50 bg-[#22C55E] text-[#0F1115] px-4 py-3 rounded-xl text-xs font-bold shadow-2xl flex items-center gap-2 animate-bounce">
+        <div className="fixed top-5 right-5 z-50 bg-[#22C55E] text-black px-4 py-3 rounded-xl text-xs font-bold shadow-2xl flex items-center gap-2 animate-bounce">
           <CheckCircle2 className="w-4 h-4" />
           <span>{toastMessage}</span>
         </div>
@@ -170,7 +170,7 @@ export default function AdminMenuPage() {
 
         <button
           onClick={handleOpenAdd}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-colors shrink-0"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black shadow-md transition-colors shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Dish</span>
@@ -178,7 +178,7 @@ export default function AdminMenuPage() {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm dark:shadow-none transition-colors">
+      <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm dark:shadow-none transition-colors">
         <div className="relative w-full sm:w-72">
           <Search className="w-4 h-4 text-[#6D756D] dark:text-[#9DA4B0] absolute left-3 top-1/2 -translate-y-1/2" />
           <input
@@ -186,7 +186,7 @@ export default function AdminMenuPage() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search dish name..."
-            className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl pl-9 pr-3 py-2 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none transition-colors"
+            className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl pl-9 pr-3 py-2 text-xs text-[#292D29] dark:text-white placeholder-[#9DA4B0] dark:placeholder-[#6B7280] outline-none transition-colors"
           />
         </div>
 
@@ -195,8 +195,8 @@ export default function AdminMenuPage() {
             onClick={() => setSelectedCategoryFilter("all")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
               selectedCategoryFilter === "all"
-                ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115]"
-                : "bg-[#FAF9F3] dark:bg-[#0F1115] text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#292D29] dark:hover:text-white border border-[#E7E2D6] dark:border-[#2A3140]"
+                ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black"
+                : "bg-[#FAF9F3] dark:bg-black text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#292D29] dark:hover:text-white border border-[#E7E2D6] dark:border-[#1c2028]"
             }`}
           >
             All Categories ({restaurant.items.length})
@@ -207,8 +207,8 @@ export default function AdminMenuPage() {
               onClick={() => setSelectedCategoryFilter(c.id)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
                 selectedCategoryFilter === c.id
-                  ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115]"
-                  : "bg-[#FAF9F3] dark:bg-[#0F1115] text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#292D29] dark:hover:text-white border border-[#E7E2D6] dark:border-[#2A3140]"
+                  ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black"
+                  : "bg-[#FAF9F3] dark:bg-black text-[#6D756D] dark:text-[#9DA4B0] hover:text-[#292D29] dark:hover:text-white border border-[#E7E2D6] dark:border-[#1c2028]"
               }`}
             >
               {c.name.en}
@@ -218,11 +218,11 @@ export default function AdminMenuPage() {
       </div>
 
       {/* Menu Table */}
-      <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl transition-colors">
+      <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-2xl overflow-hidden shadow-sm dark:shadow-xl transition-colors">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs min-w-[640px]">
             <thead>
-              <tr className="border-b border-[#E7E2D6] dark:border-[#2A3140] text-[#6D756D] dark:text-[#9DA4B0] uppercase text-[10px] tracking-wider bg-[#F5F0E6] dark:bg-[#171A21]">
+              <tr className="border-b border-[#E7E2D6] dark:border-[#1c2028] text-[#6D756D] dark:text-[#9DA4B0] uppercase text-[10px] tracking-wider bg-[#F5F0E6] dark:bg-[#111111]">
                 <th className="py-3.5 px-4 font-semibold">Dish</th>
                 <th className="py-3.5 px-4 font-semibold">Category</th>
                 <th className="py-3.5 px-4 font-semibold">Price (₹)</th>
@@ -232,15 +232,15 @@ export default function AdminMenuPage() {
                 <th className="py-3.5 px-4 font-semibold text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#E7E2D6] dark:divide-[#2A3140]/60">
+            <tbody className="divide-y divide-[#E7E2D6] dark:divide-[#1c2028]">
               {filteredDishes.map((dish) => {
                 const cat = restaurant.categories.find((c) => c.id === dish.categoryId);
                 return (
-                  <tr key={dish.id} className="hover:bg-[#FAF9F3] dark:hover:bg-[#171A21] transition-colors">
+                  <tr key={dish.id} className="hover:bg-[#FAF9F3] dark:hover:bg-[#111111] transition-colors">
                     {/* Dish Name */}
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-black shrink-0 border border-[#E7E2D6] dark:border-[#2A3140]">
+                        <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-black shrink-0 border border-[#E7E2D6] dark:border-[#1c2028]">
                           <Image
                             src={dish.image}
                             alt={dish.name.en}
@@ -258,7 +258,7 @@ export default function AdminMenuPage() {
 
                     {/* Category */}
                     <td className="py-3 px-4 text-[#6D756D] dark:text-gray-300">
-                      <span className="bg-[#FAF9F3] dark:bg-[#0F1115] px-2 py-1 rounded text-[11px] border border-[#E7E2D6] dark:border-[#2A3140]">
+                      <span className="bg-[#FAF9F3] dark:bg-black px-2 py-1 rounded text-[11px] border border-[#E7E2D6] dark:border-[#1c2028]">
                         {cat?.name.en || "Unassigned"}
                       </span>
                     </td>
@@ -319,7 +319,7 @@ export default function AdminMenuPage() {
                       <div className="flex items-center justify-end gap-2">
                         <button
                           onClick={() => handleOpenEdit(dish)}
-                          className="p-1.5 rounded-lg text-gray-500 hover:text-[#174D35] dark:text-gray-400 dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors"
+                          className="p-1.5 rounded-lg text-gray-500 hover:text-[#174D35] dark:text-gray-400 dark:hover:text-white hover:bg-[#EDF2E9] dark:hover:bg-[#111111] transition-colors"
                           title="Edit Dish Details & Price"
                         >
                           <Edit2 className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
@@ -327,7 +327,7 @@ export default function AdminMenuPage() {
 
                         <button
                           onClick={() => handleDelete(dish)}
-                          className="p-1.5 rounded-lg text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400 hover:bg-[#EDF2E9] dark:hover:bg-[#252C3B] transition-colors"
+                          className="p-1.5 rounded-lg text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400 hover:bg-[#EDF2E9] dark:hover:bg-[#111111] transition-colors"
                           title="Delete Dish"
                         >
                           <Trash2 className="w-4 h-4" />
@@ -345,7 +345,7 @@ export default function AdminMenuPage() {
       {/* Add / Edit Dish Modal */}
       {(isAddingNew || editingDish) && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm overflow-y-auto">
-          <div className="relative w-full max-w-xl bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl p-6 sm:p-8 shadow-2xl my-8 transition-colors">
+          <div className="relative w-full max-w-xl bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl p-6 sm:p-8 shadow-2xl my-8 transition-colors">
             <button
               onClick={() => {
                 setIsAddingNew(false);
@@ -371,7 +371,7 @@ export default function AdminMenuPage() {
                     required
                     value={formNameEn}
                     onChange={(e) => setFormNameEn(e.target.value)}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
 
@@ -383,7 +383,7 @@ export default function AdminMenuPage() {
                     type="text"
                     value={formNameMr}
                     onChange={(e) => setFormNameMr(e.target.value)}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
               </div>
@@ -396,7 +396,7 @@ export default function AdminMenuPage() {
                   <select
                     value={formCategoryId}
                     onChange={(e) => setFormCategoryId(e.target.value)}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   >
                     {restaurant.categories.map((c) => (
                       <option key={c.id} value={c.id}>
@@ -416,7 +416,7 @@ export default function AdminMenuPage() {
                     min={1}
                     value={formPrice}
                     onChange={(e) => setFormPrice(Number(e.target.value))}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
               </div>
@@ -430,7 +430,7 @@ export default function AdminMenuPage() {
                   required
                   value={formImage}
                   onChange={(e) => setFormImage(e.target.value)}
-                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none"
+                  className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none"
                 />
               </div>
 
@@ -443,7 +443,7 @@ export default function AdminMenuPage() {
                   required
                   value={formShortDescEn}
                   onChange={(e) => setFormShortDescEn(e.target.value)}
-                  className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl p-3 text-xs text-[#292D29] dark:text-white outline-none"
+                  className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-xl p-3 text-xs text-[#292D29] dark:text-white outline-none"
                 />
               </div>
 
@@ -456,7 +456,7 @@ export default function AdminMenuPage() {
                     type="number"
                     value={formPrepTime}
                     onChange={(e) => setFormPrepTime(Number(e.target.value))}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
 
@@ -468,7 +468,7 @@ export default function AdminMenuPage() {
                     type="text"
                     value={formServingSize}
                     onChange={(e) => setFormServingSize(e.target.value)}
-                    className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
+                    className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] rounded-xl px-3 py-2 text-xs text-[#292D29] dark:text-white outline-none"
                   />
                 </div>
               </div>
@@ -507,7 +507,7 @@ export default function AdminMenuPage() {
               </div>
 
               {/* Save CTA */}
-              <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#2A3140] flex justify-end gap-3">
+              <div className="pt-4 border-t border-[#E7E2D6] dark:border-[#1c2028] flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => {
@@ -520,7 +520,7 @@ export default function AdminMenuPage() {
                 </button>
                 <button
                   type="submit"
-                  className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] transition-colors shadow-md"
+                  className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black transition-colors shadow-md"
                 >
                   <Save className="w-3.5 h-3.5" />
                   <span>{isAddingNew ? "Add Dish to Live Menu" : "Save Changes"}</span>

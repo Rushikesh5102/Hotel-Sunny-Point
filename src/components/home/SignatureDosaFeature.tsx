@@ -18,7 +18,7 @@ export function SignatureDosaFeature() {
   const mlaDosa = restaurant.items.find((i) => i.id === "dish-mla-dosa");
 
   return (
-    <section className="py-20 bg-[#FAF9F3] dark:bg-[#0B0D10] relative transition-colors">
+    <section className="py-20 bg-[#FAF9F3] dark:bg-black relative transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
@@ -43,7 +43,7 @@ export function SignatureDosaFeature() {
         </div>
 
         {/* Feature Hero Card */}
-        <div className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden mb-12">
+        <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Visual Area */}
             <div className="lg:col-span-6 relative">
@@ -60,10 +60,10 @@ export function SignatureDosaFeature() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <div className="w-5 h-5 bg-white/90 dark:bg-[#0F1115]/90 border border-[#22C55E] flex items-center justify-center rounded p-0.5 shadow-md">
+                  <div className="w-5 h-5 bg-white/90 dark:bg-black/90 border border-[#22C55E] flex items-center justify-center rounded p-0.5 shadow-md">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#22C55E]"></div>
                   </div>
-                  <span className="bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-md uppercase">
+                  <span className="bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-black text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-md uppercase">
                     Signature Since 1995
                   </span>
                 </div>
@@ -98,7 +98,7 @@ export function SignatureDosaFeature() {
 
               {/* What Makes It Special Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-start gap-2.5">
+                <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-3 rounded-xl flex items-start gap-2.5">
                   <Award className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-[#292D29] dark:text-white">Crispy Golden Dosa</h4>
@@ -106,7 +106,7 @@ export function SignatureDosaFeature() {
                   </div>
                 </div>
 
-                <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-start gap-2.5">
+                <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-3 rounded-xl flex items-start gap-2.5">
                   <Star className="w-4 h-4 text-[#E07A2B] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-[#292D29] dark:text-white">Flavourful Potato Masala</h4>
@@ -114,7 +114,7 @@ export function SignatureDosaFeature() {
                   </div>
                 </div>
 
-                <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-start gap-2.5">
+                <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-3 rounded-xl flex items-start gap-2.5">
                   <Sparkles className="w-4 h-4 text-[#22C55E] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-[#292D29] dark:text-white">Signature Coconut Chutney</h4>
@@ -122,7 +122,7 @@ export function SignatureDosaFeature() {
                   </div>
                 </div>
 
-                <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] p-3 rounded-xl flex items-start gap-2.5">
+                <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-3 rounded-xl flex items-start gap-2.5">
                   <Coffee className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-[#292D29] dark:text-white">Hot Filter Coffee</h4>
@@ -134,7 +134,7 @@ export function SignatureDosaFeature() {
               <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
                 <button
                   onClick={() => setSelectedDish(masalaDosa)}
-                  className="px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
+                  className="px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
                 >
                   {t({ en: "View Masala Dosa Details", mr: "डोशाची माहिती पहा" })}
                 </button>
@@ -156,7 +156,7 @@ export function SignatureDosaFeature() {
           {pesarattu && (
             <div
               onClick={() => setSelectedDish(pesarattu)}
-              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] transition-all duration-300"
+              className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] transition-all duration-300"
             >
               <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-4 bg-[#F5F0E6] dark:bg-black">
                 <Image
@@ -172,7 +172,7 @@ export function SignatureDosaFeature() {
               <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] line-clamp-2 mt-1">
                 {t(pesarattu.shortDescription)}
               </p>
-              <div className="flex items-center justify-between pt-3 mt-3 border-t border-[#E7E2D6] dark:border-[#2A3140]">
+              <div className="flex items-center justify-between pt-3 mt-3 border-t border-[#E7E2D6] dark:border-[#1c2028]">
                 <span className="font-bold text-[#174D35] dark:text-white">₹{pesarattu.price}</span>
                 <span className="text-[11px] text-[#174D35] dark:text-[#D4AF37] font-semibold">Andhra Special</span>
               </div>
@@ -182,7 +182,7 @@ export function SignatureDosaFeature() {
           {setDosa && (
             <div
               onClick={() => setSelectedDish(setDosa)}
-              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] transition-all duration-300"
+              className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] transition-all duration-300"
             >
               <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-4 bg-[#F5F0E6] dark:bg-black">
                 <Image
@@ -198,7 +198,7 @@ export function SignatureDosaFeature() {
               <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] line-clamp-2 mt-1">
                 {t(setDosa.shortDescription)}
               </p>
-              <div className="flex items-center justify-between pt-3 mt-3 border-t border-[#E7E2D6] dark:border-[#2A3140]">
+              <div className="flex items-center justify-between pt-3 mt-3 border-t border-[#E7E2D6] dark:border-[#1c2028]">
                 <span className="font-bold text-[#174D35] dark:text-white">₹{setDosa.price}</span>
                 <span className="text-[11px] text-[#174D35] dark:text-[#D4AF37] font-semibold">Sponge Dosa Trio</span>
               </div>
@@ -208,7 +208,7 @@ export function SignatureDosaFeature() {
           {mlaDosa && (
             <div
               onClick={() => setSelectedDish(mlaDosa)}
-              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] transition-all duration-300"
+              className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] transition-all duration-300"
             >
               <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-4 bg-[#F5F0E6] dark:bg-black">
                 <Image
@@ -224,7 +224,7 @@ export function SignatureDosaFeature() {
               <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] line-clamp-2 mt-1">
                 {t(mlaDosa.shortDescription)}
               </p>
-              <div className="flex items-center justify-between pt-3 mt-3 border-t border-[#E7E2D6] dark:border-[#2A3140]">
+              <div className="flex items-center justify-between pt-3 mt-3 border-t border-[#E7E2D6] dark:border-[#1c2028]">
                 <span className="font-bold text-[#174D35] dark:text-white">₹{mlaDosa.price}</span>
                 <span className="text-[11px] text-[#174D35] dark:text-[#D4AF37] font-semibold">Ghee Upma Stuffing</span>
               </div>

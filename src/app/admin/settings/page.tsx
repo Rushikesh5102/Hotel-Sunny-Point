@@ -105,7 +105,7 @@ export default function AdminSettingsPage() {
     <div className="space-y-8 max-w-4xl pb-16">
       {/* Toast */}
       {toastMessage && (
-        <div className="fixed top-5 right-5 z-50 bg-[#22C55E] text-[#0F1115] px-4 py-3 rounded-xl text-xs font-bold shadow-2xl flex items-center gap-2">
+        <div className="fixed top-5 right-5 z-50 bg-[#22C55E] text-black px-4 py-3 rounded-xl text-xs font-bold shadow-2xl flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4" />
           <span>{toastMessage}</span>
         </div>
@@ -120,8 +120,8 @@ export default function AdminSettingsPage() {
       </div>
 
       {/* Admin Password & Security Setup Card */}
-      <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl space-y-5 shadow-sm dark:shadow-none transition-colors">
-        <div className="flex items-center justify-between border-b border-[#E7E2D6] dark:border-[#2A3140] pb-3">
+      <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-6 rounded-2xl space-y-5 shadow-sm dark:shadow-none transition-colors">
+        <div className="flex items-center justify-between border-b border-[#E7E2D6] dark:border-[#1c2028] pb-3">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-[#174D35]/10 dark:bg-[#D4AF37]/15 border border-[#174D35]/30 dark:border-[#D4AF37]/30 flex items-center justify-center text-[#174D35] dark:text-[#D4AF37]">
               <KeyRound className="w-4 h-4" />
@@ -166,7 +166,7 @@ export default function AdminSettingsPage() {
                 value={currentPassword}
                 placeholder="Current password"
                 onChange={(e) => setCurrentPassword(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
 
@@ -180,7 +180,7 @@ export default function AdminSettingsPage() {
                 value={newPassword}
                 placeholder="New password (min 6 chars)"
                 onChange={(e) => setNewPassword(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
 
@@ -194,7 +194,7 @@ export default function AdminSettingsPage() {
                 value={confirmPassword}
                 placeholder="Re-type new password"
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function AdminSettingsPage() {
 
             <button
               type="submit"
-              className="px-5 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-all shadow-sm active:scale-95"
+              className="px-5 py-2.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black uppercase tracking-wider transition-all shadow-sm active:scale-95"
             >
               Update Admin Password
             </button>
@@ -221,8 +221,8 @@ export default function AdminSettingsPage() {
 
       <form onSubmit={handleSave} className="space-y-6">
         {/* Brand Card */}
-        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl space-y-4 shadow-sm dark:shadow-none transition-colors">
-          <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white border-b border-[#E7E2D6] dark:border-[#2A3140] pb-3">
+        <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-6 rounded-2xl space-y-4 shadow-sm dark:shadow-none transition-colors">
+          <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white border-b border-[#E7E2D6] dark:border-[#1c2028] pb-3">
             Restaurant Identity
           </h3>
 
@@ -236,7 +236,7 @@ export default function AdminSettingsPage() {
                 required
                 value={nameEn}
                 onChange={(e) => setNameEn(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
 
@@ -249,7 +249,7 @@ export default function AdminSettingsPage() {
                 required
                 value={nameMr}
                 onChange={(e) => setNameMr(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function AdminSettingsPage() {
                 type="text"
                 value={taglineEn}
                 onChange={(e) => setTaglineEn(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
 
@@ -275,15 +275,15 @@ export default function AdminSettingsPage() {
                 type="text"
                 value={taglineMr}
                 onChange={(e) => setTaglineMr(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
           </div>
         </div>
 
         {/* Operating Hours & Phones */}
-        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl space-y-4 shadow-sm dark:shadow-none transition-colors">
-          <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white border-b border-[#E7E2D6] dark:border-[#2A3140] pb-3">
+        <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-6 rounded-2xl space-y-4 shadow-sm dark:shadow-none transition-colors">
+          <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white border-b border-[#E7E2D6] dark:border-[#1c2028] pb-3">
             Hours & Contact Lines
           </h3>
 
@@ -296,7 +296,7 @@ export default function AdminSettingsPage() {
                 type="tel"
                 value={primaryPhone}
                 onChange={(e) => setPrimaryPhone(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono outline-none transition-colors"
               />
             </div>
 
@@ -308,7 +308,7 @@ export default function AdminSettingsPage() {
                 type="tel"
                 value={secondaryPhone}
                 onChange={(e) => setSecondaryPhone(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono outline-none transition-colors"
               />
             </div>
           </div>
@@ -322,7 +322,7 @@ export default function AdminSettingsPage() {
                 type="text"
                 value={operatingHoursDays}
                 onChange={(e) => setOperatingHoursDays(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
               />
             </div>
 
@@ -334,15 +334,15 @@ export default function AdminSettingsPage() {
                 type="text"
                 value={operatingHoursTiming}
                 onChange={(e) => setOperatingHoursTiming(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono outline-none transition-colors"
               />
             </div>
           </div>
         </div>
 
         {/* Address & Social Links */}
-        <div className="bg-white dark:bg-[#12151C] border border-[#E7E2D6] dark:border-[#2A3140] p-6 rounded-2xl space-y-4 shadow-sm dark:shadow-none transition-colors">
-          <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white border-b border-[#E7E2D6] dark:border-[#2A3140] pb-3">
+        <div className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] p-6 rounded-2xl space-y-4 shadow-sm dark:shadow-none transition-colors">
+          <h3 className="font-serif font-bold text-base text-[#292D29] dark:text-white border-b border-[#E7E2D6] dark:border-[#1c2028] pb-3">
             Address & Social Presence
           </h3>
 
@@ -354,7 +354,7 @@ export default function AdminSettingsPage() {
               type="text"
               value={addressEn}
               onChange={(e) => setAddressEn(e.target.value)}
-              className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
+              className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white outline-none transition-colors"
             />
           </div>
 
@@ -367,7 +367,7 @@ export default function AdminSettingsPage() {
                 type="url"
                 value={instagramUrl}
                 onChange={(e) => setInstagramUrl(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none transition-colors"
               />
             </div>
 
@@ -379,7 +379,7 @@ export default function AdminSettingsPage() {
                 type="url"
                 value={googleMapsUrl}
                 onChange={(e) => setGoogleMapsUrl(e.target.value)}
-                className="w-full bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#2A3140] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none transition-colors"
+                className="w-full bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] focus:border-[#174D35] dark:focus:border-[#D4AF37] rounded-xl px-3.5 py-2.5 text-xs text-[#292D29] dark:text-white font-mono text-[11px] outline-none transition-colors"
               />
             </div>
           </div>
@@ -388,7 +388,7 @@ export default function AdminSettingsPage() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-md"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black uppercase tracking-wider transition-colors shadow-md"
           >
             <Save className="w-4 h-4" />
             <span>Save All Restaurant Settings</span>

@@ -142,7 +142,7 @@ export function DosaSizzleASMR({ variant = "badge", className = "" }: DosaSizzle
         onClick={toggleSound}
         className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
           isPlaying
-            ? "bg-[#D4AF37] text-[#0F1115] shadow-[0_0_15px_rgba(212,175,55,0.5)] scale-105"
+            ? "bg-[#D4AF37] text-black shadow-[0_0_15px_rgba(212,175,55,0.5)] scale-105"
             : "bg-[#174D35]/10 dark:bg-[#D4AF37]/15 text-[#174D35] dark:text-[#D4AF37] border border-[#174D35]/30 dark:border-[#D4AF37]/30 hover:bg-[#174D35]/20"
         } ${className}`}
         title="Hear real butter dosa sizzle on iron tawa (ASMR)"
@@ -150,9 +150,9 @@ export function DosaSizzleASMR({ variant = "badge", className = "" }: DosaSizzle
         {isPlaying ? (
           <>
             <span className="flex gap-0.5 items-end h-3">
-              <span className="w-0.5 bg-[#0F1115] h-full animate-[bounce_0.6s_infinite]"></span>
-              <span className="w-0.5 bg-[#0F1115] h-2/3 animate-[bounce_0.8s_infinite]"></span>
-              <span className="w-0.5 bg-[#0F1115] h-full animate-[bounce_0.5s_infinite]"></span>
+              <span className="w-0.5 bg-black h-full animate-[bounce_0.6s_infinite]"></span>
+              <span className="w-0.5 bg-black h-2/3 animate-[bounce_0.8s_infinite]"></span>
+              <span className="w-0.5 bg-black h-full animate-[bounce_0.5s_infinite]"></span>
             </span>
             <span>Sizzling Now...</span>
             <VolumeX className="w-3.5 h-3.5 ml-1 opacity-70" />
@@ -173,8 +173,8 @@ export function DosaSizzleASMR({ variant = "badge", className = "" }: DosaSizzle
       type="button"
       className={`group relative overflow-hidden rounded-full px-4 py-2 text-xs font-bold transition-all duration-300 transform active:scale-95 flex items-center gap-2.5 shadow-md ${
         isPlaying
-          ? "bg-gradient-to-r from-[#D4AF37] via-[#F9E79F] to-[#D4AF37] text-[#0F1115] ring-2 ring-[#D4AF37]/80 shadow-[0_0_20px_rgba(212,175,55,0.45)]"
-          : "bg-white/90 dark:bg-[#171A21]/90 backdrop-blur-md text-[#292D29] dark:text-[#E7E2D6] border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:shadow-lg"
+          ? "bg-gradient-to-r from-[#D4AF37] via-[#F9E79F] to-[#D4AF37] text-black ring-2 ring-[#D4AF37]/80 shadow-[0_0_20px_rgba(212,175,55,0.45)]"
+          : "bg-white/90 dark:bg-black/90 backdrop-blur-md text-[#292D29] dark:text-[#E7E2D6] border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:shadow-lg"
       } ${className}`}
       aria-label={isPlaying ? "Stop Dosa Sizzle ASMR sound" : "Listen to Crispy Dosa Sizzle ASMR Sound Bite"}
     >
@@ -183,42 +183,42 @@ export function DosaSizzleASMR({ variant = "badge", className = "" }: DosaSizzle
         <span
           className={`w-0.5 rounded-full transition-all duration-150 ${
             isPlaying
-              ? "bg-[#0F1115] h-3.5 animate-pulse"
+              ? "bg-black h-3.5 animate-pulse"
               : "bg-[#174D35] dark:bg-[#D4AF37] h-1.5 group-hover:h-2.5"
           }`}
         />
         <span
           className={`w-0.5 rounded-full transition-all duration-200 ${
             isPlaying
-              ? "bg-[#0F1115] h-2 animate-bounce"
+              ? "bg-black h-2 animate-bounce"
               : "bg-[#174D35] dark:bg-[#D4AF37] h-3 group-hover:h-3.5"
           }`}
         />
         <span
           className={`w-0.5 rounded-full transition-all duration-300 ${
             isPlaying
-              ? "bg-[#0F1115] h-3 animate-ping"
+              ? "bg-black h-3 animate-ping"
               : "bg-[#174D35] dark:bg-[#D4AF37] h-2 group-hover:h-3"
           }`}
         />
         <span
           className={`w-0.5 rounded-full transition-all duration-150 ${
             isPlaying
-              ? "bg-[#0F1115] h-3.5 animate-pulse"
+              ? "bg-black h-3.5 animate-pulse"
               : "bg-[#174D35] dark:bg-[#D4AF37] h-2.5 group-hover:h-2"
           }`}
         />
       </div>
 
       <div className="flex items-center gap-1.5">
-        <Sparkles className={`w-3.5 h-3.5 ${isPlaying ? "text-[#0F1115]" : "text-[#D4AF37]"}`} />
+        <Sparkles className={`w-3.5 h-3.5 ${isPlaying ? "text-black" : "text-[#D4AF37]"}`} />
         <span>
           {isPlaying ? "Tawa Sizzling (Playing...)" : "Crispy Dosa Sizzle (ASMR)"}
         </span>
       </div>
 
       {isPlaying ? (
-        <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-black/15 text-[#0F1115]">
+        <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-black/15 text-black">
           Tap to Mute
         </span>
       ) : (

@@ -31,7 +31,7 @@ export function ThemeSwitcher({ className = "", variant = "pill", showLabel = fa
         onClick={toggleTheme}
         className={`relative p-2 rounded-xl transition-all duration-200 border ${
           isDark
-            ? "bg-[#171A21] border-[#2A3140] text-[#D4AF37] hover:bg-[#20242C] hover:border-[#D4AF37]/50"
+            ? "bg-black border-[#1c2028] text-[#D4AF37] hover:bg-[#111111] hover:border-[#D4AF37]/50"
             : "bg-[#FFFFFF] border-[#E7E2D6] text-[#174D35] hover:bg-[#F5F0E6] hover:border-[#174D35]/40 shadow-sm"
         } ${className}`}
         title={ariaLabel}
@@ -51,7 +51,7 @@ export function ThemeSwitcher({ className = "", variant = "pill", showLabel = fa
       onClick={toggleTheme}
       className={`group relative flex items-center gap-1.5 px-2.5 py-1 sm:py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 shadow-sm ${
         isDark
-          ? "bg-[#171A21] border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#20242C] hover:border-[#D4AF37]"
+          ? "bg-black border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#111111] hover:border-[#D4AF37]"
           : "bg-[#FFFFFF] border-[#174D35]/30 text-[#174D35] hover:bg-[#F5F0E6] hover:border-[#174D35] shadow-sm"
       } ${className}`}
       title={ariaLabel}

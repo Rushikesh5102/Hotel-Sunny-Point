@@ -88,7 +88,7 @@ export function SecretHeritageEasterEgg({ children, className = "" }: SecretHeri
               </div>
               <button
                 onClick={copyPromo}
-                className="px-3 py-1.5 rounded-xl bg-[#D4AF37] hover:bg-[#F9E79F] text-[#0F1115] font-bold text-xs flex items-center gap-1.5 shadow transition-all active:scale-95"
+                className="px-3 py-1.5 rounded-xl bg-[#D4AF37] hover:bg-[#F9E79F] text-black font-bold text-xs flex items-center gap-1.5 shadow transition-all active:scale-95"
               >
                 {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copied ? "Copied!" : "Copy"}</span>

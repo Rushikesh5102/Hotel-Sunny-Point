@@ -27,12 +27,12 @@ export default function OffersPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] text-[#292D29] dark:text-[#F5F5F5] pb-16 md:pb-0 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-black text-[#292D29] dark:text-[#F5F5F5] pb-16 md:pb-0 transition-colors duration-200">
       <Header />
 
       <main className="flex-1 pb-24">
         {/* Offers Header */}
-        <section className="bg-gradient-to-b from-[#F5F0E6] to-[#FAF9F3] dark:from-[#171A21] dark:to-[#0F1115] border-b border-[#E7E2D6] dark:border-[#2A3140]/60 py-14 px-4 sm:px-6 lg:px-8 text-center">
+        <section className="bg-gradient-to-b from-[#F5F0E6] to-[#FAF9F3] dark:from-black dark:to-black border-b border-[#E7E2D6] dark:border-[#1c2028] py-14 px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#174D35]/10 border border-[#174D35]/20 text-[#174D35] dark:bg-[#D4AF37]/10 dark:border-[#D4AF37]/30 dark:text-[#D4AF37] text-xs font-semibold uppercase tracking-widest">
               <Sparkles className="w-3.5 h-3.5" />
@@ -62,7 +62,7 @@ export default function OffersPage() {
             return (
               <div
                 key={promo.id}
-                className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl p-6 sm:p-10 shadow-sm hover:shadow-md dark:shadow-2xl space-y-8 transition-colors"
+                className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-3xl p-6 sm:p-10 shadow-sm hover:shadow-md dark:shadow-2xl space-y-8 transition-colors"
               >
                 {/* Promo Header Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -84,7 +84,7 @@ export default function OffersPage() {
 
                     {promo.couponCode && (
                       <div className="flex items-center gap-3 pt-2">
-                        <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#D4AF37]/50 px-4 py-2 rounded-xl flex items-center gap-2.5">
+                        <div className="bg-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/50 px-4 py-2 rounded-xl flex items-center gap-2.5">
                           <Tag className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                           <span className="font-mono font-bold text-[#174D35] dark:text-white text-sm">
                             {promo.couponCode}
@@ -93,7 +93,7 @@ export default function OffersPage() {
 
                         <button
                           onClick={() => copyCoupon(promo.couponCode!)}
-                          className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#EDF2E9] dark:bg-[#212631] text-[#174D35] dark:text-[#D4AF37] hover:bg-[#E2EAE0] dark:hover:bg-[#2A3140] hover:shadow-sm active:scale-95 transition-all duration-200"
+                          className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#EDF2E9] dark:bg-white/10 text-[#174D35] dark:text-[#D4AF37] hover:bg-[#E2EAE0] dark:hover:bg-white/20 hover:shadow-sm active:scale-95 transition-all duration-200"
                         >
                           {copiedCode === promo.couponCode ? (
                             <>
@@ -125,7 +125,7 @@ export default function OffersPage() {
 
                 {/* Linked Dishes Grid */}
                 {linkedDishes.length > 0 && (
-                  <div className="pt-6 border-t border-[#E7E2D6] dark:border-[#2A3140]">
+                  <div className="pt-6 border-t border-[#E7E2D6] dark:border-[#1c2028]">
                     <h3 className="font-serif text-lg font-bold text-[#292D29] dark:text-white mb-6 flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-[#174D35] dark:text-[#D4AF37]" />
                       <span>{t({ en: "Dishes in this Campaign", mr: "या मोहिमेतील पदार्थ" })}</span>

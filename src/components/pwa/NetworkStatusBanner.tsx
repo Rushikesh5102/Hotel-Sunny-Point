@@ -73,7 +73,7 @@ export function NetworkStatusBanner() {
         className={`px-4 py-3 rounded-2xl shadow-2xl backdrop-blur-md border flex items-center justify-between gap-3 text-xs transition-all ${
           isOnline
             ? "bg-[#174D35]/95 text-white border-[#22C55E]/50 dark:bg-[#123C29]/95 dark:border-[#22C55E]/60 shadow-[#174D35]/20"
-            : "bg-[#0F1115]/95 text-white border-amber-500/50 dark:bg-[#171A21]/95 dark:border-[#D4AF37]/50 shadow-black/40"
+            : "bg-black/95 text-white border-amber-500/50 dark:bg-black/95 dark:border-[#D4AF37]/50 shadow-black/40"
         }`}
       >
         <div className="flex items-center gap-2.5">

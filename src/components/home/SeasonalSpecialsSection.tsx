@@ -18,10 +18,10 @@ export function SeasonalSpecialsSection() {
   );
 
   return (
-    <section className="py-20 bg-[#FAF9F3] dark:bg-[#0F1115] border-t border-[#E7E2D6] dark:border-[#2A3140]/60 relative transition-colors">
+    <section className="py-20 bg-[#FAF9F3] dark:bg-black border-t border-[#E7E2D6] dark:border-[#1c2028] relative transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Banner Area */}
-        <div className="bg-gradient-to-br from-white via-[#F5F0E6] to-[#FAF9F3] dark:bg-gradient-to-br dark:from-[#171A21] dark:via-[#1A1813] dark:to-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/50 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden mb-12">
+        <div className="bg-gradient-to-br from-white via-[#F5F0E6] to-[#FAF9F3] dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/50 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Narrative */}
             <div className="lg:col-span-7 space-y-4">
@@ -43,7 +43,7 @@ export function SeasonalSpecialsSection() {
               </p>
 
               {activePromo.couponCode && (
-                <div className="inline-flex items-center gap-2 bg-white dark:bg-[#0F1115] border border-[#E7E2D6] dark:border-[#D4AF37]/40 px-3.5 py-1.5 rounded-xl text-xs shadow-sm">
+                <div className="inline-flex items-center gap-2 bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#D4AF37]/40 px-3.5 py-1.5 rounded-xl text-xs shadow-sm">
                   <Tag className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37]" />
                   <span className="text-[#6D756D] dark:text-[#9DA4B0] font-medium">Coupon Code:</span>
                   <span className="font-mono font-bold text-[#174D35] dark:text-[#F9E79F]">{activePromo.couponCode}</span>
@@ -53,7 +53,7 @@ export function SeasonalSpecialsSection() {
               <div className="pt-2">
                 <Link
                   href="/offers"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-black uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
                 >
                   <span>{t({ en: "View All Specials & Offers", mr: "सर्व ऑफर्स पहा" })}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -87,9 +87,9 @@ export function SeasonalSpecialsSection() {
               <div
                 key={dish.id}
                 onClick={() => setSelectedDish(dish)}
-                className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 group cursor-pointer active:scale-[0.98] transition-all duration-300"
+                className="bg-white dark:bg-black border border-[#E7E2D6] dark:border-[#1c2028] hover:border-[#174D35] dark:hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 group cursor-pointer active:scale-[0.98] transition-all duration-300"
               >
-                <div className="relative aspect-[4/3] w-full bg-[#F5F0E6] dark:bg-[#0F1115]">
+                <div className="relative aspect-[4/3] w-full bg-[#F5F0E6] dark:bg-black">
                   <Image
                     src={dish.image}
                     alt={t(dish.name)}
@@ -97,8 +97,8 @@ export function SeasonalSpecialsSection() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-2.5 left-2.5">
-                    <div className="w-4 h-4 bg-white/90 dark:bg-[#0F1115]/90 border border-[#22C55E] flex items-center justify-center rounded p-0.5 shadow-md">
-                      <div className="w-2 h-2 rounded-full bg-[#22C55E]"></div>
+                    <div className="w-4 h-4 bg-white/90 dark:bg-black/90 border border-[#22C55E] flex items-center justify-center rounded p-0.5 shadow-md">
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#22C55E]"></div>
                     </div>
                   </div>
                 </div>

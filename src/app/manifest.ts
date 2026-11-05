@@ -11,7 +11,7 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: "/",
     id: "hotel-sunny-point-bhadrawati",
     display: "standalone",
-    background_color: "#0F1115",
+    background_color: "#000000",
     theme_color: "#174D35",
     orientation: "portrait",
     categories: ["food", "restaurants", "lifestyle"],
