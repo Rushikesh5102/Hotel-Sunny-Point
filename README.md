@@ -42,10 +42,10 @@
 Here is a visual overview of the application verified under external browser automation:
 
 ### 1. Desktop Experience & Heritage Showcase
-| Desktop Hero Banner & Bilingual Navigation | 1965 Vintage Gazette & 1995 Iconic Dosa |
+| Desktop Hero Banner & Bilingual Navigation | 1995 Heritage Gazette & 1995 Iconic Dosa |
 | :---: | :---: |
 | <img src="public/screenshots/01_homepage_desktop.png" width="480" alt="Homepage Desktop Hero" /> | <img src="public/screenshots/02_gazette_and_dosa_feature.png" width="480" alt="Heritage Gazette & Dosa Feature" /> |
-| *Atmospheric cinematic hero with warm gold accents* | *Authentic vintage 1965 newsprint and 1995 Dosa feature* |
+| *Atmospheric cinematic hero with warm gold accents* | *Authentic 1995 founding archive and iconic Dosa feature* |
 
 ### 2. Tri-Lingual Menu & Dish Inspection Modal
 | Tri-Lingual Menu (Hindi / Devanagari) | Dish Details Modal & Pairings |
