@@ -10,7 +10,7 @@
   </p>
 
   <p align="center">
-    <a href="https://rushikesh5102.github.io/Hotel-Sunny-Point/"><img src="https://img.shields.io/badge/🌐_Live_Preview-GitHub_Pages-22C55E?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live GitHub Pages Preview" /></a>
+    <a href="https://hotel-sunny-point.vercel.app"><img src="https://img.shields.io/badge/🌐_Live_Preview-Vercel_Production-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Vercel Preview" /></a>
     <a href="https://github.com/Rushikesh5102/Hotel-Sunny-Point"><img src="https://img.shields.io/badge/🐙_Source_Code-GitHub_Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository" /></a>
   </p>
 
@@ -28,7 +28,7 @@
 
   <p align="center">
     <b>Quick Links:</b><br />
-    <a href="https://rushikesh5102.github.io/Hotel-Sunny-Point/">🌐 <b>GitHub Pages Live Preview</b></a> • 
+    <a href="https://hotel-sunny-point.vercel.app">🌐 <b>Live Production Website (Vercel)</b></a> • 
     <a href="https://github.com/Rushikesh5102/Hotel-Sunny-Point">🐙 <b>GitHub Repository</b></a> • 
     <a href="#-visual-previews--platform-gallery">📸 <b>Visual Gallery</b></a> • 
     <a href="#7-phase-14-documentation-index">📖 <b>Documentation Suite</b></a>
