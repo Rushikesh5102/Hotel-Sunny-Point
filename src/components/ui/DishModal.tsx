@@ -69,8 +69,8 @@ export function DishModal({ dish, onClose }: DishModalProps) {
               </div>
 
               {dish.isSignature && (
-                <span className="flex items-center gap-1 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] text-xs font-bold px-2.5 py-1 rounded-full shadow-md">
-                  <Sparkles className="w-3 dot3" />
+                <span className="flex items-center gap-1.5 bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] text-xs font-bold px-3 py-1 rounded-full shadow-md tracking-wider uppercase">
+                  <Sparkles className="w-3.5 h-3.5" />
                   <span>Signature Creation</span>
                 </span>
               )}

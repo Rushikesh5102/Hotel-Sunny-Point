@@ -73,8 +73,8 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Brand Logo & Name */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#174D35] dark:border-[#D4AF37] shadow-md group-hover:scale-105 transition-transform duration-300">
+            <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+              <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#174D35] dark:border-[#D4AF37] shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0">
                 <Image
                   src={restaurant.settings.logoUrl}
                   alt={restaurant.settings.name.en}
@@ -83,17 +83,17 @@ export function Header() {
                   priority
                 />
               </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-2">
-                  <span className="font-serif text-xl sm:text-2xl font-bold tracking-wide text-[#292D29] dark:text-white group-hover:text-primary dark:group-hover:text-[#D4AF37] transition-colors">
+              <div className="flex flex-col shrink-0">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <span className="font-serif text-lg sm:text-xl xl:text-2xl font-bold tracking-wide text-[#292D29] dark:text-white group-hover:text-primary dark:group-hover:text-[#D4AF37] transition-colors whitespace-nowrap">
                     {t(restaurant.settings.name)}
                   </span>
                   {/* Pure Veg Green Badge */}
-                  <div className="w-3.5 h-3.5 border border-[#22C55E] flex items-center justify-center p-0.5 rounded-sm bg-[#22C55E]/10" title="100% Pure Veg">
+                  <div className="w-3.5 h-3.5 border border-[#22C55E] flex items-center justify-center p-0.5 rounded-sm bg-[#22C55E]/10 shrink-0" title="100% Pure Veg">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></div>
                   </div>
                 </div>
-                <span className="text-[11px] sm:text-xs text-[#174D35] dark:text-[#D4AF37] font-semibold tracking-wider uppercase">
+                <span className="text-[10px] sm:text-[11px] xl:text-xs text-[#174D35] dark:text-[#D4AF37] font-semibold tracking-wider uppercase whitespace-nowrap">
                   {t({ en: "The Taste of Legacy • Est. 1965", mr: "द टेस्ट ऑफ लेगसी • स्था. १९६५" })}
                 </span>
               </div>
@@ -107,7 +107,7 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${
+                    className={`px-2.5 xl:px-3.5 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-all ${
                       isActive
                         ? "text-[#174D35] dark:text-[#D4AF37] bg-[#174D35]/10 dark:bg-[#D4AF37]/10 border border-[#174D35]/30 dark:border-[#D4AF37]/30 font-semibold"
                         : "text-[#6D756D] dark:text-[#C9CDD5] hover:text-[#292D29] dark:hover:text-white hover:bg-[#F5F0E6] dark:hover:bg-[#171A21]"
@@ -120,12 +120,12 @@ export function Header() {
             </nav>
 
             {/* Action Buttons: Theme Switcher, Multilingual Selector & Mobile Menu */}
-            <div className="flex items-center gap-2 sm:gap-2.5">
+            <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
               {/* Theme Switcher Button */}
               <ThemeSwitcher variant="pill" className="shrink-0" />
 
               {/* Multilingual Selector: EN | मराठी | हिन्दी */}
-              <div className="flex items-center bg-[#FFFFFF] dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-full p-0.5 shadow-sm">
+              <div className="flex items-center bg-[#FFFFFF] dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-full p-0.5 shadow-sm shrink-0">
                 {(["en", "mr", "hi"] as const).map((code) => {
                   const labels = { en: "EN", mr: "मराठी", hi: "हिन्दी" };
                   const isSelected = language === code;
@@ -147,10 +147,10 @@ export function Header() {
                 })}
               </div>
 
-              {/* Order/Browse Menu CTA (Desktop) */}
+              {/* Order/Browse Menu CTA (Desktop - on xl+ screens) */}
               <Link
                 href="/menu"
-                className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-gradient-to-r dark:from-[#D4AF37] dark:to-[#B89324] dark:hover:from-[#E5C158] dark:hover:to-[#D4AF37] dark:text-[#0F1115] shadow-md transition-all transform active:scale-95"
+                className="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-gradient-to-r dark:from-[#D4AF37] dark:to-[#B89324] dark:hover:from-[#E5C158] dark:hover:to-[#D4AF37] dark:text-[#0F1115] shadow-md transition-all transform active:scale-95 whitespace-nowrap shrink-0"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{t({ en: "View Menu", mr: "मेनू पहा", hi: "मेनू देखें" })}</span>

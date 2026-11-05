@@ -26,14 +26,16 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
 
   if (!dish) {
     return (
-      <div className="min-h-screen flex flex-col bg-[#0F1115]">
+      <div className="min-h-screen flex flex-col bg-[#FAF9F3] dark:bg-[#0F1115] text-[#292D29] dark:text-white transition-colors">
         <Header />
         <main className="flex-1 flex flex-col items-center justify-center p-8 text-center space-y-4">
-          <h2 className="font-serif text-2xl font-bold text-white">Dish Not Found</h2>
-          <p className="text-sm text-[#9DA4B0]">The dish you requested could not be located in our current menu.</p>
+          <h2 className="font-serif text-3xl font-bold text-[#292D29] dark:text-white">Dish Not Found</h2>
+          <p className="text-sm text-[#6D756D] dark:text-[#9DA4B0] max-w-md">
+            The culinary item you requested could not be located in our current menu. It may have been updated or rotated seasonally.
+          </p>
           <Link
             href="/menu"
-            className="px-6 py-2.5 rounded-xl text-xs font-semibold bg-[#D4AF37] text-[#0F1115]"
+            className="px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] shadow-md transition-all duration-300"
           >
             Browse Full Menu
           </Link>

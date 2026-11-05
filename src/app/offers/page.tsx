@@ -91,17 +91,17 @@ export default function OffersPage() {
 
                         <button
                           onClick={() => copyCoupon(promo.couponCode!)}
-                          className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-[#EDF2E9] dark:bg-[#212631] text-[#174D35] dark:text-[#D4AF37] hover:bg-[#E2EAE0] dark:hover:bg-[#2A3140] transition-colors"
+                          className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#EDF2E9] dark:bg-[#212631] text-[#174D35] dark:text-[#D4AF37] hover:bg-[#E2EAE0] dark:hover:bg-[#2A3140] hover:shadow-sm active:scale-95 transition-all duration-200"
                         >
                           {copiedCode === promo.couponCode ? (
                             <>
                               <Check className="w-3.5 h-3.5 text-[#22C55E]" />
-                              <span>Copied!</span>
+                              <span>Copied to Clipboard!</span>
                             </>
                           ) : (
                             <>
                               <Copy className="w-3.5 h-3.5" />
-                              <span>Copy Code</span>
+                              <span>Copy Coupon Code</span>
                             </>
                           )}
                         </button>

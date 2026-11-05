@@ -21,7 +21,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
     return (
       <div
         onClick={() => onSelectDish && onSelectDish(dish)}
-        className={`group relative flex items-center justify-between gap-3 bg-white dark:bg-[#171A21] p-3.5 rounded-2xl border border-[#E7E2D6] dark:border-[#2A3140]/80 shadow-sm hover:border-[#174D35]/50 dark:hover:border-[#D4AF37]/50 active:scale-[0.99] transition-all cursor-pointer ${
+        className={`group relative flex items-center justify-between gap-3 bg-white dark:bg-[#171A21] p-3.5 rounded-2xl border border-[#E7E2D6] dark:border-[#2A3140]/80 shadow-sm hover:border-[#174D35]/50 dark:hover:border-[#D4AF37]/50 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 cursor-pointer ${
           !dish.isAvailable ? "opacity-75 grayscale-[30%]" : ""
         }`}
       >
@@ -114,7 +114,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
   return (
     <div
       onClick={() => onSelectDish && onSelectDish(dish)}
-      className={`group relative flex flex-col justify-between bg-white dark:bg-[#171A21] rounded-2xl border border-[#E7E2D6] dark:border-[#2A3140]/80 overflow-hidden shadow-sm hover:border-[#174D35]/50 dark:hover:border-[#D4AF37]/50 hover:shadow-xl active:scale-[0.99] transition-all duration-300 cursor-pointer ${
+      className={`group relative flex flex-col justify-between bg-white dark:bg-[#171A21] rounded-2xl border border-[#E7E2D6] dark:border-[#2A3140]/80 overflow-hidden shadow-sm hover:border-[#174D35]/50 dark:hover:border-[#D4AF37]/50 hover:shadow-xl hover:-translate-y-1.5 active:scale-[0.98] transition-all duration-300 cursor-pointer ${
         !dish.isAvailable ? "opacity-75 grayscale-[30%]" : ""
       }`}
     >
@@ -125,7 +125,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
           alt={t(dish.name)}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
           onError={() => setImageError(true)}
         />
 
@@ -181,7 +181,7 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
         )}
 
         {/* Quick View Hover Prompt */}
-        <div className="absolute bottom-2.5 right-2.5 opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-sm text-white text-[11px] font-medium px-2 py-1 rounded-lg flex items-center gap-1">
+        <div className="absolute bottom-2.5 right-2.5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 bg-black/75 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-md">
           <Eye className="w-3 h-3 text-[#174D35] dark:text-[#D4AF37]" />
           <span>{t({ en: "Details", mr: "माहिती" })}</span>
         </div>
@@ -190,13 +190,13 @@ export function FoodCard({ dish, onSelectDish, variant = "grid" }: FoodCardProps
       {/* Content Area */}
       <div className="p-4 flex flex-col justify-between flex-1">
         <div>
-          <div className="flex items-start justify-between gap-2 mb-1">
-            <h3 className="font-serif text-base sm:text-lg font-bold text-[#292D29] dark:text-white group-hover:text-primary dark:group-hover:text-[#D4AF37] transition-colors leading-snug">
+          <div className="flex items-start justify-between gap-2 mb-1.5 min-h-[2.75rem]">
+            <h3 className="font-serif text-base sm:text-lg font-bold text-[#292D29] dark:text-white group-hover:text-[#174D35] dark:group-hover:text-[#D4AF37] transition-colors leading-snug line-clamp-2">
               {t(dish.name)}
             </h3>
           </div>
 
-          <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] line-clamp-2 leading-relaxed mb-3">
+          <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] line-clamp-2 leading-relaxed mb-3 min-h-[2rem]">
             {t(dish.shortDescription)}
           </p>
         </div>

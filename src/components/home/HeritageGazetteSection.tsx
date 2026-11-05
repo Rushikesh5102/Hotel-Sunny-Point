@@ -91,7 +91,7 @@ export function HeritageGazetteSection() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-md"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
               >
                 <BookOpen className="w-3.5 h-3.5" />
                 <span>{t({ en: "Read Full Heritage Story", mr: "संपूर्ण इतिहास वाचा" })}</span>
@@ -99,7 +99,7 @@ export function HeritageGazetteSection() {
 
               <button
                 onClick={() => setShowGazetteModal(true)}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold bg-white hover:bg-[#FAF9F3] text-[#174D35] border border-[#E7E2D6] dark:bg-[#171A21] dark:hover:bg-[#212631] dark:text-[#D4AF37] dark:border-[#2A3140] shadow-sm transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-semibold bg-white hover:bg-[#FAF9F3] text-[#174D35] border border-[#E7E2D6] dark:bg-[#171A21] dark:hover:bg-[#212631] dark:text-[#D4AF37] dark:border-[#2A3140] shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#174D35] dark:text-[#D4AF37]" />
                 <span>{t({ en: "Inspect 1965 Newspaper Poster", mr: "१९६५ चे वृत्तपत्र पोस्टर पहा" })}</span>
@@ -111,11 +111,12 @@ export function HeritageGazetteSection() {
 
       {/* Gazette Fullscreen Zoom Modal */}
       {showGazetteModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
-          <div className="relative max-w-2xl w-full max-h-[90vh] bg-[#171A21] rounded-2xl overflow-hidden border border-[#D4AF37]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-200">
+          <div className="relative max-w-2xl w-full max-h-[90vh] bg-white dark:bg-[#171A21] rounded-2xl overflow-hidden border border-[#174D35] dark:border-[#D4AF37] shadow-2xl animate-in zoom-in-95 duration-200">
             <button
               onClick={() => setShowGazetteModal(false)}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/70 text-white hover:text-[#D4AF37]"
+              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/70 text-white hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
+              aria-label="Close poster view"
             >
               <X className="w-5 h-5" />
             </button>
@@ -124,7 +125,7 @@ export function HeritageGazetteSection() {
                 src="/assets/brand/gazette-history.jpg"
                 alt="Sunny Point Gazette Full Poster"
                 fill
-                className="object-contain"
+                className="object-contain p-2"
               />
             </div>
           </div>

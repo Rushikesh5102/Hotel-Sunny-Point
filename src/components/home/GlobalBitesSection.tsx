@@ -43,7 +43,7 @@ export function GlobalBitesSection() {
             <div
               key={dish.id}
               onClick={() => setSelectedDish(dish)}
-              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md group cursor-pointer transition-all duration-300 flex flex-col justify-between"
+              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 group cursor-pointer active:scale-[0.98] transition-all duration-300 flex flex-col justify-between"
             >
               <div className="relative aspect-[4/3] w-full bg-[#F5F0E6] dark:bg-[#0F1115] overflow-hidden">
                 <Image
@@ -95,10 +95,10 @@ export function GlobalBitesSection() {
         <div className="text-center mt-12">
           <Link
             href="/menu/global-bites"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-white hover:bg-[#FAF9F3] text-[#174D35] border border-[#E7E2D6] hover:border-[#174D35] dark:bg-[#171A21] dark:hover:bg-[#212631] dark:text-[#D4AF37] dark:border-[#D4AF37]/40 dark:hover:border-[#D4AF37] uppercase tracking-wider transition-all shadow-md"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold bg-white hover:bg-[#FAF9F3] text-[#174D35] border border-[#E7E2D6] hover:border-[#174D35] dark:bg-[#171A21] dark:hover:bg-[#212631] dark:text-[#D4AF37] dark:border-[#D4AF37]/40 dark:hover:border-[#D4AF37] uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
           >
             <span>{t({ en: "View All Global Bites Items", mr: "सर्व ग्लोबल बाईट्स पहा" })}</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

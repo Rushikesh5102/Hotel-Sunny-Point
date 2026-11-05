@@ -35,13 +35,13 @@ export function CategoryGrid() {
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {restaurant.categories.map((cat) => {
+          {restaurant.categories.map((cat, idx) => {
             const itemCount = restaurant.items.filter((i) => i.categoryId === cat.id).length;
             return (
               <Link
                 key={cat.id}
                 href={`/menu?category=${cat.slug}`}
-                className="group relative flex flex-col justify-end h-72 rounded-2xl overflow-hidden border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/70 shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="group relative flex flex-col justify-end h-72 rounded-2xl overflow-hidden border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/70 shadow-md hover:shadow-2xl hover:-translate-y-1.5 active:scale-[0.98] transition-all duration-300"
               >
                 {/* Background Image */}
                 <Image

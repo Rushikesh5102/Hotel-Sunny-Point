@@ -60,10 +60,11 @@ export default function FeedbackPage() {
             type="button"
             key={star}
             onClick={() => onChange(star)}
-            className="p-1 text-gray-300 dark:text-gray-600 hover:text-[#D4AF37] focus:outline-none transition-colors"
+            className="p-1 text-gray-300 dark:text-gray-600 hover:text-[#D4AF37] focus:outline-none hover:scale-125 active:scale-90 transition-all duration-150"
+            aria-label={`${star} star rating`}
           >
             <Star
-              className={`w-5 h-5 ${
+              className={`w-5 h-5 transition-colors ${
                 star <= value ? "fill-[#D4AF37] text-[#D4AF37]" : "text-gray-300 dark:text-gray-600"
               }`}
             />
@@ -243,7 +244,7 @@ export default function FeedbackPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-md disabled:opacity-50"
+                className="w-full flex items-center justify-center gap-2 py-4 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123E2A] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.99] transition-all duration-300 disabled:opacity-50"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>{isSubmitting ? "Submitting..." : "Submit Confidential Feedback"}</span>

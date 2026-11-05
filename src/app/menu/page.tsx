@@ -135,9 +135,9 @@ function MenuContent() {
         </section>
 
         {/* Sticky Mobile-First Category Navigation Bar */}
-        <div className="sticky top-20 z-30 bg-[#FAF9F3]/95 dark:bg-[#0F1115]/95 backdrop-blur-md border-b border-[#E7E2D6] dark:border-[#2A3140] shadow-sm py-2.5 px-3 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5">
-            {/* Category Pills (Touch Horizontal Scroll) */}
+        <div className="sticky top-20 z-30 bg-[#FAF9F3]/95 dark:bg-[#0F1115]/95 backdrop-blur-md border-b border-[#E7E2D6] dark:border-[#2A3140] shadow-sm py-2 px-3 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto space-y-2">
+            {/* Category Pills (Full-Width Touch Horizontal Scroll) */}
             <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar w-full py-0.5 overscroll-x-contain">
               <button
                 onClick={() => setSelectedCategory("all")}
@@ -170,12 +170,12 @@ function MenuContent() {
               })}
             </div>
 
-            {/* Quick Filter Badges & View Switcher */}
-            <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto shrink-0">
+            {/* Quick Filter Badges & View Switcher Row */}
+            <div className="flex items-center justify-between gap-2 w-full pt-1.5 border-t border-[#E7E2D6]/60 dark:border-[#2A3140]/60">
               <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
                 <button
                   onClick={() => setFilterType(filterType === "signature" ? "all" : "signature")}
-                  className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-semibold whitespace-nowrap border transition-all flex items-center gap-1 ${
+                  className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-semibold whitespace-nowrap border transition-all flex items-center gap-1 shrink-0 ${
                     filterType === "signature"
                       ? "bg-[#174D35]/15 border-[#174D35] text-[#174D35] dark:bg-[#D4AF37]/20 dark:border-[#D4AF37] dark:text-[#D4AF37]"
                       : "bg-white border-[#E7E2D6] text-[#6D756D] hover:text-[#292D29] dark:bg-[#171A21] dark:border-[#2A3140] dark:text-[#9DA4B0] dark:hover:text-white"
@@ -187,7 +187,7 @@ function MenuContent() {
 
                 <button
                   onClick={() => setFilterType(filterType === "bestseller" ? "all" : "bestseller")}
-                  className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-semibold whitespace-nowrap border transition-all flex items-center gap-1 ${
+                  className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-semibold whitespace-nowrap border transition-all flex items-center gap-1 shrink-0 ${
                     filterType === "bestseller"
                       ? "bg-[#E07A2B]/20 border-[#E07A2B] text-[#E07A2B]"
                       : "bg-white border-[#E7E2D6] text-[#6D756D] hover:text-[#292D29] dark:bg-[#171A21] dark:border-[#2A3140] dark:text-[#9DA4B0] dark:hover:text-white"
@@ -199,7 +199,7 @@ function MenuContent() {
 
                 <button
                   onClick={() => setFilterType(filterType === "budget" ? "all" : "budget")}
-                  className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-semibold whitespace-nowrap border transition-all flex items-center gap-1 ${
+                  className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-semibold whitespace-nowrap border transition-all flex items-center gap-1 shrink-0 ${
                     filterType === "budget"
                       ? "bg-[#22C55E]/20 border-[#22C55E] text-[#22C55E]"
                       : "bg-white border-[#E7E2D6] text-[#6D756D] hover:text-[#292D29] dark:bg-[#171A21] dark:border-[#2A3140] dark:text-[#9DA4B0] dark:hover:text-white"
@@ -210,32 +210,37 @@ function MenuContent() {
                 </button>
               </div>
 
-              {/* View Switcher: Compact List vs Grid */}
-              <div className="flex items-center gap-0.5 bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] p-0.5 rounded-lg shrink-0 shadow-sm">
-                <button
-                  onClick={() => setViewMode("compact")}
-                  className={`p-1.5 rounded-md text-xs transition-colors ${
-                    viewMode === "compact"
-                      ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow"
-                      : "text-gray-400 hover:text-[#292D29] dark:hover:text-white"
-                  }`}
-                  title="Compact List View"
-                  aria-label="Switch to compact list view"
-                >
-                  <ListFilter className="w-3.5 h-3.5" />
-                </button>
-                <button
-                  onClick={() => setViewMode("grid")}
-                  className={`p-1.5 rounded-md text-xs transition-colors ${
-                    viewMode === "grid"
-                      ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow"
-                      : "text-gray-400 hover:text-[#292D29] dark:hover:text-white"
-                  }`}
-                  title="Photo Grid View"
-                  aria-label="Switch to photo grid view"
-                >
-                  <LayoutGrid className="w-3.5 h-3.5" />
-                </button>
+              {/* View Switcher & Result Count */}
+              <div className="flex items-center gap-2.5 shrink-0">
+                <span className="text-[11px] font-medium text-[#6D756D] dark:text-[#9DA4B0] hidden sm:inline">
+                  {filteredDishes.length} {filteredDishes.length === 1 ? t({ en: "dish", mr: "पदार्थ" }) : t({ en: "dishes", mr: "पदार्थ" })}
+                </span>
+                <div className="flex items-center gap-0.5 bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] p-0.5 rounded-lg shrink-0 shadow-sm">
+                  <button
+                    onClick={() => setViewMode("compact")}
+                    className={`p-1.5 rounded-md text-xs transition-colors ${
+                      viewMode === "compact"
+                        ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow"
+                        : "text-gray-400 hover:text-[#292D29] dark:hover:text-white"
+                    }`}
+                    title="Compact List View"
+                    aria-label="Switch to compact list view"
+                  >
+                    <ListFilter className="w-3.5 h-3.5" />
+                  </button>
+                  <button
+                    onClick={() => setViewMode("grid")}
+                    className={`p-1.5 rounded-md text-xs transition-colors ${
+                      viewMode === "grid"
+                        ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow"
+                        : "text-gray-400 hover:text-[#292D29] dark:hover:text-white"
+                    }`}
+                    title="Photo Grid View"
+                    aria-label="Switch to photo grid view"
+                  >
+                    <LayoutGrid className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>

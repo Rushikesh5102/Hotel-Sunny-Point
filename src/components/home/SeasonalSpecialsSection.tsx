@@ -53,7 +53,7 @@ export function SeasonalSpecialsSection() {
               <div className="pt-2">
                 <Link
                   href="/offers"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-md"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
                 >
                   <span>{t({ en: "View All Specials & Offers", mr: "सर्व ऑफर्स पहा" })}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -63,12 +63,12 @@ export function SeasonalSpecialsSection() {
 
             {/* Right Poster Thumbnail */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative aspect-[4/3] w-full max-w-md rounded-2xl overflow-hidden border border-[#E7E2D6] dark:border-[#D4AF37]/40 shadow-xl">
+              <div className="relative aspect-[4/3] w-full max-w-md rounded-2xl overflow-hidden border border-[#E7E2D6] dark:border-[#D4AF37]/40 shadow-xl group">
                 <Image
                   src={activePromo.bannerImage}
                   alt={t(activePromo.title)}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>
@@ -87,7 +87,7 @@ export function SeasonalSpecialsSection() {
               <div
                 key={dish.id}
                 onClick={() => setSelectedDish(dish)}
-                className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md group cursor-pointer transition-all duration-300"
+                className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 group cursor-pointer active:scale-[0.98] transition-all duration-300"
               >
                 <div className="relative aspect-[4/3] w-full bg-[#F5F0E6] dark:bg-[#0F1115]">
                   <Image

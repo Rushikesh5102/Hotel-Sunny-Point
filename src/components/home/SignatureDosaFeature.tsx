@@ -134,17 +134,17 @@ export function SignatureDosaFeature() {
               <div className="pt-2 flex items-center gap-4">
                 <button
                   onClick={() => setSelectedDish(masalaDosa)}
-                  className="px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-md"
+                  className="px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
                 >
                   {t({ en: "View Masala Dosa Details", mr: "डोशाची माहिती पहा" })}
                 </button>
 
                 <Link
                   href="/menu/south-indian"
-                  className="text-xs font-semibold text-[#174D35] hover:text-[#225E43] dark:text-[#D4AF37] dark:hover:text-[#F9E79F] transition-colors flex items-center gap-1"
+                  className="text-xs font-semibold text-[#174D35] hover:text-[#225E43] dark:text-[#D4AF37] dark:hover:text-[#F9E79F] transition-colors flex items-center gap-1 group/link"
                 >
                   <span>{t({ en: "Explore All Dosas", mr: "सर्व डोसे पहा" })}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
@@ -156,7 +156,7 @@ export function SignatureDosaFeature() {
           {pesarattu && (
             <div
               onClick={() => setSelectedDish(pesarattu)}
-              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-md transition-all"
+              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] transition-all duration-300"
             >
               <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-4 bg-[#F5F0E6] dark:bg-black">
                 <Image
@@ -182,7 +182,7 @@ export function SignatureDosaFeature() {
           {setDosa && (
             <div
               onClick={() => setSelectedDish(setDosa)}
-              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-md transition-all"
+              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] transition-all duration-300"
             >
               <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-4 bg-[#F5F0E6] dark:bg-black">
                 <Image
@@ -208,7 +208,7 @@ export function SignatureDosaFeature() {
           {mlaDosa && (
             <div
               onClick={() => setSelectedDish(mlaDosa)}
-              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-md transition-all"
+              className="bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#2A3140] hover:border-[#174D35] dark:hover:border-[#D4AF37]/50 p-5 rounded-2xl cursor-pointer group shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] transition-all duration-300"
             >
               <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-4 bg-[#F5F0E6] dark:bg-black">
                 <Image
