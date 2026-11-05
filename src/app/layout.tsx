@@ -5,6 +5,9 @@ import { RestaurantProvider } from "@/context/RestaurantContext";
 import { MobileBottomBar } from "@/components/ui/MobileBottomBar";
 import { LateNightWhisper } from "@/components/ui/LateNightWhisper";
 import { MarigoldConfetti } from "@/components/ui/MarigoldConfetti";
+import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
+import { NetworkStatusBanner } from "@/components/pwa/NetworkStatusBanner";
+import { PwaInstallPrompt } from "@/components/pwa/PwaInstallPrompt";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hotelsunnypoint.com";
 
@@ -200,6 +203,9 @@ export default function RootLayout({
             <MobileBottomBar />
             <MarigoldConfetti />
             <LateNightWhisper />
+            <NetworkStatusBanner />
+            <PwaInstallPrompt />
+            <ServiceWorkerRegister />
           </RestaurantProvider>
         </ThemeProvider>
       </body>

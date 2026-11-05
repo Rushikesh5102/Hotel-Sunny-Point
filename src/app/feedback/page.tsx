@@ -20,12 +20,14 @@ export default function FeedbackPage() {
   const [comment, setComment] = useState("");
 
   const [submitted, setSubmitted] = useState(false);
+  const [submittedOffline, setSubmittedOffline] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!customerName.trim()) return;
 
+    const isOffline = typeof navigator !== "undefined" && !navigator.onLine;
     setIsSubmitting(true);
     await submitFeedback({
       restaurantId: restaurant.id,
@@ -40,6 +42,7 @@ export default function FeedbackPage() {
       comment: comment.trim() || undefined,
     });
     setIsSubmitting(false);
+    setSubmittedOffline(isOffline);
     setSubmitted(true);
   };
 
@@ -109,9 +112,13 @@ export default function FeedbackPage() {
               </div>
 
               <div className="space-y-2">
-                <h3 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">Thank You, {customerName}!</h3>
+                <h3 className="font-serif text-2xl font-bold text-[#292D29] dark:text-white">
+                  Thank You, {customerName}!
+                </h3>
                 <p className="text-xs text-[#6D756D] dark:text-[#9DA4B0] leading-relaxed max-w-md mx-auto">
-                  Your feedback has been received and saved into our administration management records. We truly value your patronage at Hotel Sunny Point.
+                  {submittedOffline
+                    ? "Your feedback has been securely preserved on your device offline. It is safely recorded and will automatically synchronize with restaurant administration."
+                    : "Your feedback has been received and saved into our administration management records. We truly value your patronage at Hotel Sunny Point."}
                 </p>
               </div>
 
