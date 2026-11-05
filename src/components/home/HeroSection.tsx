@@ -5,19 +5,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRestaurant } from "@/context/RestaurantContext";
-import { Sparkles, ArrowRight, Clock, MapPin, Utensils, Star, ShieldCheck, Heart, Volume2 } from "lucide-react";
+import { Sparkles, ArrowRight, Clock, Star, ChevronDown } from "lucide-react";
 import { GoldenParticles } from "@/components/ui/GoldenParticles";
 import { RotatingHeritageSeal } from "@/components/ui/RotatingHeritageSeal";
 import { HeroTastingTrio } from "@/components/home/HeroTastingTrio";
-import { DosaSizzleASMR } from "@/components/ui/DosaSizzleASMR";
 
 export function HeroSection() {
   const { restaurant, t } = useRestaurant();
 
-  // Scroll smoothly down to the heritage section
-  const handleScrollDown = () => {
+  // Scroll smoothly down to the menu or heritage section
+  const handleScrollToMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
     if (typeof window !== "undefined") {
-      const target = document.getElementById("heritage-section");
+      const target = document.getElementById("menu-section") || document.getElementById("heritage-section");
       if (target) {
         target.scrollIntoView({ behavior: "smooth" });
       }
@@ -25,19 +25,19 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[96vh] flex flex-col items-center justify-center overflow-hidden bg-[#FAF9F3] dark:bg-[#0B0D10] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 transition-colors">
-      {/* 1. Background Photography with Warm Luxury Vignette */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative min-h-[94vh] flex flex-col items-center justify-center overflow-hidden bg-[#FAF9F3] dark:bg-[#0B0D10] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 transition-colors">
+      {/* 1. Background Photography with Visible Landmark Architectural Silhouette */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <Image
           src="/assets/brand/facade.jpg"
-          alt="Hotel Sunny Point Exterior"
+          alt="Hotel Sunny Point Landmark Architectural Facade"
           fill
-          className="object-cover object-center scale-105 opacity-15 dark:opacity-25 filter blur-[1px]"
+          className="object-cover object-top scale-100 opacity-60 dark:opacity-45 contrast-125 saturate-110 transition-opacity duration-700"
           priority
         />
-        {/* Soft radial and linear gradient blend */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F3] via-[#FAF9F3]/90 to-[#FAF9F3]/70 dark:from-[#0F1115] dark:via-[#0F1115]/85 dark:to-[#0F1115]/70" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#FAF9F3]/60 to-[#FAF9F3] dark:from-transparent dark:via-[#0F1115]/60 dark:to-[#0F1115]" />
+        {/* Architectural Silhouette overlay with balanced contrast in both light and dark mode */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F3] via-[#FAF9F3]/70 to-[#FAF9F3]/30 dark:from-[#0B0D10] dark:via-[#0B0D10]/75 dark:to-[#0B0D10]/35" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#FAF9F3]/30 to-[#FAF9F3]/85 dark:via-[#0B0D10]/40 dark:to-[#0B0D10]/95" />
       </div>
 
       {/* 2. Ambient Golden Embers & Floating Steam Canvas */}
@@ -45,25 +45,6 @@ export function HeroSection() {
 
       {/* 3. Main Center Container */}
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-7 w-full pt-4">
-        {/* Real-Time Live Kitchen Status & Operational Beacon */}
-        <motion.div
-          initial={{ opacity: 0, y: -15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/95 dark:bg-[#171A21]/95 border border-[#174D35]/30 dark:border-[#D4AF37]/50 shadow-md text-xs font-semibold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-widest backdrop-blur-md"
-        >
-          <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C55E]" />
-          </span>
-          <span>
-            {t({
-              en: "Kitchen Open Now • Serving Heritage Specials (7:30 AM – 10:30 PM)",
-              mr: "किचन सुरू आहे • अस्सल दाक्षिणात्य स्वाद (सकाळी ७:३० – रात्री १०:३०)",
-            })}
-          </span>
-        </motion.div>
-
         {/* Master Heritage Seal with Rotating Circular Crest */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
@@ -101,33 +82,31 @@ export function HeroSection() {
           </p>
         </motion.div>
 
-        {/* Action CTAs with Interactive Sizzle Soundbite */}
+        {/* Action: Text + Bouncing Down Arrow Pointing Directly to Menu Below */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
-          className="flex flex-wrap items-center justify-center gap-3.5 pt-2"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-1"
         >
-          <Link
-            href="/menu"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-gradient-to-r dark:from-[#D4AF37] dark:via-[#E5C158] dark:to-[#B89324] dark:text-[#0F1115] shadow-xl hover:shadow-[#174D35]/30 dark:hover:shadow-[#D4AF37]/30 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 tracking-wider uppercase"
+          <a
+            href="#menu-section"
+            onClick={handleScrollToMenu}
+            className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full text-sm sm:text-base font-serif font-bold text-[#174D35] dark:text-[#D4AF37] hover:text-[#225E43] dark:hover:text-[#F9E79F] transition-all group border border-[#174D35]/30 dark:border-[#D4AF37]/40 bg-white/80 dark:bg-[#171A21]/80 backdrop-blur-md shadow-sm hover:shadow-md cursor-pointer"
           >
-            <Utensils className="w-4 h-4" />
-            <span>{t({ en: "Explore Full Digital Menu", mr: "डिजिटल मेनू पहा" })}</span>
-            <ArrowRight className="w-4 h-4 ml-0.5" />
-          </Link>
+            <span className="tracking-wide uppercase text-xs sm:text-sm">
+              {t({ en: "Explore Full Digital Menu", mr: "डिजिटल मेनू पहा", hi: "डिजिटल मेनू देखें" })}
+            </span>
+            <ChevronDown className="w-4 h-4 text-[#E07A2B] animate-bounce group-hover:translate-y-1 transition-transform" />
+          </a>
 
           <Link
             href="/about"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-xs font-semibold bg-white hover:bg-[#F5F0E6] text-[#292D29] border border-[#E7E2D6] hover:border-[#174D35]/50 dark:bg-[#171A21]/90 dark:hover:bg-[#212631] dark:text-white dark:border-[#2A3140] dark:hover:border-[#D4AF37]/60 shadow-sm hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
+            className="inline-flex items-center gap-1.5 text-xs text-[#6D756D] dark:text-[#C9CDD5] hover:text-[#174D35] dark:hover:text-white font-medium hover:underline transition-colors py-1"
           >
-            <span>{t({ en: "Our 1995 Heritage", mr: "आमचा १९९५ चा इतिहास" })}</span>
+            <span>{t({ en: "Our 1995 Story", mr: "आमचा १९९५ चा इतिहास" })}</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
-
-          {/* Crispy Dosa Sizzle ASMR Bite */}
-          <div className="w-full sm:w-auto flex justify-center">
-            <DosaSizzleASMR />
-          </div>
         </motion.div>
 
         {/* Heritage Trust & Accolades Bar (4 Stats) */}
@@ -177,22 +156,6 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.55, ease: "easeOut" }}
         >
           <HeroTastingTrio />
-        </motion.div>
-
-        {/* 5. Smooth Scroll Down Prompt */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="pt-6 flex flex-col items-center justify-center gap-1.5 cursor-pointer group"
-          onClick={handleScrollDown}
-        >
-          <span className="text-[11px] font-semibold text-[#6D756D] dark:text-[#9DA4B0] group-hover:text-[#174D35] dark:group-hover:text-[#D4AF37] transition-colors uppercase tracking-wider">
-            Scroll to Taste Legacy
-          </span>
-          <div className="w-5 h-8 rounded-full border-2 border-[#174D35]/40 dark:border-[#D4AF37]/50 flex items-start justify-center p-1 group-hover:border-[#174D35] dark:group-hover:border-[#D4AF37] transition-colors">
-            <div className="w-1.5 h-2 bg-[#174D35] dark:bg-[#D4AF37] rounded-full animate-bounce" />
-          </div>
         </motion.div>
       </div>
     </section>

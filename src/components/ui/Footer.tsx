@@ -177,10 +177,23 @@ export function Footer() {
           <p>
             © {currentYear} {restaurant.settings.name.en} – Pure Veg. All rights reserved.
           </p>
-          <div className="flex items-center gap-1 text-[11px]">
-            <span>Crafted with</span>
-            <Heart className="w-3 h-3 text-red-500 fill-red-500" />
-            <span>for Bhadrawati Food Lovers</span>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 text-[11px]">
+            <div className="flex items-center gap-1">
+              <span>Crafted with</span>
+              <Heart className="w-3 h-3 text-red-500 fill-red-500" />
+              <span>for Bhadrawati Food Lovers</span>
+            </div>
+            <span className="hidden sm:inline text-gray-400 dark:text-gray-600">•</span>
+            <a
+              href="https://github.com/Rushikesh5102"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 text-[#174D35] dark:text-[#D4AF37] hover:border-[#174D35] dark:hover:border-[#D4AF37] font-semibold transition-all hover:scale-105 shadow-sm"
+              title="Designed & Developed by Rushikesh Pattiwar"
+            >
+              <span>Designed &amp; Developed by <strong>Rushikesh Pattiwar</strong></span>
+            </a>
           </div>
         </div>
       </div>

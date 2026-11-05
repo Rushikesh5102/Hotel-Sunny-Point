@@ -5,7 +5,6 @@ import Image from "next/image";
 import { MenuItem } from "@/types";
 import { useRestaurant } from "@/context/RestaurantContext";
 import { X, Clock, Sparkles, CheckCircle2, Share2, Flame, Heart, MessageCircle } from "lucide-react";
-import { DosaSizzleASMR } from "@/components/ui/DosaSizzleASMR";
 
 interface DishModalProps {
   dish: MenuItem | null;
@@ -186,16 +185,6 @@ export function DishModal({ dish, onClose }: DishModalProps) {
               <p className="text-xs text-[#292D29] dark:text-[#C9CDD5]">
                 {dish.pairingSuggestions.join(" • ")}
               </p>
-            </div>
-          )}
-
-          {/* Dosa Sizzle ASMR for South Indian items */}
-          {(dish.categoryId === "cat-south-indian" || dish.name.en.toLowerCase().includes("dosa")) && (
-            <div className="p-3 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-between">
-              <span className="text-xs font-semibold text-[#174D35] dark:text-[#D4AF37]">
-                Tawa Audio Preview
-              </span>
-              <DosaSizzleASMR variant="compact" />
             </div>
           )}
 

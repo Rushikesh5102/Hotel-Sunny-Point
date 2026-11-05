@@ -91,29 +91,29 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 8. Visit Information & Map Navigation Callout */}
+        {/* 8. Visit Information & Embedded Interactive Google Map */}
         <section className="py-16 bg-white dark:bg-[#171A21] border-t border-[#E7E2D6] dark:border-[#2A3140] transition-colors">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#174D35]/30 dark:border-[#D4AF37]/40 rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="space-y-3 text-center lg:text-left">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="bg-[#FAF9F3] dark:bg-[#0F1115] border border-[#174D35]/30 dark:border-[#D4AF37]/40 rounded-3xl p-6 sm:p-10 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
+              <div className="space-y-2 text-center lg:text-left">
                 <span className="text-xs font-bold text-[#174D35] dark:text-[#D4AF37] uppercase tracking-wider">
-                  Hotel Sunny Point — Pure Veg
+                  Hotel Sunny Point — 100% Pure Veg Landmark
                 </span>
-                <h3 className="font-serif text-2xl sm:text-4xl font-bold text-[#292D29] dark:text-white">
-                  {t({ en: "Join Us for a Taste of Legacy", mr: "भद्रावतीतील स्वादाच्या वारशाचा अनुभव घ्या" })}
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#292D29] dark:text-white">
+                  {t({ en: "Visit Us in Bhadrawati", mr: "भद्रावतीतील स्वादाच्या वारशाचा प्रत्यक्ष अनुभव घ्या", hi: "भद्रावती में पधारें" })}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#6D756D] dark:text-[#C9CDD5] max-w-xl">
                   {t({
-                    en: "Located on Main Road, Bhadrawati. Family dining with air-conditioned comfort, generous parking, and genuine hospitality.",
-                    mr: "मुख्य रस्ता, भद्रावती. वातानुकूलित कौटुंबिक आसनव्यवस्था, प्रशस्त पार्किंग आणि आपुलकीचे आदरातिथ्य.",
+                    en: "Chandrapur-Nagpur Main Road, Bhadrawati. Air-conditioned family dining, ample parking, and authentic pure veg hospitality.",
+                    mr: "चंद्रपूर-नागपूर मुख्य रस्ता, भद्रावती. वातानुकूलित कौटुंबिक आसनव्यवस्था, प्रशस्त पार्किंग आणि आपुलकीचे आदरातिथ्य.",
                   })}
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full lg:w-auto">
+              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full lg:w-auto">
                 <a
                   href={`tel:${restaurant.settings.primaryPhone}`}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-lg"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89324] dark:text-[#0F1115] uppercase tracking-wider transition-colors shadow-lg"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call {restaurant.settings.primaryPhone}</span>
@@ -123,12 +123,26 @@ export default function HomePage() {
                   href={restaurant.settings.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-semibold bg-white hover:bg-[#F5F0E6] text-[#292D29] border border-[#E7E2D6] hover:border-[#174D35]/50 dark:bg-[#212631] dark:hover:bg-[#2A3140] dark:text-white dark:border-[#2A3140] shadow-sm transition-colors"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-semibold bg-white hover:bg-[#F5F0E6] text-[#292D29] border border-[#E7E2D6] hover:border-[#174D35]/50 dark:bg-[#212631] dark:hover:bg-[#2A3140] dark:text-white dark:border-[#2A3140] shadow-sm transition-colors"
                 >
                   <MapPin className="w-4 h-4 text-[#E07A2B]" />
-                  <span>Google Maps Directions</span>
+                  <span>Open in Google Maps</span>
                 </a>
               </div>
+            </div>
+
+            {/* Embedded Live Google Map */}
+            <div className="relative w-full h-[320px] sm:h-[400px] rounded-3xl overflow-hidden border-2 border-[#E7E2D6] dark:border-[#D4AF37]/40 shadow-xl bg-gray-100 dark:bg-[#0B0D10]">
+              <iframe
+                title="Hotel Sunny Point Google Map Location"
+                src="https://maps.google.com/maps?q=Hotel+Sunny+Point+Bhadrawati+Maharashtra+442902&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full filter contrast-105"
+              />
             </div>
           </div>
         </section>

@@ -15,15 +15,19 @@ export function LateNightWhisper() {
     setIsLateNight(late);
 
     // Check if dismissed during current browser session
-    const dismissed = sessionStorage.getItem("sunny_point_late_night_whisper_dismissed");
-    if (!dismissed && late) {
-      setIsDismissed(false);
-    }
+    try {
+      const dismissed = sessionStorage.getItem("sunny_point_late_night_whisper_dismissed");
+      if (!dismissed && late) {
+        setIsDismissed(false);
+      }
+    } catch (e) {}
   }, []);
 
   const handleDismiss = () => {
     setIsDismissed(true);
-    sessionStorage.setItem("sunny_point_late_night_whisper_dismissed", "true");
+    try {
+      sessionStorage.setItem("sunny_point_late_night_whisper_dismissed", "true");
+    } catch (e) {}
   };
 
   if (!isLateNight || isDismissed) {
@@ -31,54 +35,63 @@ export function LateNightWhisper() {
   }
 
   return (
-    <aside
-      aria-label="Late Night Kitchen Whisper"
-      className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 max-w-sm w-[calc(100vw-2rem)] sm:w-auto animate-in fade-in slide-in-from-bottom-5 duration-500"
-    >
-      <div className="relative overflow-hidden rounded-2xl bg-[#171A21]/95 border border-[#D4AF37]/50 p-4 shadow-2xl backdrop-blur-xl text-white">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-300">
+      <aside
+        aria-label="Late Night Kitchen Whisper"
+        className="relative max-w-md w-full bg-[#12141A]/95 border-2 border-[#D4AF37]/50 rounded-3xl p-6 sm:p-7 shadow-2xl backdrop-blur-xl text-white text-center overflow-hidden animate-in zoom-in-95 duration-300"
+      >
         {/* Ambient starry backdrop glow */}
-        <div className="absolute -top-12 -right-12 w-32 h-32 bg-[#D4AF37]/15 rounded-full blur-2xl pointer-events-none" />
-        <div className="absolute -bottom-10 -left-10 w-28 h-28 bg-[#E07A2B]/15 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute -top-16 -right-16 w-36 h-36 bg-[#D4AF37]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-16 -left-16 w-36 h-36 bg-[#E07A2B]/15 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="relative flex items-start gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37]/20 to-[#E07A2B]/20 border border-[#D4AF37]/40 flex items-center justify-center shrink-0 shadow-inner">
-            <Moon className="w-5 h-5 text-[#D4AF37] animate-pulse" />
-          </div>
+        {/* Close Button top right */}
+        <button
+          onClick={handleDismiss}
+          className="absolute top-4 right-4 text-gray-400 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition-colors"
+          aria-label="Dismiss late night notice"
+        >
+          <X className="w-5 h-5" />
+        </button>
 
-          <div className="flex-1 pr-4">
-            <div className="flex items-center gap-1.5 mb-1">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-[#D4AF37] flex items-center gap-1">
-                <Sparkles className="w-3 h-3" />
-                Late Night Kitchen Whisper
-              </span>
-            </div>
+        {/* Center Moon Badge */}
+        <div className="mx-auto w-14 h-14 rounded-2xl bg-gradient-to-br from-[#D4AF37]/20 to-[#E07A2B]/20 border border-[#D4AF37]/50 flex items-center justify-center mb-4 shadow-inner">
+          <Moon className="w-7 h-7 text-[#D4AF37] animate-pulse" />
+        </div>
 
-            <p className="text-xs text-[#C9CDD5] leading-relaxed mb-3">
-              Our cast-iron tawas are resting tonight. The firewood aromas and hot ghee dosas return fresh at <strong className="text-white">7:30 AM</strong> tomorrow.
-            </p>
+        <div className="inline-flex items-center gap-1.5 mb-2">
+          <span className="text-xs uppercase font-bold tracking-widest text-[#D4AF37] flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5" />
+            Late Night Kitchen Whisper
+          </span>
+        </div>
 
-            <div className="flex items-center gap-2">
-              <Link
-                href="/menu/south-indian"
-                onClick={handleDismiss}
-                className="inline-flex items-center gap-1 text-[11px] font-bold text-[#D4AF37] hover:text-[#F9E79F] transition-colors"
-              >
-                <Sunrise className="w-3.5 h-3.5 text-[#E07A2B]" />
-                <span>Bookmark Tomorrow&apos;s Breakfast</span>
-                <ArrowRight className="w-3 h-3 ml-0.5" />
-              </Link>
-            </div>
-          </div>
+        <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
+          Our Tawas Are Resting Tonight
+        </h3>
+
+        <p className="text-xs sm:text-sm text-[#C9CDD5] leading-relaxed mb-6 max-w-sm mx-auto">
+          The firewood aromas, crisp golden dosas, and fresh desi ghee delicacies will return hot &amp; fresh at <strong className="text-white">7:30 AM</strong> tomorrow morning.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Link
+            href="/menu/south-indian"
+            onClick={handleDismiss}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B89324] text-[#0F1115] font-bold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 transition-all active:scale-95"
+          >
+            <Sunrise className="w-4 h-4 text-[#78350F]" />
+            <span>Bookmark Tomorrow&apos;s Breakfast</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
 
           <button
             onClick={handleDismiss}
-            className="text-gray-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors shrink-0"
-            aria-label="Dismiss late night notice"
+            className="w-full sm:w-auto px-5 py-3 rounded-xl text-xs font-semibold text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
           >
-            <X className="w-4 h-4" />
+            Close / समजल
           </button>
         </div>
-      </div>
-    </aside>
+      </aside>
+    </div>
   );
 }

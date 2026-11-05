@@ -10,7 +10,7 @@ export function CategoryGrid() {
   const { restaurant, t } = useRestaurant();
 
   return (
-    <section className="py-20 bg-[#F5F0E6] dark:bg-[#0F1115] relative transition-colors">
+    <section id="menu-section" className="py-20 bg-[#F5F0E6] dark:bg-[#0F1115] relative transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">

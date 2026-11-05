@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import { useRestaurant } from "@/context/RestaurantContext";
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
 import { AnimatedHamburger } from "@/components/ui/AnimatedHamburger";
@@ -15,6 +16,27 @@ export function Header() {
   const { restaurant, language, setLanguage, t } = useRestaurant();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const isHomePage = pathname === "/";
+  // On homepage: hide header at the top so only the hero seal is visible.
+  // When scrolled past hero seal (> 220px), reveal header and morph logo in.
+  const [isVisible, setIsVisible] = useState(!isHomePage);
+
+  useEffect(() => {
+    if (!isHomePage) {
+      setIsVisible(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 220;
+      setIsVisible(scrolled);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHomePage]);
+
   const navLinks = [
     { href: "/", label: { en: "Home", mr: "मुख्यपृष्ठ", hi: "होम" } },
     { href: "/menu", label: { en: "Digital Menu", mr: "डिजिटल मेनू", hi: "डिजिटल मेनू" } },
@@ -24,156 +46,170 @@ export function Header() {
     { href: "/contact", label: { en: "Contact & Location", mr: "संपर्क व पत्ता", hi: "संपर्क एवं स्थान" } },
   ];
 
+  const handleOpenLanguageModal = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("open-language-launch-modal"));
+    }
+  };
+
   return (
     <>
-      {/* Top Banner Notice: Pure Veg & Legacy */}
-      <div className="bg-[#F5F0E6] dark:bg-gradient-to-r dark:from-[#0F1115] dark:via-[#1A1813] dark:to-[#0F1115] border-b border-[#E7E2D6] dark:border-[#2A3140]/60 text-xs py-1.5 px-4 transition-colors">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C55E]"></span>
-            </span>
-            <span className="text-[#6D756D] dark:text-[#9DA4B0] font-medium hidden sm:inline">
-              {t({
-                en: "100% Pure Vegetarian Restaurant in Bhadrawati",
-                mr: "भद्रावतीतील १००% शुद्ध शाकाहारी रेस्टॉरंट",
-                hi: "भद्रावती में १००% शुद्ध शाकाहारी रेस्टोरेंट",
-              })}
-            </span>
-            <span className="text-[#6D756D] dark:text-[#9DA4B0] font-medium sm:hidden">
-              {t({
-                en: "Pure Veg • Since 1995",
-                mr: "शुद्ध शाकाहारी • १९९५ पासून",
-                hi: "शुद्ध शाकाहारी • १९९५ से",
-              })}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-4 text-[#292D29] dark:text-[#C9CDD5]">
-            <a
-              href={`tel:${restaurant.settings.primaryPhone}`}
-              className="flex items-center gap-1.5 hover:text-primary dark:hover:text-[#D4AF37] transition-colors"
-            >
-              <Phone className="w-3 h-3 text-[#174D35] dark:text-[#D4AF37]" />
-              <span className="font-semibold">{restaurant.settings.primaryPhone}</span>
-            </a>
-            <span className="text-[#C6A45C]/60 dark:text-[#4A5568] hidden sm:inline">•</span>
-            <a
-              href={restaurant.settings.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-1 text-[#174D35] hover:text-[#225E43] dark:text-[#D4AF37]/90 dark:hover:text-[#F9E79F] transition-colors font-medium"
-              title="Open Hotel Sunny Point on Google Maps"
-            >
-              <MapPin className="w-3.5 h-3.5" />
-              <span>{t({ en: "Locate on Maps", mr: "गुगल मॅप्सवर शोधा", hi: "गूगल मैप्स पर देखें" })}</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Sticky Header */}
-      <header className="sticky top-0 z-40 bg-[#FAF9F3]/92 dark:bg-[#0F1115]/92 backdrop-blur-md border-b border-[#E7E2D6] dark:border-[#2A3140]/80 transition-all shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Brand Logo & Name */}
-            <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-              <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#174D35] dark:border-[#D4AF37] shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0">
-                <Image
-                  src={restaurant.settings.logoUrl}
-                  alt={restaurant.settings.name.en}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <div className="flex flex-col shrink-0">
-                <div className="flex items-center gap-1.5 sm:gap-2">
-                  <span className="font-serif text-lg sm:text-xl xl:text-2xl font-bold tracking-wide text-[#292D29] dark:text-white group-hover:text-primary dark:group-hover:text-[#D4AF37] transition-colors whitespace-nowrap">
-                    {t(restaurant.settings.name)}
-                  </span>
-                  {/* Pure Veg Green Badge */}
-                  <div className="w-3.5 h-3.5 border border-[#22C55E] flex items-center justify-center p-0.5 rounded-sm bg-[#22C55E]/10 shrink-0" title="100% Pure Veg">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></div>
-                  </div>
-                </div>
-                <SecretHeritageEasterEgg>
-                  <span className="text-[10px] sm:text-[11px] xl:text-xs text-[#174D35] dark:text-[#D4AF37] font-semibold tracking-wider uppercase whitespace-nowrap hover:underline cursor-pointer">
-                    {t({ en: "The Taste of Legacy • Est. 1995", mr: "द टेस्ट ऑफ लेगसी • स्था. १९९५" })}
-                  </span>
-                </SecretHeritageEasterEgg>
-              </div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`px-2.5 xl:px-3.5 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-all ${
-                      isActive
-                        ? "text-[#174D35] dark:text-[#D4AF37] bg-[#174D35]/10 dark:bg-[#D4AF37]/10 border border-[#174D35]/30 dark:border-[#D4AF37]/30 font-semibold"
-                        : "text-[#6D756D] dark:text-[#C9CDD5] hover:text-[#292D29] dark:hover:text-white hover:bg-[#F5F0E6] dark:hover:bg-[#171A21]"
-                    }`}
-                  >
-                    {t(link.label)}
-                  </Link>
-                );
-              })}
-            </nav>
-
-            {/* Action Buttons: Theme Switcher, Multilingual Selector & Mobile Menu */}
-            <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-              {/* Theme Switcher Button */}
-              <ThemeSwitcher variant="pill" className="shrink-0" />
-
-              {/* Multilingual Selector: EN | मराठी | हिन्दी */}
-              <div className="flex items-center bg-[#FFFFFF] dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/40 rounded-full p-0.5 shadow-sm shrink-0">
-                {(["en", "mr", "hi"] as const).map((code) => {
-                  const labels = { en: "EN", mr: "मराठी", hi: "हिन्दी" };
-                  const isSelected = language === code;
-                  return (
-                    <button
-                      key={code}
-                      onClick={() => setLanguage(code)}
-                      className={`px-2 sm:px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold transition-all ${
-                        isSelected
-                          ? "bg-[#174D35] text-white dark:bg-[#D4AF37] dark:text-[#0F1115] shadow-sm"
-                          : "text-[#6D756D] hover:text-[#292D29] dark:text-[#9DA4B0] dark:hover:text-white"
-                      }`}
-                      title={`Switch to ${labels[code]}`}
-                      aria-label={`Switch to ${labels[code]}`}
-                    >
-                      {labels[code]}
-                    </button>
-                  );
+      <motion.div
+        initial={false}
+        animate={{
+          y: isVisible ? 0 : -140,
+          opacity: isVisible ? 1 : 0,
+        }}
+        transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
+        className={`sticky top-0 z-40 w-full transition-shadow ${
+          !isVisible ? "pointer-events-none" : ""
+        }`}
+      >
+        {/* Top Banner Notice: Pure Veg & Legacy */}
+        <div className="bg-[#F5F0E6] dark:bg-gradient-to-r dark:from-[#0F1115] dark:via-[#1A1813] dark:to-[#0F1115] border-b border-[#E7E2D6] dark:border-[#2A3140]/60 text-xs py-1.5 px-4 transition-colors">
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C55E]"></span>
+              </span>
+              <span className="text-[#6D756D] dark:text-[#9DA4B0] font-medium hidden sm:inline">
+                {t({
+                  en: "100% Pure Vegetarian Restaurant in Bhadrawati",
+                  mr: "भद्रावतीतील १००% शुद्ध शाकाहारी रेस्टॉरंट",
+                  hi: "भद्रावती में १००% शुद्ध शाकाहारी रेस्टोरेंट",
                 })}
-              </div>
+              </span>
+              <span className="text-[#6D756D] dark:text-[#9DA4B0] font-medium sm:hidden">
+                {t({
+                  en: "Pure Veg • Since 1995",
+                  mr: "शुद्ध शाकाहारी • १९९५ पासून",
+                  hi: "शुद्ध शाकाहारी • १९९५ से",
+                })}
+              </span>
+            </div>
 
-              {/* Order/Browse Menu CTA (Desktop - on xl+ screens) */}
-              <Link
-                href="/menu"
-                className="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-gradient-to-r dark:from-[#D4AF37] dark:to-[#B89324] dark:hover:from-[#E5C158] dark:hover:to-[#D4AF37] dark:text-[#0F1115] shadow-md transition-all transform active:scale-95 whitespace-nowrap shrink-0"
+            <div className="flex items-center gap-4 text-[#292D29] dark:text-[#C9CDD5]">
+              <a
+                href={`tel:${restaurant.settings.primaryPhone}`}
+                className="flex items-center gap-1.5 hover:text-primary dark:hover:text-[#D4AF37] transition-colors"
               >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{t({ en: "View Menu", mr: "मेनू पहा", hi: "मेनू देखें" })}</span>
-              </Link>
-
-              {/* Mobile Animated Hamburger Button */}
-              <div className="lg:hidden">
-                <AnimatedHamburger
-                  isOpen={mobileMenuOpen}
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                />
-              </div>
+                <Phone className="w-3 h-3 text-[#174D35] dark:text-[#D4AF37]" />
+                <span className="font-semibold">{restaurant.settings.primaryPhone}</span>
+              </a>
+              <span className="text-[#C6A45C]/60 dark:text-[#4A5568] hidden sm:inline">•</span>
+              <a
+                href={restaurant.settings.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:flex items-center gap-1 text-[#174D35] hover:text-[#225E43] dark:text-[#D4AF37]/90 dark:hover:text-[#F9E79F] transition-colors font-medium"
+                title="Open Hotel Sunny Point on Google Maps"
+              >
+                <MapPin className="w-3.5 h-3.5" />
+                <span>{t({ en: "Locate on Maps", mr: "गुगल मॅप्सवर शोधा", hi: "गूगल मैप्स पर देखें" })}</span>
+              </a>
             </div>
           </div>
         </div>
-      </header>
+
+        {/* Main Sticky Header */}
+        <header className="bg-[#FAF9F3]/95 dark:bg-[#0F1115]/95 backdrop-blur-md border-b border-[#E7E2D6] dark:border-[#2A3140]/80 transition-all shadow-md">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-20">
+              {/* Brand Logo & Name with Morph Entrance Animation */}
+              <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+                <motion.div
+                  key="header-logo"
+                  initial={{ y: 35, scale: 0.6, opacity: 0 }}
+                  animate={isVisible ? { y: 0, scale: 1, opacity: 1 } : { y: 35, scale: 0.6, opacity: 0 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 22, delay: 0.05 }}
+                  className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#174D35] dark:border-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.45)] group-hover:scale-105 transition-transform duration-300 shrink-0"
+                >
+                  <Image
+                    src={restaurant.settings.logoUrl}
+                    alt={restaurant.settings.name.en}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+                <div className="flex flex-col shrink-0">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <span className="font-serif text-lg sm:text-xl xl:text-2xl font-bold tracking-wide text-[#292D29] dark:text-white group-hover:text-primary dark:group-hover:text-[#D4AF37] transition-colors whitespace-nowrap">
+                      {t(restaurant.settings.name)}
+                    </span>
+                    {/* Pure Veg Green Badge */}
+                    <div className="w-3.5 h-3.5 border border-[#22C55E] flex items-center justify-center p-0.5 rounded-sm bg-[#22C55E]/10 shrink-0" title="100% Pure Veg">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></div>
+                    </div>
+                  </div>
+                  <SecretHeritageEasterEgg>
+                    <span className="text-[10px] sm:text-[11px] xl:text-xs text-[#174D35] dark:text-[#D4AF37] font-semibold tracking-wider uppercase whitespace-nowrap hover:underline cursor-pointer">
+                      {t({ en: "The Taste of Legacy • Est. 1995", mr: "द टेस्ट ऑफ लेगसी • स्था. १९९५" })}
+                    </span>
+                  </SecretHeritageEasterEgg>
+                </div>
+              </Link>
+
+              {/* Desktop Navigation */}
+              <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`px-2.5 xl:px-3.5 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-all ${
+                        isActive
+                          ? "text-[#174D35] dark:text-[#D4AF37] bg-[#174D35]/10 dark:bg-[#D4AF37]/10 border border-[#174D35]/30 dark:border-[#D4AF37]/30 font-semibold"
+                          : "text-[#6D756D] dark:text-[#C9CDD5] hover:text-[#292D29] dark:hover:text-white hover:bg-[#F5F0E6] dark:hover:bg-[#171A21]"
+                      }`}
+                    >
+                      {t(link.label)}
+                    </Link>
+                  );
+                })}
+              </nav>
+
+              {/* Action Buttons: Theme Switcher, Compact Multilingual Selector & Mobile Menu */}
+              <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                {/* Theme Switcher Button */}
+                <ThemeSwitcher variant="pill" className="shrink-0" />
+
+                {/* Compact Multilingual Selector Button */}
+                <button
+                  onClick={handleOpenLanguageModal}
+                  className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white dark:bg-[#171A21] border border-[#E7E2D6] dark:border-[#D4AF37]/50 text-[#174D35] dark:text-[#D4AF37] hover:border-[#174D35] dark:hover:border-[#D4AF37] shadow-sm text-xs font-bold transition-all shrink-0 hover:scale-105 active:scale-95"
+                  title="Change Language / भाषा बदला / भाषा बदलें"
+                  aria-label="Change Language"
+                >
+                  <Globe className="w-3.5 h-3.5" />
+                  <span className="uppercase text-[11px] tracking-wide font-extrabold">
+                    {language === "mr" ? "मराठी" : language === "hi" ? "हिन्दी" : "EN"}
+                  </span>
+                </button>
+
+                {/* Order/Browse Menu CTA (Desktop - on xl+ screens) */}
+                <Link
+                  href="/menu"
+                  className="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold bg-[#174D35] hover:bg-[#123C29] text-white dark:bg-gradient-to-r dark:from-[#D4AF37] dark:to-[#B89324] dark:hover:from-[#E5C158] dark:hover:to-[#D4AF37] dark:text-[#0F1115] shadow-md transition-all transform active:scale-95 whitespace-nowrap shrink-0"
+                >
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>{t({ en: "View Menu", mr: "मेनू पहा", hi: "मेनू देखें" })}</span>
+                </Link>
+
+                {/* Mobile Animated Hamburger Button */}
+                <div className="lg:hidden">
+                  <AnimatedHamburger
+                    isOpen={mobileMenuOpen}
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </motion.div>
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (

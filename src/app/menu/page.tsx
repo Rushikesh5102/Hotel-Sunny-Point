@@ -7,7 +7,6 @@ import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import { FoodCard } from "@/components/ui/FoodCard";
 import { DishModal } from "@/components/ui/DishModal";
-import { DosaSizzleASMR } from "@/components/ui/DosaSizzleASMR";
 import { FoodMoodDial } from "@/components/ui/FoodMoodDial";
 import { useRestaurant } from "@/context/RestaurantContext";
 import { MenuItem } from "@/types";
@@ -107,11 +106,6 @@ function MenuContent() {
                 mr: "१९९५ पासूनचा वारसा, खास डोसे, सूप्स आणि आंतरराष्ट्रीय पदार्थ. सविस्तर माहितीसाठी पदार्थावर क्लिक करा.",
               })}
             </p>
-
-            {/* Crispy Dosa Sizzle ASMR Sound Bite Trigger */}
-            <div className="flex justify-center pt-2">
-              <DosaSizzleASMR variant="compact" />
-            </div>
 
             {/* Fast Search Input Bar */}
             <div className="max-w-md mx-auto pt-3">

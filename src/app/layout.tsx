@@ -7,7 +7,7 @@ import { LateNightWhisper } from "@/components/ui/LateNightWhisper";
 import { MarigoldConfetti } from "@/components/ui/MarigoldConfetti";
 import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
 import { NetworkStatusBanner } from "@/components/pwa/NetworkStatusBanner";
-import { PwaInstallPrompt } from "@/components/pwa/PwaInstallPrompt";
+import { LanguageLaunchModal } from "@/components/ui/LanguageLaunchModal";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
@@ -36,8 +36,11 @@ export const metadata: Metadata = {
     "family restaurant",
     "Maharashtra 442902",
   ],
-  authors: [{ name: "Hotel Sunny Point", url: SITE_URL }],
-  creator: "Hotel Sunny Point",
+  authors: [
+    { name: "Hotel Sunny Point", url: SITE_URL },
+    { name: "Rushikesh Pattiwar", url: "https://github.com/Rushikesh5102" },
+  ],
+  creator: "Rushikesh Pattiwar",
   publisher: "Hotel Sunny Point",
   formatDetection: {
     telephone: true,
@@ -209,7 +212,7 @@ export default function RootLayout({
             <MarigoldConfetti />
             <LateNightWhisper />
             <NetworkStatusBanner />
-            <PwaInstallPrompt />
+            <LanguageLaunchModal />
             <ServiceWorkerRegister />
           </RestaurantProvider>
         </ThemeProvider>
